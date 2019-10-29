@@ -9,6 +9,7 @@ utils => Carpeta con el script para consumir las tablas y generar los archivos J
 
 ## Consumir y generar datasets
 cd ./utils
+
 python3 ./consumir-tablas.py 
 
 
