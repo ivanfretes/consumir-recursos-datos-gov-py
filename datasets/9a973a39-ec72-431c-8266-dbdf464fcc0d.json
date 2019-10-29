@@ -1,0 +1,147 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "CANDIDATO A PRESIDENTE",
+                "type": "text"
+            },
+            {
+                "id": "CANDIDATO A VICEPRESIDENTE",
+                "type": "text"
+            },
+            {
+                "id": "Lista",
+                "type": "numeric"
+            },
+            {
+                "id": "Siglas",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "CANDIDATO A PRESIDENTE": "",
+                "CANDIDATO A VICEPRESIDENTE": "",
+                "Lista": null,
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 1
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "",
+                "CANDIDATO A VICEPRESIDENTE": "",
+                "Lista": null,
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 2
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "",
+                "CANDIDATO A VICEPRESIDENTE": "",
+                "Lista": null,
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 3
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "HORACIO MANUEL CARTES JARA",
+                "CANDIDATO A VICEPRESIDENTE": "JUAN EUDES AFARA MACIEL",
+                "Lista": "1",
+                "Siglas": "ANR",
+                "_full_text": "'afara':7 'anr':9 'cart':3 'eud':6 'horacio':1 'jara':4 'juan':5 'maciel':8 'manuel':2",
+                "_id": 4
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "MARIO ANIBAL FERREIRO SANABRIA",
+                "CANDIDATO A VICEPRESIDENTE": "CYNTHIA ELVIRA BRIZUELA SPERATTI",
+                "Lista": "3",
+                "Siglas": "AP",
+                "_full_text": "'anib':2 'ap':9 'brizuela':7 'cynthia':5 'elvira':6 'ferreiro':3 'mario':1 'sanabria':4 'speratti':8",
+                "_id": 5
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "PEDRO EFRAIN ALEGRE SASIAIN",
+                "CANDIDATO A VICEPRESIDENTE": "RAFAEL AUGUSTO FILIZZOLA SERRA",
+                "Lista": "4",
+                "Siglas": "PA",
+                "_full_text": "'alegr':3 'augusto':6 'efrain':2 'filizzola':7 'pa':9 'pedro':1 'rafael':5 'sasiain':4 'serra':8",
+                "_id": 6
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "ROBERTO CARLOS FERREIRA FRANCO",
+                "CANDIDATO A VICEPRESIDENTE": "LUIS BELTRAN VALLEJOS",
+                "Lista": "5",
+                "Siglas": "PHP",
+                "_full_text": "'beltran':6 'carlo':2 'ferreira':3 'franco':4 'lui':5 'php':8 'roberto':1 'vallejo':7",
+                "_id": 7
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "LINO CESAR OVIEDO",
+                "CANDIDATO A VICEPRESIDENTE": "LUIS FELIPE VILLAMAYOR ALVAREZ",
+                "Lista": "7",
+                "Siglas": "UNACE",
+                "_full_text": "'alvarez':7 'cesar':2 'felip':5 'lino':1 'lui':4 'oviedo':3 'unac':8 'villamayor':6",
+                "_id": 8
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "MIGUEL CARRIZOSA GALIANO",
+                "CANDIDATO A VICEPRESIDENTE": "ARSENIO OCAMPOS VELAZQUEZ",
+                "Lista": "8",
+                "Siglas": "PPQ",
+                "_full_text": "'arsenio':4 'carrizosa':2 'galiano':3 'miguel':1 'ocampo':5 'ppq':7 'velazquez':6",
+                "_id": 9
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "RICARDO MARTIN ALMADA",
+                "CANDIDATO A VICEPRESIDENTE": "LIBRADA MARTINEZ DE VIERA",
+                "Lista": "10",
+                "Siglas": "PB",
+                "_full_text": "'almada':3 'de':6 'librada':4 'martin':2 'martinez':5 'pb':8 'ricardo':1 'viera':7",
+                "_id": 10
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "EDUARDO MARIA ARCE SCHAERER",
+                "CANDIDATO A VICEPRESIDENTE": "GLORIA MARIA BAREIRO CANDIA",
+                "Lista": "14",
+                "Siglas": "PT",
+                "_full_text": "'arc':3 'bareiro':7 'candia':8 'eduardo':1 'gloria':5 'maria':2,6 'pt':9 'schaerer':4",
+                "_id": 11
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "ANIBAL ENRIQUE CARRILLO IRAMAIN",
+                "CANDIDATO A VICEPRESIDENTE": "RAFAEL LUIS AGUAYO TRINIDAD",
+                "Lista": "40",
+                "Siglas": "FG",
+                "_full_text": "'aguayo':7 'anib':1 'carrillo':3 'enriqu':2 'fg':9 'iramain':4 'lui':6 'rafael':5 'trinidad':8",
+                "_id": 12
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "ATANASIO GALEANO",
+                "CANDIDATO A VICEPRESIDENTE": "DIGNO VALDEZ ESPINOZA",
+                "Lista": "55",
+                "Siglas": "PPL",
+                "_full_text": "'atanasio':1 'digno':3 'espinoza':5 'galeano':2 'ppl':6 'valdez':4",
+                "_id": 13
+            },
+            {
+                "CANDIDATO A PRESIDENTE": "LILIAN SUSANA SOTO BADAUI",
+                "CANDIDATO A VICEPRESIDENTE": "MAGUIORINA ATANASIA RAMONA BALBUENA CARDOZO",
+                "Lista": "69",
+                "Siglas": "MKP",
+                "_full_text": "'atanasia':6 'badaui':4 'balbuena':8 'cardozo':9 'lilian':1 'maguiorina':5 'mkp':10 'ramona':7 'soto':3 'susana':2",
+                "_id": 14
+            }
+        ],
+        "sql": "SELECT * FROM \"9a973a39-ec72-431c-8266-dbdf464fcc0d\" ;"
+    },
+    "success": true
+}

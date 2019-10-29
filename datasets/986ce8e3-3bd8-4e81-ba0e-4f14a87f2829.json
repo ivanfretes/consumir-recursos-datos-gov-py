@@ -1,0 +1,351 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Fecha",
+                "type": "text"
+            },
+            {
+                "id": "14/12/2008",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "14/12/2008": "Elección Municipal",
+                "Fecha": "Tipo Elección:",
+                "_full_text": "'elección':2,3 'municip':4 'tipo':1",
+                "_id": 1
+            },
+            {
+                "14/12/2008": "14",
+                "Fecha": "Departamento",
+                "_full_text": "'14':2 'departamento':1",
+                "_id": 2
+            },
+            {
+                "14/12/2008": "11",
+                "Fecha": "Distrito",
+                "_full_text": "'11':2 'distrito':1",
+                "_id": 3
+            },
+            {
+                "14/12/2008": "3193",
+                "Fecha": "Habilitados",
+                "_full_text": "'3193':2 'habilitado':1",
+                "_id": 4
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 5
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 6
+            },
+            {
+                "14/12/2008": "Intendente",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'intendent':2",
+                "_id": 7
+            },
+            {
+                "14/12/2008": "884",
+                "Fecha": "A.N.R.",
+                "_full_text": "'884':2 'a.n.r':1",
+                "_id": 8
+            },
+            {
+                "14/12/2008": "706",
+                "Fecha": "P.L.R.A",
+                "_full_text": "'706':2 'p.l.r.a':1",
+                "_id": 9
+            },
+            {
+                "14/12/2008": "552",
+                "Fecha": "P.P.Q.",
+                "_full_text": "'552':2 'p.p.q':1",
+                "_id": 10
+            },
+            {
+                "14/12/2008": "0",
+                "Fecha": "NULOS",
+                "_full_text": "'0':2 'nulo':1",
+                "_id": 11
+            },
+            {
+                "14/12/2008": "0",
+                "Fecha": "BLANCOS",
+                "_full_text": "'0':2 'blanco':1",
+                "_id": 12
+            },
+            {
+                "14/12/2008": "2142",
+                "Fecha": "TOTALES",
+                "_full_text": "'2142':2 'total':1",
+                "_id": 13
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 14
+            },
+            {
+                "14/12/2008": "Electo",
+                "Fecha": "LISTA",
+                "_full_text": "'electo':2 'lista':1",
+                "_id": 15
+            },
+            {
+                "14/12/2008": "Benito Ricardo Aguayo Fernández",
+                "Fecha": "ANR",
+                "_full_text": "'aguayo':4 'anr':1 'benito':2 'fernández':5 'ricardo':3",
+                "_id": 16
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 17
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 18
+            },
+            {
+                "14/12/2008": "Junta Municipal",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'junta':2 'municip':3",
+                "_id": 19
+            },
+            {
+                "14/12/2008": "853",
+                "Fecha": "A.N.R.",
+                "_full_text": "'853':2 'a.n.r':1",
+                "_id": 20
+            },
+            {
+                "14/12/2008": "408",
+                "Fecha": "P.L.R.A",
+                "_full_text": "'408':2 'p.l.r.a':1",
+                "_id": 21
+            },
+            {
+                "14/12/2008": "256",
+                "Fecha": "PUNACE",
+                "_full_text": "'256':2 'punac':1",
+                "_id": 22
+            },
+            {
+                "14/12/2008": "526",
+                "Fecha": "P.P.Q.",
+                "_full_text": "'526':2 'p.p.q':1",
+                "_id": 23
+            },
+            {
+                "14/12/2008": "0",
+                "Fecha": "BLANCOS",
+                "_full_text": "'0':2 'blanco':1",
+                "_id": 24
+            },
+            {
+                "14/12/2008": "0",
+                "Fecha": "NULOS",
+                "_full_text": "'0':2 'nulo':1",
+                "_id": 25
+            },
+            {
+                "14/12/2008": "2043",
+                "Fecha": "TOTALES",
+                "_full_text": "'2043':2 'total':1",
+                "_id": 26
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 27
+            },
+            {
+                "14/12/2008": "Orden",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'orden':2",
+                "_id": 28
+            },
+            {
+                "14/12/2008": "1",
+                "Fecha": "ANR",
+                "_full_text": "'1':2 'anr':1",
+                "_id": 29
+            },
+            {
+                "14/12/2008": "2",
+                "Fecha": "PPQ",
+                "_full_text": "'2':2 'ppq':1",
+                "_id": 30
+            },
+            {
+                "14/12/2008": "3",
+                "Fecha": "ANR",
+                "_full_text": "'3':2 'anr':1",
+                "_id": 31
+            },
+            {
+                "14/12/2008": "4",
+                "Fecha": "PLRA",
+                "_full_text": "'4':2 'plra':1",
+                "_id": 32
+            },
+            {
+                "14/12/2008": "5",
+                "Fecha": "ANR",
+                "_full_text": "'5':2 'anr':1",
+                "_id": 33
+            },
+            {
+                "14/12/2008": "6",
+                "Fecha": "PPQ",
+                "_full_text": "'6':2 'ppq':1",
+                "_id": 34
+            },
+            {
+                "14/12/2008": "7",
+                "Fecha": "UNACE",
+                "_full_text": "'7':2 'unac':1",
+                "_id": 35
+            },
+            {
+                "14/12/2008": "8",
+                "Fecha": "ANR",
+                "_full_text": "'8':2 'anr':1",
+                "_id": 36
+            },
+            {
+                "14/12/2008": "9",
+                "Fecha": "PLRA",
+                "_full_text": "'9':2 'plra':1",
+                "_id": 37
+            },
+            {
+                "14/12/2008": "10",
+                "Fecha": "PPQ",
+                "_full_text": "'10':2 'ppq':1",
+                "_id": 38
+            },
+            {
+                "14/12/2008": "11",
+                "Fecha": "ANR",
+                "_full_text": "'11':2 'anr':1",
+                "_id": 39
+            },
+            {
+                "14/12/2008": "12",
+                "Fecha": "ANR",
+                "_full_text": "'12':2 'anr':1",
+                "_id": 40
+            },
+            {
+                "14/12/2008": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 41
+            },
+            {
+                "14/12/2008": "Orden",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'orden':2",
+                "_id": 42
+            },
+            {
+                "14/12/2008": "1",
+                "Fecha": "ANR",
+                "_full_text": "'1':2 'anr':1",
+                "_id": 43
+            },
+            {
+                "14/12/2008": "2",
+                "Fecha": "PPQ",
+                "_full_text": "'2':2 'ppq':1",
+                "_id": 44
+            },
+            {
+                "14/12/2008": "3",
+                "Fecha": "ANR",
+                "_full_text": "'3':2 'anr':1",
+                "_id": 45
+            },
+            {
+                "14/12/2008": "4",
+                "Fecha": "PLRA",
+                "_full_text": "'4':2 'plra':1",
+                "_id": 46
+            },
+            {
+                "14/12/2008": "5",
+                "Fecha": "ANR",
+                "_full_text": "'5':2 'anr':1",
+                "_id": 47
+            },
+            {
+                "14/12/2008": "6",
+                "Fecha": "PPQ",
+                "_full_text": "'6':2 'ppq':1",
+                "_id": 48
+            },
+            {
+                "14/12/2008": "7",
+                "Fecha": "UNACE",
+                "_full_text": "'7':2 'unac':1",
+                "_id": 49
+            },
+            {
+                "14/12/2008": "8",
+                "Fecha": "ANR",
+                "_full_text": "'8':2 'anr':1",
+                "_id": 50
+            },
+            {
+                "14/12/2008": "9",
+                "Fecha": "PLRA",
+                "_full_text": "'9':2 'plra':1",
+                "_id": 51
+            },
+            {
+                "14/12/2008": "10",
+                "Fecha": "PPQ",
+                "_full_text": "'10':2 'ppq':1",
+                "_id": 52
+            },
+            {
+                "14/12/2008": "11",
+                "Fecha": "ANR",
+                "_full_text": "'11':2 'anr':1",
+                "_id": 53
+            },
+            {
+                "14/12/2008": "12",
+                "Fecha": "ANR",
+                "_full_text": "'12':2 'anr':1",
+                "_id": 54
+            }
+        ],
+        "sql": "SELECT * FROM \"986ce8e3-3bd8-4e81-ba0e-4f14a87f2829\" ;"
+    },
+    "success": true
+}

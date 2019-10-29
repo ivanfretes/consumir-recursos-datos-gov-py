@@ -1,0 +1,343 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "COD.",
+                "type": "numeric"
+            },
+            {
+                "id": "DISTRITO",
+                "type": "text"
+            },
+            {
+                "id": "ELECTORES",
+                "type": "numeric"
+            },
+            {
+                "id": "MESAS",
+                "type": "numeric"
+            },
+            {
+                "id": "ANR",
+                "type": "numeric"
+            },
+            {
+                "id": "PLRA",
+                "type": "numeric"
+            },
+            {
+                "id": "ADT",
+                "type": "numeric"
+            },
+            {
+                "id": "PPS",
+                "type": "numeric"
+            },
+            {
+                "id": "PHP",
+                "type": "numeric"
+            },
+            {
+                "id": "UNACE",
+                "type": "numeric"
+            },
+            {
+                "id": "PPQ",
+                "type": "numeric"
+            },
+            {
+                "id": "PEN",
+                "type": "numeric"
+            },
+            {
+                "id": "PB",
+                "type": "numeric"
+            },
+            {
+                "id": "P_MAS",
+                "type": "numeric"
+            },
+            {
+                "id": "PFA",
+                "type": "numeric"
+            },
+            {
+                "id": "PT",
+                "type": "numeric"
+            },
+            {
+                "id": "ERES",
+                "type": "numeric"
+            },
+            {
+                "id": "MPO",
+                "type": "numeric"
+            },
+            {
+                "id": "MONAPEJUAM",
+                "type": "numeric"
+            },
+            {
+                "id": "PUP",
+                "type": "numeric"
+            },
+            {
+                "id": "PJP",
+                "type": "numeric"
+            },
+            {
+                "id": "ARENA",
+                "type": "numeric"
+            },
+            {
+                "id": "MRCN",
+                "type": "numeric"
+            },
+            {
+                "id": "MTP",
+                "type": "numeric"
+            },
+            {
+                "id": "MPT",
+                "type": "numeric"
+            },
+            {
+                "id": "PDP",
+                "type": "numeric"
+            },
+            {
+                "id": "BLANCOS",
+                "type": "numeric"
+            },
+            {
+                "id": "NULOS",
+                "type": "numeric"
+            },
+            {
+                "id": "TOTAL",
+                "type": "numeric"
+            },
+            {
+                "id": "PARTICIPACION",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "ADT": "5",
+                "ANR": "780",
+                "ARENA": "0",
+                "BLANCOS": "401",
+                "COD.": "0",
+                "DISTRITO": "FILADELFIA",
+                "ELECTORES": "5058",
+                "ERES": "11",
+                "MESAS": "25",
+                "MONAPEJUAM": "2",
+                "MPO": "7",
+                "MPT": "60",
+                "MRCN": "19",
+                "MTP": "3",
+                "NULOS": "85",
+                "PARTICIPACION": "0",
+                "PB": "1",
+                "PDP": "17",
+                "PEN": "1109",
+                "PFA": "2",
+                "PHP": "11",
+                "PJP": "1",
+                "PLRA": "78",
+                "PPQ": "574",
+                "PPS": "59",
+                "PT": "3",
+                "PUP": "28",
+                "P_MAS": "10",
+                "TOTAL": "3472",
+                "UNACE": "206",
+                "_full_text": "'filadelfia':1",
+                "_id": 1
+            },
+            {
+                "ADT": "10",
+                "ANR": "1171",
+                "ARENA": "1",
+                "BLANCOS": "391",
+                "COD.": "1",
+                "DISTRITO": "LOMA PLATA",
+                "ELECTORES": "5864",
+                "ERES": "3",
+                "MESAS": "29",
+                "MONAPEJUAM": "1",
+                "MPO": "6",
+                "MPT": "14",
+                "MRCN": "20",
+                "MTP": "9",
+                "NULOS": "56",
+                "PARTICIPACION": "0",
+                "PB": "3",
+                "PDP": "16",
+                "PEN": "390",
+                "PFA": "0",
+                "PHP": "5",
+                "PJP": "2",
+                "PLRA": "82",
+                "PPQ": "442",
+                "PPS": "62",
+                "PT": "8",
+                "PUP": "17",
+                "P_MAS": "8",
+                "TOTAL": "3234",
+                "UNACE": "517",
+                "_full_text": "'loma':1 'plata':2",
+                "_id": 2
+            },
+            {
+                "ADT": "22",
+                "ANR": "2240",
+                "ARENA": "7",
+                "BLANCOS": "775",
+                "COD.": "3",
+                "DISTRITO": "MCAL. ESTIGARRIBIA",
+                "ELECTORES": "8562",
+                "ERES": "8",
+                "MESAS": "44",
+                "MONAPEJUAM": "5",
+                "MPO": "35",
+                "MPT": "95",
+                "MRCN": "29",
+                "MTP": "16",
+                "NULOS": "131",
+                "PARTICIPACION": "0",
+                "PB": "6",
+                "PDP": "37",
+                "PEN": "1180",
+                "PFA": "6",
+                "PHP": "5",
+                "PJP": "2",
+                "PLRA": "234",
+                "PPQ": "328",
+                "PPS": "71",
+                "PT": "3",
+                "PUP": "27",
+                "P_MAS": "21",
+                "TOTAL": "5740",
+                "UNACE": "457",
+                "_full_text": "'estigarribia':2 'mcal':1",
+                "_id": 3
+            },
+            {
+                "ADT": null,
+                "ANR": null,
+                "ARENA": null,
+                "BLANCOS": null,
+                "COD.": null,
+                "DISTRITO": "",
+                "ELECTORES": null,
+                "ERES": null,
+                "MESAS": null,
+                "MONAPEJUAM": null,
+                "MPO": null,
+                "MPT": null,
+                "MRCN": null,
+                "MTP": null,
+                "NULOS": null,
+                "PARTICIPACION": null,
+                "PB": null,
+                "PDP": null,
+                "PEN": null,
+                "PFA": null,
+                "PHP": null,
+                "PJP": null,
+                "PLRA": null,
+                "PPQ": null,
+                "PPS": null,
+                "PT": null,
+                "PUP": null,
+                "P_MAS": null,
+                "TOTAL": null,
+                "UNACE": null,
+                "_full_text": "",
+                "_id": 4
+            },
+            {
+                "ADT": "37",
+                "ANR": "4191",
+                "ARENA": "8",
+                "BLANCOS": "1567",
+                "COD.": null,
+                "DISTRITO": "TOTALES",
+                "ELECTORES": "19484",
+                "ERES": "22",
+                "MESAS": "98",
+                "MONAPEJUAM": "8",
+                "MPO": "48",
+                "MPT": "169",
+                "MRCN": "68",
+                "MTP": "28",
+                "NULOS": "272",
+                "PARTICIPACION": null,
+                "PB": "10",
+                "PDP": "70",
+                "PEN": "2679",
+                "PFA": "8",
+                "PHP": "21",
+                "PJP": "5",
+                "PLRA": "394",
+                "PPQ": "1344",
+                "PPS": "192",
+                "PT": "14",
+                "PUP": "72",
+                "P_MAS": "39",
+                "TOTAL": "12446",
+                "UNACE": "1180",
+                "_full_text": "'total':1",
+                "_id": 5
+            },
+            {
+                "ADT": "0",
+                "ANR": "0",
+                "ARENA": "0",
+                "BLANCOS": "0",
+                "COD.": null,
+                "DISTRITO": "PORCENTAJE VOTACION",
+                "ELECTORES": null,
+                "ERES": "0",
+                "MESAS": null,
+                "MONAPEJUAM": "0",
+                "MPO": "0",
+                "MPT": "0",
+                "MRCN": "0",
+                "MTP": "0",
+                "NULOS": "0",
+                "PARTICIPACION": null,
+                "PB": "0",
+                "PDP": "0",
+                "PEN": "0",
+                "PFA": "0",
+                "PHP": "0",
+                "PJP": "0",
+                "PLRA": "0",
+                "PPQ": "0",
+                "PPS": "0",
+                "PT": "0",
+                "PUP": "0",
+                "P_MAS": "0",
+                "TOTAL": null,
+                "UNACE": "0",
+                "_full_text": "'porcentaj':1 'votacion':2",
+                "_id": 6
+            }
+        ],
+        "sql": "SELECT * FROM \"0023c978-8501-4119-8348-7ea5dd234df4\" ;"
+    },
+    "success": true
+}

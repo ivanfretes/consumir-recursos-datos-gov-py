@@ -1,0 +1,555 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Nombre y Apellido",
+                "type": "text"
+            },
+            {
+                "id": "Lista",
+                "type": "text"
+            },
+            {
+                "id": "Siglas",
+                "type": "text"
+            },
+            {
+                "id": "Partido / Movimiento/ Alianza",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "EMILIO PAVON",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':3 'autentico':8 'emilio':1 'liber':6 'partido':5 'pavon':2 'plra':4 'radic':7",
+                "_id": 1
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 2
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " SAN PEDRO",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'pedro':2 'san':1",
+                "_id": 3
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 4
+            },
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "JOSE GREGORIO LEDESMA NARVAEZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 'autentico':10 'gregorio':2 'jose':1 'ledesma':3 'liber':8 'narvaez':4 'partido':7 'plra':6 'radic':9",
+                "_id": 5
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 6
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " CORDILLERA",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'cordillera':1",
+                "_id": 7
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 8
+            },
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "MILCIADES DURE",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':3 'autentico':8 'dure':2 'liber':6 'milciad':1 'partido':5 'plra':4 'radic':7",
+                "_id": 9
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 10
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " GUAIRA",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'guaira':1",
+                "_id": 11
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 12
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "GUSTAVO  JAVIER ALONSO",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':4 'alonso':3 'anr':5 'colorado':7 'gustavo':1 'javier':2 'partido':6",
+                "_id": 13
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 14
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " CAAGUAZU",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'caaguazu':1",
+                "_id": 15
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 16
+            },
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "ENRIQUE ANTONIO C. BUZARQUIS CACERES",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 'antonio':2 'autentico':11 'buzarqui':4 'c':3 'cacer':5 'enriqu':1 'liber':9 'partido':8 'plra':7 'radic':10",
+                "_id": 17
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 18
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " CAAZAPA",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'caazapa':1",
+                "_id": 19
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 20
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "CELSO TROCHE ALVAREZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':4 'alvarez':3 'anr':5 'celso':1 'colorado':7 'partido':6 'troch':2",
+                "_id": 21
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 22
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " ITAPUA",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'itapua':1",
+                "_id": 23
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 24
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "JUAN EUDES AFARA",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':4 'afara':3 'anr':5 'colorado':7 'eud':2 'juan':1 'partido':6",
+                "_id": 25
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 26
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " MISIONES",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'mision':1",
+                "_id": 27
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 28
+            },
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "VICTOR HUGO PEREIRA ALCARAZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 'alcaraz':4 'autentico':10 'hugo':2 'liber':8 'partido':7 'pereira':3 'plra':6 'radic':9 'victor':1",
+                "_id": 29
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 30
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " PARAGUARI",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'paraguari':1",
+                "_id": 31
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 32
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "TOMAS RIVAS BENITEZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':4 'anr':5 'benitez':3 'colorado':7 'partido':6 'riva':2 'toma':1",
+                "_id": 33
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 34
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " ALTO PARANA",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'alto':1 'parana':2",
+                "_id": 35
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 36
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "NELSON AGUINAGALDE",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':3 'aguinagald':2 'anr':4 'colorado':6 'nelson':1 'partido':5",
+                "_id": 37
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 38
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " CENTRAL",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'central':1",
+                "_id": 39
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 40
+            },
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "CARLOS AMARILLA",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':3 'amarilla':2 'autentico':8 'carlo':1 'liber':6 'partido':5 'plra':4 'radic':7",
+                "_id": 41
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 42
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " ÑEEMBUCU",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'Ñeembucu':1",
+                "_id": 43
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 44
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "PEDRO ALLIANA RODRIGUEZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':4 'alliana':2 'anr':5 'colorado':7 'partido':6 'pedro':1 'rodriguez':3",
+                "_id": 45
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 46
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " AMAMBAY",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'amambay':1",
+                "_id": 47
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 48
+            },
+            {
+                "Lista": "2",
+                "Nombre y Apellido": "JUAN BARTOLOME RAMIREZ BRIZUELA",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 'autentico':10 'bartolom':2 'brizuela':4 'juan':1 'liber':8 'partido':7 'plra':6 'radic':9 'ramirez':3",
+                "_id": 49
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 50
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " CANINDEYU",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'canindeyu':1",
+                "_id": 51
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 52
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "MARIA CRISTINA VILLALBA",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':4 'anr':5 'colorado':7 'cristina':2 'maria':1 'partido':6 'villalba':3",
+                "_id": 53
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 54
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " PRESIDENTE HAYES",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'hay':2 'president':1",
+                "_id": 55
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 56
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "OSCAR VENANCIO NUÑEZ GIMENEZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 'anr':6 'colorado':8 'gimenez':4 'nuÑez':3 'oscar':1 'partido':7 'venancio':2",
+                "_id": 57
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 58
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " ALTO PARAGUAY",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'alto':1 'paraguay':2",
+                "_id": 59
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 60
+            },
+            {
+                "Lista": "1",
+                "Nombre y Apellido": "JUSTO FERNANDEZ",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':3 'anr':4 'colorado':6 'fernandez':2 'justo':1 'partido':5",
+                "_id": 61
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 62
+            },
+            {
+                "Lista": "",
+                "Nombre y Apellido": " BOQUERON",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'boqueron':1",
+                "_id": 63
+            },
+            {
+                "Lista": "Lista",
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':8 'apellido':3 'lista':4 'movimiento':7 'nombr':1 'partido':6 'sigla':5 'y':2",
+                "_id": 64
+            },
+            {
+                "Lista": "23",
+                "Nombre y Apellido": "WALTER ALOISIUS STOCKL NOPPER",
+                "Partido / Movimiento/ Alianza": "ALIANZA DEPARTAMENTAL BOQUERON",
+                "Siglas": "ADB",
+                "_full_text": "'23':5 'adb':6 'alianza':7 'aloisius':2 'boqueron':9 'departament':8 'nopper':4 'stockl':3 'walter':1",
+                "_id": 65
+            }
+        ],
+        "sql": "SELECT * FROM \"ff1edf38-210d-40dc-8dc7-55acad9810be\" ;"
+    },
+    "success": true
+}

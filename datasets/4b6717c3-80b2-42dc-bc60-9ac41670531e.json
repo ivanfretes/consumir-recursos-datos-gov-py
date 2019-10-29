@@ -1,0 +1,872 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "candi",
+                "type": "text"
+            },
+            {
+                "id": "dep",
+                "type": "numeric"
+            },
+            {
+                "id": "mun",
+                "type": "numeric"
+            },
+            {
+                "id": "lista",
+                "type": "numeric"
+            },
+            {
+                "id": "tit_sup",
+                "type": "text"
+            },
+            {
+                "id": "orden",
+                "type": "numeric"
+            },
+            {
+                "id": "NOMBRE",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "NOMBRE": "NELSON MANUEL ANASTASIO ARGAÑA CONTRERAS",
+                "_full_text": "'anastasio':5 'argaÑa':6 'contrera':7 'manuel':4 'nelson':3 'senador':1 'titular':2",
+                "_id": 1,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "1",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "CARLOS QUINTO MATEO BALMELLI",
+                "_full_text": "'balmelli':6 'carlo':3 'mateo':5 'quinto':4 'senador':1 'titular':2",
+                "_id": 2,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "2",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "CRESCENCIO HERMINIO CACERES SANTACRUZ",
+                "_full_text": "'cacer':5 'crescencio':3 'herminio':4 'santacruz':6 'senador':1 'titular':2",
+                "_id": 3,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "3",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ORLANDO PENNER DURKSEN",
+                "_full_text": "'durksen':5 'orlando':3 'penner':4 'senador':1 'titular':2",
+                "_id": 4,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "4",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ENRIQUE GONZALEZ QUINTANA",
+                "_full_text": "'enriqu':3 'gonzalez':4 'quintana':5 'senador':1 'titular':2",
+                "_id": 5,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "5",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "AMANCIO OSCAR DENIS SANCHEZ",
+                "_full_text": "'amancio':3 'deni':5 'oscar':4 'sanchez':6 'senador':1 'titular':2",
+                "_id": 6,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "6",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JULIO OSVALDO DOMINGUEZ WILSON SMITH",
+                "_full_text": "'dominguez':5 'julio':3 'osvaldo':4 'senador':1 'smith':7 'titular':2 'wilson':6",
+                "_id": 7,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "7",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JUAN CARLOS ROMAN GALAVERNA DELVALLE",
+                "_full_text": "'carlo':4 'delvall':7 'galaverna':6 'juan':3 'roman':5 'senador':1 'titular':2",
+                "_id": 8,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "8",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "EUSEBIO RAMON AYALA GIMENEZ",
+                "_full_text": "'ayala':5 'eusebio':3 'gimenez':6 'ramon':4 'senador':1 'titular':2",
+                "_id": 9,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "9",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "FELICIANO MARTINEZ MORALES",
+                "_full_text": "'feliciano':3 'martinez':4 'moral':5 'senador':1 'titular':2",
+                "_id": 10,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "10",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MILCIADES ALEJANDRO VELAZQUEZ UGARTE",
+                "_full_text": "'alejandro':4 'milciad':3 'senador':1 'titular':2 'ugart':6 'velazquez':5",
+                "_id": 11,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "11",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JULIO CESAR FANEGO ARELLANO",
+                "_full_text": "'arellano':6 'cesar':4 'fanego':5 'julio':3 'senador':1 'titular':2",
+                "_id": 12,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "12",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MODESTO LUIS GUGGIARI ZAVALA",
+                "_full_text": "'guggiari':5 'lui':4 'modesto':3 'senador':1 'titular':2 'zavala':6",
+                "_id": 13,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "13",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "BLAS NICOLAS RIQUELME CENTURION",
+                "_full_text": "'blas':3 'centurion':6 'nicola':4 'riquelm':5 'senador':1 'titular':2",
+                "_id": 14,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "14",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MIGUEL CARRIZOSA GALIANO",
+                "_full_text": "'carrizosa':4 'galiano':5 'miguel':3 'senador':1 'titular':2",
+                "_id": 15,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "15",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ARMANDO VICENTE ESPINOLA WIEZELL",
+                "_full_text": "'armando':3 'espinola':5 'senador':1 'titular':2 'vicent':4 'wiezel':6",
+                "_id": 16,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "16",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JOSE LUIS ALDER IBAÑEZ",
+                "_full_text": "'alder':5 'ibaÑez':6 'jose':3 'lui':4 'senador':1 'titular':2",
+                "_id": 17,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "17",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "HERMINIO CHENA VALDEZ",
+                "_full_text": "'chena':4 'herminio':3 'senador':1 'titular':2 'valdez':5",
+                "_id": 18,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "18",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "CARLOS ALBERTO FILIZZOLA PALLARES",
+                "_full_text": "'alberto':4 'carlo':3 'filizzola':5 'pallar':6 'senador':1 'titular':2",
+                "_id": 19,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "4",
+                "mun": "99",
+                "orden": "19",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ADA FATIMA SOLALINDE DE ROMERO",
+                "_full_text": "'ada':3 'de':6 'fatima':4 'romero':7 'senador':1 'solalind':5 'titular':2",
+                "_id": 20,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "20",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JUAN CARLOS RAMIREZ MONTALBETTI",
+                "_full_text": "'carlo':4 'juan':3 'montalbetti':6 'ramirez':5 'senador':1 'titular':2",
+                "_id": 21,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "21",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ESTANISLAO MARTINEZ GARCIA",
+                "_full_text": "'estanislao':3 'garcia':5 'martinez':4 'senador':1 'titular':2",
+                "_id": 22,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "22",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "OSCAR ALBERTO GONZALEZ DAHER",
+                "_full_text": "'alberto':4 'daher':6 'gonzalez':5 'oscar':3 'senador':1 'titular':2",
+                "_id": 23,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "23",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JUAN MANUEL MARCOS ALVAREZ",
+                "_full_text": "'alvarez':6 'juan':3 'manuel':4 'marco':5 'senador':1 'titular':2",
+                "_id": 24,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "24",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "RAMON ROBERTO DOMINGUEZ SANTACRUZ",
+                "_full_text": "'dominguez':5 'ramon':3 'roberto':4 'santacruz':6 'senador':1 'titular':2",
+                "_id": 25,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "25",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "LUCIO VERGARA RIOS",
+                "_full_text": "'lucio':3 'rio':5 'senador':1 'titular':2 'vergara':4",
+                "_id": 26,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "26",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ANA MARIA JUANITA MENDOZA DE ACHA",
+                "_full_text": "'acha':8 'ana':3 'de':7 'juanita':5 'maria':4 'mendoza':6 'senador':1 'titular':2",
+                "_id": 27,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "27",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "DOMINGO ISABELINO LAINO FIGUEREDO",
+                "_full_text": "'domingo':3 'figueredo':6 'isabelino':4 'laino':5 'senador':1 'titular':2",
+                "_id": 28,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "28",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "AMADO ENRIQUE YAMBAY VELAZQUEZ",
+                "_full_text": "'amado':3 'enriqu':4 'senador':1 'titular':2 'velazquez':6 'yambay':5",
+                "_id": 29,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "29",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ALFONSO GONZALEZ NUÑEZ",
+                "_full_text": "'alfonso':3 'gonzalez':4 'nuÑez':5 'senador':1 'titular':2",
+                "_id": 30,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "30",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ADRIANA HERCILIA FRANCO DE FERNANDEZ",
+                "_full_text": "'adriana':3 'de':6 'fernandez':7 'franco':5 'hercilia':4 'senador':1 'titular':2",
+                "_id": 31,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "31",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MIGUEL ABDON SAGUIER CARMONA",
+                "_full_text": "'abdon':4 'carmona':6 'miguel':3 'saguier':5 'senador':1 'titular':2",
+                "_id": 32,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "32",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MARCELO ALBERTO DIEGO DUARTE MANZONI",
+                "_full_text": "'alberto':4 'diego':5 'duart':6 'manzoni':7 'marcelo':3 'senador':1 'titular':2",
+                "_id": 33,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "33",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "BADER RACHID LICHI",
+                "_full_text": "'bader':3 'lichi':5 'rachid':4 'senador':1 'titular':2",
+                "_id": 34,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "34",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MIRTHA VERGARA DE FRANCO",
+                "_full_text": "'de':5 'franco':6 'mirtha':3 'senador':1 'titular':2 'vergara':4",
+                "_id": 35,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "35",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "MARTIN ANTONIO CHIOLA VILLAGRA",
+                "_full_text": "'antonio':4 'chiola':5 'martin':3 'senador':1 'titular':2 'villagra':6",
+                "_id": 36,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "36",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JORGE ANTONIO OVIEDO MATTO",
+                "_full_text": "'antonio':4 'jorg':3 'matto':6 'oviedo':5 'senador':1 'titular':2",
+                "_id": 37,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "37",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "CANDIDO CARMELO VERA BEJARANO",
+                "_full_text": "'bejarano':6 'candido':3 'carmelo':4 'senador':1 'titular':2 'vera':5",
+                "_id": 38,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "38",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "FRANCISCO ARCIDIO OVIEDO BRITEZ",
+                "_full_text": "'arcidio':4 'britez':6 'francisco':3 'oviedo':5 'senador':1 'titular':2",
+                "_id": 39,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "39",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JOSE NICOLAS MORINIGO ALCARAZ",
+                "_full_text": "'alcaraz':6 'jose':3 'morinigo':5 'nicola':4 'senador':1 'titular':2",
+                "_id": 40,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "4",
+                "mun": "99",
+                "orden": "40",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "RONALDO ENO DIETZE JUNGHANNS",
+                "_full_text": "'dietz':5 'eno':4 'junghann':6 'ronaldo':3 'senador':1 'titular':2",
+                "_id": 41,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "41",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "GUSTAVO ADOLFO PEDROZO ABBATE",
+                "_full_text": "'abbat':6 'adolfo':4 'gustavo':3 'pedrozo':5 'senador':1 'titular':2",
+                "_id": 42,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "42",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "ALFREDO LUIS JAEGGLI CABALLERO",
+                "_full_text": "'alfredo':3 'caballero':6 'jaegg':5 'lui':4 'senador':1 'titular':2",
+                "_id": 43,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "43",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "EMILIO CAMACHO PAREDES",
+                "_full_text": "'camacho':4 'emilio':3 'pared':5 'senador':1 'titular':2",
+                "_id": 44,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "9",
+                "mun": "99",
+                "orden": "44",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "JOSE MANUEL BOBEDA MELGAREJO",
+                "_full_text": "'bobeda':5 'jose':3 'manuel':4 'melgarejo':6 'senador':1 'titular':2",
+                "_id": 45,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "45",
+                "tit_sup": "TITULAR"
+            },
+            {
+                "NOMBRE": "SILVIO ADALBERTO OVELAR BENITEZ",
+                "_full_text": "'adalberto':4 'benitez':6 'ovelar':5 'senador':1 'silvio':3 'suplent':2",
+                "_id": 46,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "1",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "PAULO BERNARDO REICHARDT JUNIOR",
+                "_full_text": "'bernardo':4 'junior':6 'paulo':3 'reichardt':5 'senador':1 'suplent':2",
+                "_id": 47,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "2",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "ROBERTO EUDEZ GONZALEZ SEGOVIA",
+                "_full_text": "'eudez':4 'gonzalez':5 'roberto':3 'segovia':6 'senador':1 'suplent':2",
+                "_id": 48,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "3",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "ALFREDO OSVALDO AUGUSTO RATTI JAEGLI",
+                "_full_text": "'alfredo':3 'augusto':5 'jaeg':7 'osvaldo':4 'ratti':6 'senador':1 'suplent':2",
+                "_id": 49,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "4",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "BERNARDINO CANO RADIL",
+                "_full_text": "'bernardino':3 'cano':4 'radil':5 'senador':1 'suplent':2",
+                "_id": 50,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "5",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "AMANCIO LOPEZ IRALA",
+                "_full_text": "'amancio':3 'irala':5 'lopez':4 'senador':1 'suplent':2",
+                "_id": 51,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "6",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "RAMON GAONA ESCOBAR",
+                "_full_text": "'escobar':5 'gaona':4 'ramon':3 'senador':1 'suplent':2",
+                "_id": 52,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "7",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "LILIAN GRACIELA SAMANIEGO GONZALEZ",
+                "_full_text": "'gonzalez':6 'graciela':4 'lilian':3 'samaniego':5 'senador':1 'suplent':2",
+                "_id": 53,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "8",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "LUIS PEDRO LLANO IMAS",
+                "_full_text": "'ima':6 'llano':5 'lui':3 'pedro':4 'senador':1 'suplent':2",
+                "_id": 54,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "9",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "ARSENIO OCAMPOS VELAZQUEZ",
+                "_full_text": "'arsenio':3 'ocampo':4 'senador':1 'suplent':2 'velazquez':5",
+                "_id": 55,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "10",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "MARIO CANO YEGROS",
+                "_full_text": "'cano':4 'mario':3 'senador':1 'suplent':2 'yegro':5",
+                "_id": 56,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "11",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "INOCENCIA LOPEZ DE SANABRIA",
+                "_full_text": "'de':5 'inocencia':3 'lopez':4 'sanabria':6 'senador':1 'suplent':2",
+                "_id": 57,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "12",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "ROBERTO PEDRO GOMEZ VERLANGIERI",
+                "_full_text": "'gomez':5 'pedro':4 'roberto':3 'senador':1 'suplent':2 'verlangieri':6",
+                "_id": 58,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "13",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "MAXIMO GUSTAVO LOPEZ AQUINO",
+                "_full_text": "'aquino':6 'gustavo':4 'lopez':5 'maximo':3 'senador':1 'suplent':2",
+                "_id": 59,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "14",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "RUBEN ANTONIO RODRIGUEZ OVELAR",
+                "_full_text": "'antonio':4 'ovelar':6 'rodriguez':5 'ruben':3 'senador':1 'suplent':2",
+                "_id": 60,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "15",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "PATRICIO ENCISO GOMEZ",
+                "_full_text": "'enciso':4 'gomez':5 'patricio':3 'senador':1 'suplent':2",
+                "_id": 61,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "16",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "ISMAEL YAMBAY RODRIGUEZ",
+                "_full_text": "'ismael':3 'rodriguez':5 'senador':1 'suplent':2 'yambay':4",
+                "_id": 62,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "17",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "JUAN CARLOS ELEUTERIO RUIZ DIAZ BENITEZ",
+                "_full_text": "'benitez':8 'carlo':4 'diaz':7 'eleuterio':5 'juan':3 'ruiz':6 'senador':1 'suplent':2",
+                "_id": 63,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "18",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "FRANCISCO JAVIER VILLALBA CANTALUPPI",
+                "_full_text": "'cantaluppi':6 'francisco':3 'javier':4 'senador':1 'suplent':2 'villalba':5",
+                "_id": 64,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "4",
+                "mun": "99",
+                "orden": "19",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "FELIX SILVA MONGES",
+                "_full_text": "'felix':3 'mong':5 'senador':1 'silva':4 'suplent':2",
+                "_id": 65,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "20",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "SILVIA ANTONIA DIAZ DE CABRERA",
+                "_full_text": "'antonia':4 'cabrera':7 'de':6 'diaz':5 'senador':1 'silvia':3 'suplent':2",
+                "_id": 66,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "21",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "MARIA VICTORIA RIVAS DE ADLAN",
+                "_full_text": "'adlan':7 'de':6 'maria':3 'riva':5 'senador':1 'suplent':2 'victoria':4",
+                "_id": 67,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "22",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "LUIS ANTONIO HENRY BECKER GENES",
+                "_full_text": "'antonio':4 'becker':6 'gene':7 'henri':5 'lui':3 'senador':1 'suplent':2",
+                "_id": 68,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "23",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "WILFRIDO CHAVEZ CACERES",
+                "_full_text": "'cacer':5 'chavez':4 'senador':1 'suplent':2 'wilfrido':3",
+                "_id": 69,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "24",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "RUBEN DARIO JUAN FRETES CUBILLA",
+                "_full_text": "'cubilla':7 'dario':4 'frete':6 'juan':5 'ruben':3 'senador':1 'suplent':2",
+                "_id": 70,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "10",
+                "mun": "99",
+                "orden": "25",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "EUFEMIO RAMON ACOSTA RUIZ",
+                "_full_text": "'acosta':5 'eufemio':3 'ramon':4 'ruiz':6 'senador':1 'suplent':2",
+                "_id": 71,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "26",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "GRACIELA FADLALA REZK",
+                "_full_text": "'fadlala':4 'graciela':3 'rezk':5 'senador':1 'suplent':2",
+                "_id": 72,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "8",
+                "mun": "99",
+                "orden": "27",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "VICTOR MANUEL RODRIGUEZ BOJANOVICH",
+                "_full_text": "'bojanovich':6 'manuel':4 'rodriguez':5 'senador':1 'suplent':2 'victor':3",
+                "_id": 73,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "2",
+                "mun": "99",
+                "orden": "28",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "LIDIA DEL ROSARIO ALVARENGA MOLAS",
+                "_full_text": "'alvarenga':6 'del':4 'lidia':3 'mola':7 'rosario':5 'senador':1 'suplent':2",
+                "_id": 74,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "29",
+                "tit_sup": "SUPLENTE"
+            },
+            {
+                "NOMBRE": "EUGENIO DANIEL RAIDAN GOMEZ",
+                "_full_text": "'daniel':4 'eugenio':3 'gomez':6 'raidan':5 'senador':1 'suplent':2",
+                "_id": 75,
+                "candi": "SENADOR",
+                "dep": "99",
+                "lista": "1",
+                "mun": "99",
+                "orden": "30",
+                "tit_sup": "SUPLENTE"
+            }
+        ],
+        "sql": "SELECT * FROM \"4b6717c3-80b2-42dc-bc60-9ac41670531e\" ;"
+    },
+    "success": true
+}

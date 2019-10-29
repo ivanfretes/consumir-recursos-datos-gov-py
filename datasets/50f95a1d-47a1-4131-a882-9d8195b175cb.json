@@ -1,0 +1,123 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "74",
+                "type": "numeric"
+            },
+            {
+                "id": "2586754",
+                "type": "numeric"
+            },
+            {
+                "id": "RAMON",
+                "type": "text"
+            },
+            {
+                "id": "DUARTE JIMENEZ",
+                "type": "text"
+            },
+            {
+                "id": "01/07/2013",
+                "type": "timestamp"
+            },
+            {
+                "id": "DIPUTADO NACIONAL",
+                "type": "text"
+            },
+            {
+                "id": "29606840",
+                "type": "numeric"
+            },
+            {
+                "id": "3168000",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "01/07/2013": "2013-01-07T00:00:00",
+                "2586754": "2909541",
+                "29606840": "29606840",
+                "3168000": "3168000",
+                "74": "75",
+                "DIPUTADO NACIONAL": "DIPUTADO NACIONAL",
+                "DUARTE JIMENEZ": "LEZCANO PAREDES",
+                "RAMON": "MARCIAL",
+                "_full_text": "'diputado':4 'lezcano':2 'marcial':1 'nacion':5 'pared':3",
+                "_id": 1
+            },
+            {
+                "01/07/2013": "2013-01-07T00:00:00",
+                "2586754": "2911406",
+                "29606840": "29606840",
+                "3168000": "3168000",
+                "74": "76",
+                "DIPUTADO NACIONAL": "DIPUTADO NACIONAL",
+                "DUARTE JIMENEZ": "PORTILLO VERON",
+                "RAMON": "CARLOS ANTONIO",
+                "_full_text": "'antonio':2 'carlo':1 'diputado':5 'nacion':6 'portillo':3 'veron':4",
+                "_id": 2
+            },
+            {
+                "01/07/2013": "2013-01-07T00:00:00",
+                "2586754": "2952067",
+                "29606840": "29606840",
+                "3168000": "3168000",
+                "74": "77",
+                "DIPUTADO NACIONAL": "DIPUTADO NACIONAL",
+                "DUARTE JIMENEZ": "ORTELLADO ZORRILLA",
+                "RAMON": "FELIX FERNANDO",
+                "_full_text": "'diputado':5 'felix':1 'fernando':2 'nacion':6 'ortellado':3 'zorrilla':4",
+                "_id": 3
+            },
+            {
+                "01/07/2013": "2013-01-07T00:00:00",
+                "2586754": "3542359",
+                "29606840": "29606840",
+                "3168000": "3168000",
+                "74": "78",
+                "DIPUTADO NACIONAL": "DIPUTADO NACIONAL",
+                "DUARTE JIMENEZ": "BRITOS ESPINOLA",
+                "RAMON": "PEDRO DAVID",
+                "_full_text": "'brito':3 'david':2 'diputado':5 'espinola':4 'nacion':6 'pedro':1",
+                "_id": 4
+            },
+            {
+                "01/07/2013": "2013-01-07T00:00:00",
+                "2586754": "3984772",
+                "29606840": "29606840",
+                "3168000": "3168000",
+                "74": "79",
+                "DIPUTADO NACIONAL": "DIPUTADO NACIONAL",
+                "DUARTE JIMENEZ": "NUÑEZ SALINAS",
+                "RAMON": "CARLOS ALBERTO",
+                "_full_text": "'alberto':2 'carlo':1 'diputado':5 'nacion':6 'nuÑez':3 'salina':4",
+                "_id": 5
+            },
+            {
+                "01/07/2013": "2013-01-07T00:00:00",
+                "2586754": "4589708",
+                "29606840": "29606840",
+                "3168000": "3168000",
+                "74": "80",
+                "DIPUTADO NACIONAL": "DIPUTADO NACIONAL",
+                "DUARTE JIMENEZ": "RODRIGUEZ CARAMBULA",
+                "RAMON": "KARINA ANDREA",
+                "_full_text": "'andrea':2 'carambula':4 'diputado':5 'karina':1 'nacion':6 'rodriguez':3",
+                "_id": 6
+            }
+        ],
+        "sql": "SELECT * FROM \"50f95a1d-47a1-4131-a882-9d8195b175cb\" ;"
+    },
+    "success": true
+}

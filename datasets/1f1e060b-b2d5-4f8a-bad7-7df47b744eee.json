@@ -1,0 +1,345 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Fecha",
+                "type": "text"
+            },
+            {
+                "id": "24/11/2013",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "24/11/2013": "Elección Municipal",
+                "Fecha": "Tipo Elección:",
+                "_full_text": "'elección':2,3 'municip':4 'tipo':1",
+                "_id": 1
+            },
+            {
+                "24/11/2013": "1",
+                "Fecha": "Departamento",
+                "_full_text": "'1':2 'departamento':1",
+                "_id": 2
+            },
+            {
+                "24/11/2013": "8",
+                "Fecha": "Distrito",
+                "_full_text": "'8':2 'distrito':1",
+                "_id": 3
+            },
+            {
+                "24/11/2013": "2110",
+                "Fecha": "Habilitados",
+                "_full_text": "'2110':2 'habilitado':1",
+                "_id": 4
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 5
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 6
+            },
+            {
+                "24/11/2013": "Intendente",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'intendent':2",
+                "_id": 7
+            },
+            {
+                "24/11/2013": "PARTIDO O MOVIMIENTO POLITICO ",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'movimiento':4 'o':3 'partido':2 'politico':5",
+                "_id": 8
+            },
+            {
+                "24/11/2013": "Partido Colorado",
+                "Fecha": "1",
+                "_full_text": "'1':1 'colorado':3 'partido':2",
+                "_id": 9
+            },
+            {
+                "24/11/2013": "Partido Liberal Radical Auténtico",
+                "Fecha": "2",
+                "_full_text": "'2':1 'auténtico':5 'liber':3 'partido':2 'radic':4",
+                "_id": 10
+            },
+            {
+                "24/11/2013": "Votos Nulos",
+                "Fecha": "",
+                "_full_text": "'nulo':2 'voto':1",
+                "_id": 11
+            },
+            {
+                "24/11/2013": "Votos en Blanco",
+                "Fecha": "",
+                "_full_text": "'blanco':3 'en':2 'voto':1",
+                "_id": 12
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 13
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 14
+            },
+            {
+                "24/11/2013": "Electo",
+                "Fecha": "LISTA",
+                "_full_text": "'electo':2 'lista':1",
+                "_id": 15
+            },
+            {
+                "24/11/2013": "Mario Torres Silvero",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1 'mario':2 'silvero':4 'torr':3",
+                "_id": 16
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 17
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 18
+            },
+            {
+                "24/11/2013": "Junta Municipal",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'junta':2 'municip':3",
+                "_id": 19
+            },
+            {
+                "24/11/2013": "PARTIDO O MOVIMIENTO POLITICO ",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'movimiento':4 'o':3 'partido':2 'politico':5",
+                "_id": 20
+            },
+            {
+                "24/11/2013": "Partido Colorado",
+                "Fecha": "1",
+                "_full_text": "'1':1 'colorado':3 'partido':2",
+                "_id": 21
+            },
+            {
+                "24/11/2013": "Partido Liberal Radical Auténtico",
+                "Fecha": "2",
+                "_full_text": "'2':1 'auténtico':5 'liber':3 'partido':2 'radic':4",
+                "_id": 22
+            },
+            {
+                "24/11/2013": "Votos Nulos",
+                "Fecha": "",
+                "_full_text": "'nulo':2 'voto':1",
+                "_id": 23
+            },
+            {
+                "24/11/2013": "Votos en Blanco",
+                "Fecha": "",
+                "_full_text": "'blanco':3 'en':2 'voto':1",
+                "_id": 24
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 25
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 26
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Junta Municipal",
+                "_full_text": "'junta':1 'municip':2",
+                "_id": 27
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 28
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1",
+                "_id": 29
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Edgar Martín Bell Carvallo",
+                "_full_text": "'bell':3 'carvallo':4 'edgar':1 'martín':2",
+                "_id": 30
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Enrique David Ascona Morel",
+                "_full_text": "'ascona':3 'david':2 'enriqu':1 'morel':4",
+                "_id": 31
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "María Cristina Palacios Aguiar",
+                "_full_text": "'aguiar':4 'cristina':2 'maría':1 'palacio':3",
+                "_id": 32
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Benigno Villanueva Salinas",
+                "_full_text": "'benigno':1 'salina':3 'villanueva':2",
+                "_id": 33
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "PLRA",
+                "_full_text": "'plra':1",
+                "_id": 34
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Alfonso Rolando Bell Martínez",
+                "_full_text": "'alfonso':1 'bell':3 'martínez':4 'rolando':2",
+                "_id": 35
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Guillerme René Ayala Ocampo",
+                "_full_text": "'ayala':3 'guillerm':1 'ocampo':4 'rené':2",
+                "_id": 36
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Nancy del Carmen González Romero",
+                "_full_text": "'carmen':3 'del':2 'gonzález':4 'nanci':1 'romero':5",
+                "_id": 37
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Santiago Faustino Filártiga Alarcón",
+                "_full_text": "'alarcón':4 'faustino':2 'filártiga':3 'santiago':1",
+                "_id": 38
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Emigdia González Ávalos",
+                "_full_text": "'emigdia':1 'gonzález':2 'Ávalo':3",
+                "_id": 39
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 40
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Junta Municipal",
+                "_full_text": "'junta':1 'municip':2",
+                "_id": 41
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 42
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1",
+                "_id": 43
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Luciano Cardozo Lezcano ",
+                "_full_text": "'cardozo':2 'lezcano':3 'luciano':1",
+                "_id": 44
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Rigoberto Andres Troche Bogarin",
+                "_full_text": "'andr':2 'bogarin':4 'rigoberto':1 'troch':3",
+                "_id": 45
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Andresa Mercedes Villasanti de Villanueva",
+                "_full_text": "'andresa':1 'de':4 'merced':2 'villanueva':5 'villasanti':3",
+                "_id": 46
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Juana Zaporitti",
+                "_full_text": "'juana':1 'zaporitti':2",
+                "_id": 47
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "PLRA",
+                "_full_text": "'plra':1",
+                "_id": 48
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Buenaventura Coronel Gimenez",
+                "_full_text": "'buenaventura':1 'coronel':2 'gimenez':3",
+                "_id": 49
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Jorge Daniel Avezada Acosta",
+                "_full_text": "'acosta':4 'avezada':3 'daniel':2 'jorg':1",
+                "_id": 50
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Horacio Ayala Montiel",
+                "_full_text": "'ayala':2 'horacio':1 'montiel':3",
+                "_id": 51
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Alicia Moreno Mazacotte",
+                "_full_text": "'alicia':1 'mazacott':3 'moreno':2",
+                "_id": 52
+            },
+            {
+                "24/11/2013": "",
+                "Fecha": "Liz de Jesus Ayala Molas",
+                "_full_text": "'ayala':4 'de':2 'jesus':3 'liz':1 'mola':5",
+                "_id": 53
+            }
+        ],
+        "sql": "SELECT * FROM \"1f1e060b-b2d5-4f8a-bad7-7df47b744eee\" ;"
+    },
+    "success": true
+}

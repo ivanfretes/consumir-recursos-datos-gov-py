@@ -1,0 +1,269 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "dep",
+                "type": "numeric"
+            },
+            {
+                "id": "depdes",
+                "type": "text"
+            },
+            {
+                "id": "dis",
+                "type": "text"
+            },
+            {
+                "id": "disdes",
+                "type": "text"
+            },
+            {
+                "id": "zon",
+                "type": "numeric"
+            },
+            {
+                "id": "zondes",
+                "type": "text"
+            },
+            {
+                "id": "loc",
+                "type": "numeric"
+            },
+            {
+                "id": "locdes",
+                "type": "text"
+            },
+            {
+                "id": "anr",
+                "type": "numeric"
+            },
+            {
+                "id": "ps",
+                "type": "numeric"
+            },
+            {
+                "id": "ppl",
+                "type": "numeric"
+            },
+            {
+                "id": "pen",
+                "type": "numeric"
+            },
+            {
+                "id": "nulos",
+                "type": "numeric"
+            },
+            {
+                "id": "blancos",
+                "type": "numeric"
+            },
+            {
+                "id": "total",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'chaco':8 'del':7 'estigarribia':5 'lic.sub.sta.maria':6 'marisc':4 'mcal.estigarribia':3",
+                "_id": 1,
+                "anr": "280",
+                "blancos": "17",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "1",
+                "locdes": "LIC.SUB.STA.MARIA DEL CHACO",
+                "nulos": "30",
+                "pen": "119",
+                "ppl": "35",
+                "ps": "9",
+                "total": "490",
+                "zon": "0",
+                "zondes": "MARISCAL ESTIGARRIBIA"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'estigarribia':5 'marisc':4 'mcal.estigarribia':3 'municipalidad':6",
+                "_id": 2,
+                "anr": "439",
+                "blancos": "34",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "2",
+                "locdes": "MUNICIPALIDAD",
+                "nulos": "30",
+                "pen": "374",
+                "ppl": "42",
+                "ps": "13",
+                "total": "932",
+                "zon": "0",
+                "zondes": "MARISCAL ESTIGARRIBIA"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'chaco':10 'chofer':8 'del':9 'esc':6 'estigarribia':5 'marisc':4 'mcal.estigarribia':3 'villa':7",
+                "_id": 3,
+                "anr": "220",
+                "blancos": "36",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "501",
+                "locdes": "ESC. VILLA CHOFERES DEL CHACO",
+                "nulos": "17",
+                "pen": "323",
+                "ppl": "12",
+                "ps": "13",
+                "total": "621",
+                "zon": "0",
+                "zondes": "MARISCAL ESTIGARRIBIA"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'esc':6 'estigarribia':5 'marisc':4 'mcal.estigarribia':3 'mision':7 'salv':8 'yanga':9",
+                "_id": 4,
+                "anr": "493",
+                "blancos": "33",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "502",
+                "locdes": "ESC. MISION SALVE YANGA",
+                "nulos": "12",
+                "pen": "358",
+                "ppl": "6",
+                "ps": "31",
+                "total": "933",
+                "zon": "0",
+                "zondes": "MARISCAL ESTIGARRIBIA"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'colegio':5 'filadelfia':4,6 'mcal.estigarribia':3",
+                "_id": 5,
+                "anr": "813",
+                "blancos": "42",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "503",
+                "locdes": "COLEGIO  FILADELFIA",
+                "nulos": "0",
+                "pen": "1732",
+                "ppl": "30",
+                "ps": "92",
+                "total": "2709",
+                "zon": "1",
+                "zondes": "FILADELFIA"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'col':6 'de':7 'loma':4,8 'mcal.estigarribia':3 'plata':5,9",
+                "_id": 6,
+                "anr": "1032",
+                "blancos": "214",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "504",
+                "locdes": "COL. DE LOMA PLATA",
+                "nulos": "31",
+                "pen": "497",
+                "ppl": "76",
+                "ps": "118",
+                "total": "1968",
+                "zon": "2",
+                "zondes": "LOMA PLATA"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'col':5 'colonia':8 'de':6 'la':7 'mcal.estigarribia':3 'neuland':4 'newland':9",
+                "_id": 7,
+                "anr": "717",
+                "blancos": "59",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "505",
+                "locdes": "COL. DE LA COLONIA NEWLAND",
+                "nulos": "21",
+                "pen": "498",
+                "ppl": "30",
+                "ps": "11",
+                "total": "1336",
+                "zon": "3",
+                "zondes": "NEULAND"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'col':11 'de':9 'esc':8 'eugenio':5 'garay':7 'general':4 'la':10,12 'mcal.estigarribia':3 'patria':13",
+                "_id": 8,
+                "anr": "0",
+                "blancos": "1",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "506",
+                "locdes": "ESC. DE LA COL. LA PATRIA",
+                "nulos": "0",
+                "pen": "0",
+                "ppl": "0",
+                "ps": "0",
+                "total": "1",
+                "zon": "4",
+                "zondes": "GENERAL EUGENIO A. GARAY"
+            },
+            {
+                "_full_text": "'0.0':2 'asuncion':11 'boqueron':1 'de':9 'es':8 'eugenio':5 'garay':7 'general':4 'mcal.estigarribia':3 'nva':10",
+                "_id": 9,
+                "anr": "82",
+                "blancos": "4",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "507",
+                "locdes": "ES. DE NVA. ASUNCION",
+                "nulos": "5",
+                "pen": "9",
+                "ppl": "2",
+                "ps": "2",
+                "total": "104",
+                "zon": "4",
+                "zondes": "GENERAL EUGENIO A. GARAY"
+            },
+            {
+                "_full_text": "'0.0':2 'boqueron':1 'concepcion':10 'dr':4 'esc.1566':8 'inmaculada':9 'mcal.estigarribia':3 'p':6 'pedro':5 'peÑa':7",
+                "_id": 10,
+                "anr": "57",
+                "blancos": "12",
+                "dep": "17",
+                "depdes": "BOQUERON",
+                "dis": "0.0",
+                "disdes": "MCAL.ESTIGARRIBIA",
+                "loc": "508",
+                "locdes": "ESC.1566 INMACULADA CONCEPCION",
+                "nulos": "8",
+                "pen": "130",
+                "ppl": "3",
+                "ps": "3",
+                "total": "213",
+                "zon": "5",
+                "zondes": "DR. PEDRO P. PEÑA"
+            }
+        ],
+        "sql": "SELECT * FROM \"93d53138-29c7-4330-a0a5-171b20ae81f4\" ;"
+    },
+    "success": true
+}

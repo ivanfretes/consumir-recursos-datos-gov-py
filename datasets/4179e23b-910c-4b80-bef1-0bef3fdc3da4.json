@@ -1,0 +1,2028 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "DPTO",
+                "type": "numeric"
+            },
+            {
+                "id": "MUNIC",
+                "type": "numeric"
+            },
+            {
+                "id": "CANDIDATURA",
+                "type": "text"
+            },
+            {
+                "id": "LISTA",
+                "type": "numeric"
+            },
+            {
+                "id": "NOMBRE",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "0",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "ENRIQUE RIERA ESCUDERO",
+                "_full_text": "'enriqu':2 'escudero':4 'intendent':1 'riera':3",
+                "_id": 1
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "1",
+                "LISTA": "2",
+                "MUNIC": "0",
+                "NOMBRE": "JOSE MODESTO ARAUJO QUEVEDO",
+                "_full_text": "'araujo':4 'intendent':1 'jose':2 'modesto':3 'quevedo':5",
+                "_id": 2
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "1",
+                "LISTA": "2",
+                "MUNIC": "1",
+                "NOMBRE": "NATIVIDAD ALDANA LEGUIZAMON",
+                "_full_text": "'aldana':3 'intendent':1 'leguizamon':4 'natividad':2",
+                "_id": 3
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "1",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "JORGE RAUL RAMIREZ AFARA",
+                "_full_text": "'afara':5 'intendent':1 'jorg':2 'ramirez':4 'raul':3",
+                "_id": 4
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "1",
+                "LISTA": "2",
+                "MUNIC": "5",
+                "NOMBRE": "RODOLFO INSAURRALDE GOMEZ",
+                "_full_text": "'gomez':4 'insaurrald':3 'intendent':1 'rodolfo':2",
+                "_id": 5
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "1",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "WILSON INOCENTE BARRIOS ARGUELLO",
+                "_full_text": "'arguello':5 'barrio':4 'inocent':3 'intendent':1 'wilson':2",
+                "_id": 6
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "1",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "SILVINO CASCO GONZALEZ",
+                "_full_text": "'casco':3 'gonzalez':4 'intendent':1 'silvino':2",
+                "_id": 7
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "0",
+                "NOMBRE": "PASTO ALBERTO VERA BEJARANO",
+                "_full_text": "'alberto':3 'bejarano':5 'intendent':1 'pasto':2 'vera':4",
+                "_id": 8
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "1",
+                "NOMBRE": "CRISTINO CRISTALDO MARTINEZ",
+                "_full_text": "'cristaldo':3 'cristino':2 'intendent':1 'martinez':4",
+                "_id": 9
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "3",
+                "NOMBRE": "BASILIO RAMIREZ CACERES",
+                "_full_text": "'basilio':2 'cacer':4 'intendent':1 'ramirez':3",
+                "_id": 10
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "5",
+                "NOMBRE": "CESAR DE LA CRUZ GONZALEZ FRANCO",
+                "_full_text": "'cesar':2 'cruz':5 'de':3 'franco':7 'gonzalez':6 'intendent':1 'la':4",
+                "_id": 11
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "7",
+                "NOMBRE": "MARIO FERNANDO RECALDE RAMIREZ",
+                "_full_text": "'fernando':3 'intendent':1 'mario':2 'ramirez':5 'recald':4",
+                "_id": 12
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "AGUSTIN DUARTE PRIETO",
+                "_full_text": "'agustin':2 'duart':3 'intendent':1 'prieto':4",
+                "_id": 13
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "11",
+                "NOMBRE": "ALIPIO CORREA GALVAN",
+                "_full_text": "'alipio':2 'correa':3 'galvan':4 'intendent':1",
+                "_id": 14
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "13",
+                "NOMBRE": "JOSE GREGORIO LEDESMA NARVAEZ",
+                "_full_text": "'gregorio':3 'intendent':1 'jose':2 'ledesma':4 'narvaez':5",
+                "_id": 15
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "BASILIO ZACARIA GOMEZ NUÑEZ",
+                "_full_text": "'basilio':2 'gomez':4 'intendent':1 'nuÑez':5 'zacaria':3",
+                "_id": 16
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "JULIO CESAR FRANCO SOSA",
+                "_full_text": "'cesar':3 'franco':4 'intendent':1 'julio':2 'sosa':5",
+                "_id": 17
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "2",
+                "MUNIC": "19",
+                "NOMBRE": "CEFERINO ZENA DUARTE",
+                "_full_text": "'ceferino':2 'duart':4 'intendent':1 'zena':3",
+                "_id": 18
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "21",
+                "NOMBRE": "MARCOS RODRIGUEZ GARCETE",
+                "_full_text": "'garcet':4 'intendent':1 'marco':2 'rodriguez':3",
+                "_id": 19
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "JULIO CESAR VALDOVINOS FIORE",
+                "_full_text": "'cesar':3 'fior':5 'intendent':1 'julio':2 'valdovino':4",
+                "_id": 20
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "SALVADOR TORRES CARDOZO",
+                "_full_text": "'cardozo':4 'intendent':1 'salvador':2 'torr':3",
+                "_id": 21
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "27",
+                "NOMBRE": "ROQUE DIOSMEDE VENIALGO VILLALBA",
+                "_full_text": "'diosmed':3 'intendent':1 'roqu':2 'venialgo':4 'villalba':5",
+                "_id": 22
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "29",
+                "NOMBRE": "JULIAN ABEL BARRESI MANCIA",
+                "_full_text": "'abel':3 'barresi':4 'intendent':1 'julian':2 'mancia':5",
+                "_id": 23
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "2",
+                "LISTA": "1",
+                "MUNIC": "31",
+                "NOMBRE": "FELIX ROJAS ",
+                "_full_text": "'felix':2 'intendent':1 'roja':3",
+                "_id": 24
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "ELISEO AQUINO ALVAREZ",
+                "_full_text": "'alvarez':4 'aquino':3 'eliseo':2 'intendent':1",
+                "_id": 25
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "1",
+                "NOMBRE": "MABILO VERA MALDONADO",
+                "_full_text": "'intendent':1 'mabilo':2 'maldonado':4 'vera':3",
+                "_id": 26
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "3",
+                "NOMBRE": "CARLOS ALBERTO OJEDA ARZAMENDIA",
+                "_full_text": "'alberto':3 'arzamendia':5 'carlo':2 'intendent':1 'ojeda':4",
+                "_id": 27
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "DENIS LICHI AYALA",
+                "_full_text": "'ayala':4 'deni':2 'intendent':1 'lichi':3",
+                "_id": 28
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "7",
+                "NOMBRE": "JUAN FRANCISCO FERREIRA",
+                "_full_text": "'ferreira':4 'francisco':3 'intendent':1 'juan':2",
+                "_id": 29
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "MARIANO FRANCO AQUINO",
+                "_full_text": "'aquino':4 'franco':3 'intendent':1 'mariano':2",
+                "_id": 30
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "11",
+                "NOMBRE": "ESPIRION PEÑA",
+                "_full_text": "'espirion':2 'intendent':1 'peÑa':3",
+                "_id": 31
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "13",
+                "NOMBRE": "VICTOR MARTINEZ MOLINAS",
+                "_full_text": "'intendent':1 'martinez':3 'molina':4 'victor':2",
+                "_id": 32
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "PABLINO GONZALEZ GALEANO",
+                "_full_text": "'galeano':4 'gonzalez':3 'intendent':1 'pablino':2",
+                "_id": 33
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "CARLOS SANTOS MAGGI ROLON",
+                "_full_text": "'carlo':2 'intendent':1 'maggi':4 'rolon':5 'santo':3",
+                "_id": 34
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "19",
+                "NOMBRE": "JULIO CESAR ANTUNEZ ACOSTA",
+                "_full_text": "'acosta':5 'antunez':4 'cesar':3 'intendent':1 'julio':2",
+                "_id": 35
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "21",
+                "NOMBRE": "VICTOR HUGO JIMENEZ AYALA",
+                "_full_text": "'ayala':5 'hugo':3 'intendent':1 'jimenez':4 'victor':2",
+                "_id": 36
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "23",
+                "NOMBRE": "FRANCISCO ARNALDO GUILLEN AGUILERA",
+                "_full_text": "'aguilera':5 'arnaldo':3 'francisco':2 'guillen':4 'intendent':1",
+                "_id": 37
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "GUSTAVO ADEL FRANCO SANABRIA ",
+                "_full_text": "'adel':3 'franco':4 'gustavo':2 'intendent':1 'sanabria':5",
+                "_id": 38
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "27",
+                "NOMBRE": "VICTOR LUIS GONZALEZ SEGOVIA",
+                "_full_text": "'gonzalez':4 'intendent':1 'lui':3 'segovia':5 'victor':2",
+                "_id": 39
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "29",
+                "NOMBRE": "LUIS AGUILAR RIOS",
+                "_full_text": "'aguilar':3 'intendent':1 'lui':2 'rio':4",
+                "_id": 40
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "2",
+                "MUNIC": "31",
+                "NOMBRE": "JOSE RAUL RIQUELME ORTIZ",
+                "_full_text": "'intendent':1 'jose':2 'ortiz':5 'raul':3 'riquelm':4",
+                "_id": 41
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "33",
+                "NOMBRE": "PEDRO PEREZ CACERES",
+                "_full_text": "'cacer':4 'intendent':1 'pedro':2 'perez':3",
+                "_id": 42
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "35",
+                "NOMBRE": "OLINDO CORAZON JIMENEZ VARGAS",
+                "_full_text": "'corazon':3 'intendent':1 'jimenez':4 'olindo':2 'varga':5",
+                "_id": 43
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "3",
+                "LISTA": "1",
+                "MUNIC": "37",
+                "NOMBRE": "MARIA GRACIELA RIVAS DE DIARTE",
+                "_full_text": "'de':5 'diart':6 'graciela':3 'intendent':1 'maria':2 'riva':4",
+                "_id": 44
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "2",
+                "MUNIC": "0",
+                "NOMBRE": "CHRISTIAN FEDERICO ALDERETE G.",
+                "_full_text": "'alderet':4 'christian':2 'federico':3 'g':5 'intendent':1",
+                "_id": 45
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "VALERIO ANTONIO SILVERO ACUÑA",
+                "_full_text": "'acuÑa':5 'antonio':3 'intendent':1 'silvero':4 'valerio':2",
+                "_id": 46
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "JORGE NATIVIDAD AQUINO",
+                "_full_text": "'aquino':4 'intendent':1 'jorg':2 'natividad':3",
+                "_id": 47
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "RAMON MAGGIN LICHI OCAMPOS",
+                "_full_text": "'intendent':1 'lichi':4 'maggin':3 'ocampo':5 'ramon':2",
+                "_id": 48
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "PEDRO TOMAS BOGADO",
+                "_full_text": "'bogado':4 'intendent':1 'pedro':2 'toma':3",
+                "_id": 49
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "LEOPOLDINA CASTILLO GAMARRA",
+                "_full_text": "'castillo':3 'gamarra':4 'intendent':1 'leopoldina':2",
+                "_id": 50
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "RODOLFO PEREIRA DUARTE",
+                "_full_text": "'duart':4 'intendent':1 'pereira':3 'rodolfo':2",
+                "_id": 51
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "10",
+                "MUNIC": "13",
+                "NOMBRE": "NICOLAS ORTIGOZA BRITEZ",
+                "_full_text": "'britez':4 'intendent':1 'nicola':2 'ortigoza':3",
+                "_id": 52
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "ARTEMIO DUARTE INSAURRALDE",
+                "_full_text": "'artemio':2 'duart':3 'insaurrald':4 'intendent':1",
+                "_id": 53
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "LUIS ALBERTO RAMIREZ CAMPOS",
+                "_full_text": "'alberto':3 'campo':5 'intendent':1 'lui':2 'ramirez':4",
+                "_id": 54
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "2",
+                "MUNIC": "19",
+                "NOMBRE": "EDUARDO TORRES CACERES",
+                "_full_text": "'cacer':4 'eduardo':2 'intendent':1 'torr':3",
+                "_id": 55
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "21",
+                "NOMBRE": "JOSE GABRIEL MARTINEZ PANIAGUA",
+                "_full_text": "'gabriel':3 'intendent':1 'jose':2 'martinez':4 'paniagua':5",
+                "_id": 56
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "JUSTO RIVERO GARCIA",
+                "_full_text": "'garcia':4 'intendent':1 'justo':2 'rivero':3",
+                "_id": 57
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "2",
+                "MUNIC": "25",
+                "NOMBRE": "CARMEN AURORA MARTINI DE CABRERA",
+                "_full_text": "'aurora':3 'cabrera':6 'carmen':2 'de':5 'intendent':1 'martini':4",
+                "_id": 58
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "2",
+                "MUNIC": "27",
+                "NOMBRE": "LUIS EDUARDO DURE SAMANIEGO",
+                "_full_text": "'dure':4 'eduardo':3 'intendent':1 'lui':2 'samaniego':5",
+                "_id": 59
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "2",
+                "MUNIC": "29",
+                "NOMBRE": "DARIO RAMON RUIZ HERRERA",
+                "_full_text": "'dario':2 'herrera':5 'intendent':1 'ramon':3 'ruiz':4",
+                "_id": 60
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "4",
+                "LISTA": "1",
+                "MUNIC": "31",
+                "NOMBRE": "MAXIMO ARMOA GOIRIS",
+                "_full_text": "'armoa':3 'goiri':4 'intendent':1 'maximo':2",
+                "_id": 61
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "CARLOS ANTONIO LOPEZ DOSE",
+                "_full_text": "'antonio':3 'carlo':2 'dose':5 'intendent':1 'lopez':4",
+                "_id": 62
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "JOAQUIN LOPEZ FERNANDEZ",
+                "_full_text": "'fernandez':4 'intendent':1 'joaquin':2 'lopez':3",
+                "_id": 63
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "OVIDIO ESTEBAN AMARILLA JARA",
+                "_full_text": "'amarilla':4 'esteban':3 'intendent':1 'jara':5 'ovidio':2",
+                "_id": 64
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "HUGO MIGUEL A. ESTIGARRIBIA M.",
+                "_full_text": "'estigarribia':5 'hugo':2 'intendent':1 'm':6 'miguel':3",
+                "_id": 65
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "12",
+                "MUNIC": "7",
+                "NOMBRE": "BRUNO BENIGNO BENITEZ ROJAS",
+                "_full_text": "'benigno':3 'benitez':4 'bruno':2 'intendent':1 'roja':5",
+                "_id": 66
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "JUAN NELSON CACERES BAEZ",
+                "_full_text": "'baez':5 'cacer':4 'intendent':1 'juan':2 'nelson':3",
+                "_id": 67
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "ELVIO AMANCIO RODRIGUEZ MONTIEL",
+                "_full_text": "'amancio':3 'elvio':2 'intendent':1 'montiel':5 'rodriguez':4",
+                "_id": 68
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "2",
+                "MUNIC": "13",
+                "NOMBRE": "GERARDO MANCUELLO FERNANDEZ",
+                "_full_text": "'fernandez':4 'gerardo':2 'intendent':1 'mancuello':3",
+                "_id": 69
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "2",
+                "MUNIC": "15",
+                "NOMBRE": "DENIS ANDRES MARTINEZ ARIAS",
+                "_full_text": "'andr':3 'aria':5 'deni':2 'intendent':1 'martinez':4",
+                "_id": 70
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "MAURO BRIZUELA PERALTA",
+                "_full_text": "'brizuela':3 'intendent':1 'mauro':2 'peralta':4",
+                "_id": 71
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "2",
+                "MUNIC": "19",
+                "NOMBRE": "VICTOR EDGAR SMITH COHENE",
+                "_full_text": "'cohen':5 'edgar':3 'intendent':1 'smith':4 'victor':2",
+                "_id": 72
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "2",
+                "MUNIC": "21",
+                "NOMBRE": "FRANCISCO FIGUEREDO SANTACRUZ",
+                "_full_text": "'figueredo':3 'francisco':2 'intendent':1 'santacruz':4",
+                "_id": 73
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "LUCRECIO MENDOZA MONTIEL",
+                "_full_text": "'intendent':1 'lucrecio':2 'mendoza':3 'montiel':4",
+                "_id": 74
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "ANIBAL GONZALEZ RECALDE ",
+                "_full_text": "'anib':2 'gonzalez':3 'intendent':1 'recald':4",
+                "_id": 75
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "27",
+                "NOMBRE": "FELIX HERNAN HELLMAN ARAUJO",
+                "_full_text": "'araujo':5 'felix':2 'hellman':4 'hernan':3 'intendent':1",
+                "_id": 76
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "29",
+                "NOMBRE": "JORGE DANIEL AGUILAR ACUÑA",
+                "_full_text": "'acuÑa':5 'aguilar':4 'daniel':3 'intendent':1 'jorg':2",
+                "_id": 77
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "2",
+                "MUNIC": "31",
+                "NOMBRE": "RUBEN CONCEPCION FLECHA VERA",
+                "_full_text": "'concepcion':3 'flecha':4 'intendent':1 'ruben':2 'vera':5",
+                "_id": 78
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "2",
+                "MUNIC": "33",
+                "NOMBRE": "ADRIANO GODOY CUENCA",
+                "_full_text": "'adriano':2 'cuenca':4 'godoy':3 'intendent':1",
+                "_id": 79
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "35",
+                "NOMBRE": "CIRO RUBEN FRANCO JARA",
+                "_full_text": "'ciro':2 'franco':4 'intendent':1 'jara':5 'ruben':3",
+                "_id": 80
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "5",
+                "LISTA": "1",
+                "MUNIC": "37",
+                "NOMBRE": "EVERGISTO RAMON GAITO BARRETO",
+                "_full_text": "'barreto':5 'evergisto':2 'gaito':4 'intendent':1 'ramon':3",
+                "_id": 81
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "FRANCISCO NICOLAS SARUBBI BRIZUELA",
+                "_full_text": "'brizuela':5 'francisco':2 'intendent':1 'nicola':3 'sarubbi':4",
+                "_id": 82
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "99",
+                "MUNIC": "1",
+                "NOMBRE": "HUGO MARCELO LOPEZ",
+                "_full_text": "'hugo':2 'intendent':1 'lopez':4 'marcelo':3",
+                "_id": 83
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "2",
+                "MUNIC": "3",
+                "NOMBRE": "ESTANISLAO SILVERO ARGUELLO",
+                "_full_text": "'arguello':4 'estanislao':2 'intendent':1 'silvero':3",
+                "_id": 84
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "ALFREDO JAVIER DA ROSA ECURRA",
+                "_full_text": "'alfredo':2 'da':4 'ecurra':6 'intendent':1 'javier':3 'rosa':5",
+                "_id": 85
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "FABIO RUBEN DAVALOS DIETRICH",
+                "_full_text": "'davalo':4 'dietrich':5 'fabio':2 'intendent':1 'ruben':3",
+                "_id": 86
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "2",
+                "MUNIC": "9",
+                "NOMBRE": "NESTOR ORLANDO ROJAS VILLALBA",
+                "_full_text": "'intendent':1 'nestor':2 'orlando':3 'roja':4 'villalba':5",
+                "_id": 87
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "AMADEO ALFREDO LEDESMA ORTIZ",
+                "_full_text": "'alfredo':3 'amadeo':2 'intendent':1 'ledesma':4 'ortiz':5",
+                "_id": 88
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "1",
+                "MUNIC": "13",
+                "NOMBRE": "CARLOS REINALDO PAREDES ",
+                "_full_text": "'carlo':2 'intendent':1 'pared':4 'reinaldo':3",
+                "_id": 89
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "DOMINGO TORRES ESCOBAR",
+                "_full_text": "'domingo':2 'escobar':4 'intendent':1 'torr':3",
+                "_id": 90
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "6",
+                "LISTA": "2",
+                "MUNIC": "17",
+                "NOMBRE": "NELSON JAVIER VERA VILLAR",
+                "_full_text": "'intendent':1 'javier':3 'nelson':2 'vera':4 'villar':5",
+                "_id": 91
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "ROGELIO RAIMUNDO BENITEZ VARGAS",
+                "_full_text": "'benitez':4 'intendent':1 'raimundo':3 'rogelio':2 'varga':5",
+                "_id": 92
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "2",
+                "MUNIC": "1",
+                "NOMBRE": "CRISPIN AQUINO",
+                "_full_text": "'aquino':3 'crispin':2 'intendent':1",
+                "_id": 93
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "2",
+                "MUNIC": "3",
+                "NOMBRE": "WALTER SCHENEIDER DICKEL",
+                "_full_text": "'dickel':4 'intendent':1 'scheneid':3 'walter':2",
+                "_id": 94
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "LUIS ALBERTO WIELDEL",
+                "_full_text": "'alberto':3 'intendent':1 'lui':2 'wieldel':4",
+                "_id": 95
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "LUIS ALBERTO LARRE DEL PUERTO",
+                "_full_text": "'alberto':3 'del':5 'intendent':1 'larr':4 'lui':2 'puerto':6",
+                "_id": 96
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "PEDRO PABLO F. HELLEMANS LIEVYNS",
+                "_full_text": "'f':4 'helleman':5 'intendent':1 'lievyn':6 'pablo':3 'pedro':2",
+                "_id": 97
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "ALCIBIADES CABELLO GONZALEZ",
+                "_full_text": "'alcibiad':2 'cabello':3 'gonzalez':4 'intendent':1",
+                "_id": 98
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "13",
+                "NOMBRE": "ELIZABETH CLORINDA JOJOT DE GNEITING",
+                "_full_text": "'clorinda':3 'de':5 'elizabeth':2 'gneit':6 'intendent':1 'jojot':4",
+                "_id": 99
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "MANUEL MARIA CODAS MARTIN ",
+                "_full_text": "'coda':4 'intendent':1 'manuel':2 'maria':3 'martin':5",
+                "_id": 100
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "ELVIO ESPINOLA CESPEDES",
+                "_full_text": "'cesped':4 'elvio':2 'espinola':3 'intendent':1",
+                "_id": 101
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "19",
+                "NOMBRE": "TATIANA TROCIUK DE PARZAJUK",
+                "_full_text": "'de':4 'intendent':1 'parzajuk':5 'tatiana':2 'trociuk':3",
+                "_id": 102
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "21",
+                "NOMBRE": "ANASTACIO FERREIRA FERREIRA",
+                "_full_text": "'anastacio':2 'ferreira':3,4 'intendent':1",
+                "_id": 103
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "FIDELINO ALLENDE ORTIZ",
+                "_full_text": "'allend':3 'fidelino':2 'intendent':1 'ortiz':4",
+                "_id": 104
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "FEDERICO SALVADOR SCHULZ STUMPFS",
+                "_full_text": "'federico':2 'intendent':1 'salvador':3 'schulz':4 'stumpf':5",
+                "_id": 105
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "10",
+                "MUNIC": "29",
+                "NOMBRE": "JULIO IRALA",
+                "_full_text": "'intendent':1 'irala':3 'julio':2",
+                "_id": 106
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "2",
+                "MUNIC": "31",
+                "NOMBRE": "OSCAR RAMON OCAMPOS BENITEZ ",
+                "_full_text": "'benitez':5 'intendent':1 'ocampo':4 'oscar':2 'ramon':3",
+                "_id": 107
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "33",
+                "NOMBRE": "ISAO TAOKA",
+                "_full_text": "'intendent':1 'isao':2 'taoka':3",
+                "_id": 108
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "2",
+                "MUNIC": "35",
+                "NOMBRE": "CARLOS ANTONIO LOVERA PALACIOS",
+                "_full_text": "'antonio':3 'carlo':2 'intendent':1 'lovera':4 'palacio':5",
+                "_id": 109
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "37",
+                "NOMBRE": "MODESTA GERONIMA GONZALEZ DE DELVALLE",
+                "_full_text": "'de':5 'delvall':6 'geronima':3 'gonzalez':4 'intendent':1 'modesta':2",
+                "_id": 110
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "39",
+                "NOMBRE": "GUSTAVO RICARDO OSMIK PEREIRA",
+                "_full_text": "'gustavo':2 'intendent':1 'osmik':4 'pereira':5 'ricardo':3",
+                "_id": 111
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "41",
+                "NOMBRE": "LAURO BECKER DIETZE ",
+                "_full_text": "'becker':3 'dietz':4 'intendent':1 'lauro':2",
+                "_id": 112
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "43",
+                "NOMBRE": "ANDRES YOSHIKI NAGAMI SUSUKI",
+                "_full_text": "'andr':2 'intendent':1 'nagami':4 'susuki':5 'yoshiki':3",
+                "_id": 113
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "45",
+                "NOMBRE": "HUGO FIDEL BARBOZA AGUILERA",
+                "_full_text": "'aguilera':5 'barboza':4 'fidel':3 'hugo':2 'intendent':1",
+                "_id": 114
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "2",
+                "MUNIC": "47",
+                "NOMBRE": "ALDO NUMAN LEPRETTI BAEZ",
+                "_full_text": "'aldo':2 'baez':5 'intendent':1 'lepretti':4 'numan':3",
+                "_id": 115
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "2",
+                "MUNIC": "49",
+                "NOMBRE": "VICTORIO RIVERO LOPEZ",
+                "_full_text": "'intendent':1 'lopez':4 'rivero':3 'victorio':2",
+                "_id": 116
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "51",
+                "NOMBRE": "ELADIO RUIZ ALVARENGA",
+                "_full_text": "'alvarenga':4 'eladio':2 'intendent':1 'ruiz':3",
+                "_id": 117
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "53",
+                "NOMBRE": "GERARDO SILVEYRA MERCADO",
+                "_full_text": "'gerardo':2 'intendent':1 'mercado':4 'silveyra':3",
+                "_id": 118
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "55",
+                "NOMBRE": "ARMINDO BOGADO BARBOZA",
+                "_full_text": "'armindo':2 'barboza':4 'bogado':3 'intendent':1",
+                "_id": 119
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "7",
+                "LISTA": "1",
+                "MUNIC": "57",
+                "NOMBRE": "MANUEL ZAYAS TOLEDO ",
+                "_full_text": "'intendent':1 'manuel':2 'toledo':4 'zaya':3",
+                "_id": 120
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "2",
+                "MUNIC": "0",
+                "NOMBRE": "VICTOR HUGO PEREIRA ALCARAZ",
+                "_full_text": "'alcaraz':5 'hugo':3 'intendent':1 'pereira':4 'victor':2",
+                "_id": 121
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "ANTONIO BARRETO ",
+                "_full_text": "'antonio':2 'barreto':3 'intendent':1",
+                "_id": 122
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "RICARDO OMAR YEDNACZ BRITEZ ",
+                "_full_text": "'britez':5 'intendent':1 'omar':3 'ricardo':2 'yednacz':4",
+                "_id": 123
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "JOSE EFREN GONZALEZ JACQUET",
+                "_full_text": "'efren':3 'gonzalez':4 'intendent':1 'jacquet':5 'jose':2",
+                "_id": 124
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "MARIO HUGO MAIDANA GARCIA",
+                "_full_text": "'garcia':5 'hugo':3 'intendent':1 'maidana':4 'mario':2",
+                "_id": 125
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "2",
+                "MUNIC": "9",
+                "NOMBRE": "DAMIAN JOEL GARCIA ROA",
+                "_full_text": "'damian':2 'garcia':4 'intendent':1 'joel':3 'roa':5",
+                "_id": 126
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "2",
+                "MUNIC": "11",
+                "NOMBRE": "RUBEN ALFONSO JACQUET GODOY",
+                "_full_text": "'alfonso':3 'godoy':5 'intendent':1 'jacquet':4 'ruben':2",
+                "_id": 127
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "2",
+                "MUNIC": "13",
+                "NOMBRE": "ENRIQUE JULIAN JOHANNSEN LINDSTROM",
+                "_full_text": "'enriqu':2 'intendent':1 'johannsen':4 'julian':3 'lindstrom':5",
+                "_id": 128
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "2",
+                "MUNIC": "15",
+                "NOMBRE": "FELIX LORENZO IRUM ALAMANI",
+                "_full_text": "'alamani':5 'felix':2 'intendent':1 'irum':4 'lorenzo':3",
+                "_id": 129
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "8",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "RAMON NUMAN ARRECHEA BOGADO",
+                "_full_text": "'arrechea':4 'bogado':5 'intendent':1 'numan':3 'ramon':2",
+                "_id": 130
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "RODOLFOUDRIZAR ADORNO",
+                "_full_text": "'adorno':3 'intendent':1 'rodolfoudrizar':2",
+                "_id": 131
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "2",
+                "MUNIC": "1",
+                "NOMBRE": "ALEJO FRETES PRIETO",
+                "_full_text": "'alejo':2 'frete':3 'intendent':1 'prieto':4",
+                "_id": 132
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "2",
+                "MUNIC": "3",
+                "NOMBRE": "EULOGIO ANTONIO MARIÑO ROA",
+                "_full_text": "'antonio':3 'eulogio':2 'intendent':1 'mariÑo':4 'roa':5",
+                "_id": 133
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "ANGEL GONZALEZ",
+                "_full_text": "'angel':2 'gonzalez':3 'intendent':1",
+                "_id": 134
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "EDUARDO BURGOS MEDINA ",
+                "_full_text": "'burgo':3 'eduardo':2 'intendent':1 'medina':4",
+                "_id": 135
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "HECTOR DANIEL CARDOZO GONZALEZ",
+                "_full_text": "'cardozo':4 'daniel':3 'gonzalez':5 'hector':2 'intendent':1",
+                "_id": 136
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "ODILIO CABALLERO GONZALEZ",
+                "_full_text": "'caballero':3 'gonzalez':4 'intendent':1 'odilio':2",
+                "_id": 137
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "2",
+                "MUNIC": "13",
+                "NOMBRE": "LUIS STAPLE CABRERA",
+                "_full_text": "'cabrera':4 'intendent':1 'lui':2 'stapl':3",
+                "_id": 138
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "2",
+                "MUNIC": "15",
+                "NOMBRE": "LUIS RAMON GIMENEZ ",
+                "_full_text": "'gimenez':4 'intendent':1 'lui':2 'ramon':3",
+                "_id": 139
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "JUAN BAUTISTA BOGADO VERA",
+                "_full_text": "'bautista':3 'bogado':4 'intendent':1 'juan':2 'vera':5",
+                "_id": 140
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "19",
+                "NOMBRE": "LUCIO MARTIN MARTINEZ MORENO",
+                "_full_text": "'intendent':1 'lucio':2 'martin':3 'martinez':4 'moreno':5",
+                "_id": 141
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "21",
+                "NOMBRE": "DEL PILAR CERAFIN MONTIEL SERNA",
+                "_full_text": "'cerafin':4 'del':2 'intendent':1 'montiel':5 'pilar':3 'serna':6",
+                "_id": 142
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "CIRILO ANTONIO CUEVAS RUIZ DIAZ",
+                "_full_text": "'antonio':3 'cirilo':2 'cueva':4 'diaz':6 'intendent':1 'ruiz':5",
+                "_id": 143
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "2",
+                "MUNIC": "25",
+                "NOMBRE": "NILDA ROSAS PRIETO DE DUARTE",
+                "_full_text": "'de':5 'duart':6 'intendent':1 'nilda':2 'prieto':4 'rosa':3",
+                "_id": 144
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "27",
+                "NOMBRE": "ELADIO RIOS LUGO",
+                "_full_text": "'eladio':2 'intendent':1 'lugo':4 'rio':3",
+                "_id": 145
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "29",
+                "NOMBRE": "ALBERTO SANTIAGO CABRAL BASALIK",
+                "_full_text": "'alberto':2 'basalik':5 'cabral':4 'intendent':1 'santiago':3",
+                "_id": 146
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "9",
+                "LISTA": "1",
+                "MUNIC": "31",
+                "NOMBRE": "RICARDO ZELAYA SAMUDIO",
+                "_full_text": "'intendent':1 'ricardo':2 'samudio':4 'zelaya':3",
+                "_id": 147
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "ERNESTO JAVIER ZACARIAS IRUN",
+                "_full_text": "'ernesto':2 'intendent':1 'irun':5 'javier':3 'zacaria':4",
+                "_id": 148
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "9",
+                "MUNIC": "1",
+                "NOMBRE": "MODESTO FERMIN AMARILLA GONZALEZ",
+                "_full_text": "'amarilla':4 'fermin':3 'gonzalez':5 'intendent':1 'modesto':2",
+                "_id": 149
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "MIGUEL GOMEZ CHAVEZ",
+                "_full_text": "'chavez':4 'gomez':3 'intendent':1 'miguel':2",
+                "_id": 150
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "ANDRES RETAMOZO ORTIZ",
+                "_full_text": "'andr':2 'intendent':1 'ortiz':4 'retamozo':3",
+                "_id": 151
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "ANIBAL PERALTA DOMINGUEZ",
+                "_full_text": "'anib':2 'dominguez':4 'intendent':1 'peralta':3",
+                "_id": 152
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "MIGUEL ANGEL SORIA RIVAS",
+                "_full_text": "'angel':3 'intendent':1 'miguel':2 'riva':5 'soria':4",
+                "_id": 153
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "CARLOS WALDIMIRO GARCIA ROJAS",
+                "_full_text": "'carlo':2 'garcia':4 'intendent':1 'roja':5 'waldimiro':3",
+                "_id": 154
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "13",
+                "NOMBRE": "CELESTINO MARECO SAMUDIO ",
+                "_full_text": "'celestino':2 'intendent':1 'mareco':3 'samudio':4",
+                "_id": 155
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "2",
+                "MUNIC": "15",
+                "NOMBRE": "JOSE GIACOMELLI",
+                "_full_text": "'giacomelli':3 'intendent':1 'jose':2",
+                "_id": 156
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "FRANCISCO JAVIER MARTINEZ GALLINAR",
+                "_full_text": "'francisco':2 'gallinar':5 'intendent':1 'javier':3 'martinez':4",
+                "_id": 157
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "19",
+                "NOMBRE": "NATALICIO GONZALEZ ALMIRON",
+                "_full_text": "'almiron':4 'gonzalez':3 'intendent':1 'natalicio':2",
+                "_id": 158
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "15",
+                "MUNIC": "21",
+                "NOMBRE": "CESAR AUGUSTO PADOIN DIESEL",
+                "_full_text": "'augusto':3 'cesar':2 'diesel':5 'intendent':1 'padoin':4",
+                "_id": 159
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "MARIO MIGUEL GAMARRA",
+                "_full_text": "'gamarra':4 'intendent':1 'mario':2 'miguel':3",
+                "_id": 160
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "BLAS FRANCISCO ANTONIO BARBOZA",
+                "_full_text": "'antonio':4 'barboza':5 'blas':2 'francisco':3 'intendent':1",
+                "_id": 161
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "27",
+                "NOMBRE": "LUCIANA VALAITES MAIA",
+                "_full_text": "'intendent':1 'luciana':2 'maia':4 'valait':3",
+                "_id": 162
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "29",
+                "NOMBRE": "ERNESTO ENGEL WART NAVARRO",
+                "_full_text": "'engel':3 'ernesto':2 'intendent':1 'navarro':5 'wart':4",
+                "_id": 163
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "31",
+                "NOMBRE": "ISMAEL CORONEL FORNERON",
+                "_full_text": "'coronel':3 'forneron':4 'intendent':1 'ismael':2",
+                "_id": 164
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "33",
+                "NOMBRE": "CLAIRTON FEIX VOSS",
+                "_full_text": "'clairton':2 'feix':3 'intendent':1 'voss':4",
+                "_id": 165
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "10",
+                "LISTA": "1",
+                "MUNIC": "35",
+                "NOMBRE": "TOMAS OVIEDO CORONEL",
+                "_full_text": "'coronel':4 'intendent':1 'oviedo':3 'toma':2",
+                "_id": 166
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "MIGUEL TADEO ROJAS MEZA",
+                "_full_text": "'intendent':1 'meza':5 'miguel':2 'roja':4 'tadeo':3",
+                "_id": 167
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "DERLIS ARIELALEJANDRO OSORIO",
+                "_full_text": "'arielalejandro':3 'der':2 'intendent':1 'osorio':4",
+                "_id": 168
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "JULIO CESAR VELAZQUEZ TILLERIA ",
+                "_full_text": "'cesar':3 'intendent':1 'julio':2 'tilleria':5 'velazquez':4",
+                "_id": 169
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "CANDIDO ARRUA ACOSTA",
+                "_full_text": "'acosta':4 'arrua':3 'candido':2 'intendent':1",
+                "_id": 170
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "7",
+                "NOMBRE": "RAFAEL VELAZQUEZ TOBAL",
+                "_full_text": "'intendent':1 'rafael':2 'tobal':4 'velazquez':3",
+                "_id": 171
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "ANTONIO CUBILLA MELGAREJO",
+                "_full_text": "'antonio':2 'cubilla':3 'intendent':1 'melgarejo':4",
+                "_id": 172
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "11",
+                "NOMBRE": "EUSEBIO BAREIRO",
+                "_full_text": "'bareiro':3 'eusebio':2 'intendent':1",
+                "_id": 173
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "13",
+                "NOMBRE": "JUAN RAMON MARTINEZ CORONEL",
+                "_full_text": "'coronel':5 'intendent':1 'juan':2 'martinez':4 'ramon':3",
+                "_id": 174
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "15",
+                "NOMBRE": "OPTACIANO LAUDIO GOMEZ V.",
+                "_full_text": "'gomez':4 'intendent':1 'laudio':3 'optaciano':2 'v':5",
+                "_id": 175
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "ANDRES VICENTE CACERES ARAUJO",
+                "_full_text": "'andr':2 'araujo':5 'cacer':4 'intendent':1 'vicent':3",
+                "_id": 176
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "19",
+                "NOMBRE": "EDUARDO CANO GUTIERREZ",
+                "_full_text": "'cano':3 'eduardo':2 'gutierrez':4 'intendent':1",
+                "_id": 177
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "21",
+                "NOMBRE": "OSVALDO ALCIDES KRAUSE HAUSMAN",
+                "_full_text": "'alcid':3 'hausman':5 'intendent':1 'kraus':4 'osvaldo':2",
+                "_id": 178
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "23",
+                "NOMBRE": "BLAS LANZONI ACHINELLI",
+                "_full_text": "'achinelli':4 'blas':2 'intendent':1 'lanzoni':3",
+                "_id": 179
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "OBDULIO ESPINOZA",
+                "_full_text": "'espinoza':3 'intendent':1 'obdulio':2",
+                "_id": 180
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "1",
+                "MUNIC": "27",
+                "NOMBRE": "GERMAN INOCENCIO VILLALBA FRUTOS",
+                "_full_text": "'fruto':5 'german':2 'inocencio':3 'intendent':1 'villalba':4",
+                "_id": 181
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "29",
+                "NOMBRE": "ALBINO GONZALEZ VILLALBA",
+                "_full_text": "'albino':2 'gonzalez':3 'intendent':1 'villalba':4",
+                "_id": 182
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "31",
+                "NOMBRE": "FRANCISCO DARIO BENITEZ",
+                "_full_text": "'benitez':4 'dario':3 'francisco':2 'intendent':1",
+                "_id": 183
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "33",
+                "NOMBRE": "ADALBERTO MORINIGO BARRIOS",
+                "_full_text": "'adalberto':2 'barrio':4 'intendent':1 'morinigo':3",
+                "_id": 184
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "11",
+                "LISTA": "2",
+                "MUNIC": "35",
+                "NOMBRE": "JUAN CARLOS PEREIRA ARROYO",
+                "_full_text": "'arroyo':5 'carlo':3 'intendent':1 'juan':2 'pereira':4",
+                "_id": 185
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "DARIO RUBEN ENCINA SILVA",
+                "_full_text": "'dario':2 'encina':4 'intendent':1 'ruben':3 'silva':5",
+                "_id": 186
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "JERONIMO SOTELO COLLANTE",
+                "_full_text": "'collant':4 'intendent':1 'jeronimo':2 'sotelo':3",
+                "_id": 187
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "JULIO CESAR CANDIA AMARILLA",
+                "_full_text": "'amarilla':5 'candia':4 'cesar':3 'intendent':1 'julio':2",
+                "_id": 188
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "PATROCINIO ALVIDE VILLAN",
+                "_full_text": "'alvid':3 'intendent':1 'patrocinio':2 'villan':4",
+                "_id": 189
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "CARLOS NICOLAS ROMERO GONZALEZ",
+                "_full_text": "'carlo':2 'gonzalez':5 'intendent':1 'nicola':3 'romero':4",
+                "_id": 190
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "9",
+                "NOMBRE": "ODILON BARRIOS MEDINA",
+                "_full_text": "'barrio':3 'intendent':1 'medina':4 'odilon':2",
+                "_id": 191
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "11",
+                "NOMBRE": "RAFAEL CESAR ESTIGARRIBIA",
+                "_full_text": "'cesar':3 'estigarribia':4 'intendent':1 'rafael':2",
+                "_id": 192
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "13",
+                "NOMBRE": "RAMON MORINIGO HERMOSILLA",
+                "_full_text": "'hermosilla':4 'intendent':1 'morinigo':3 'ramon':2",
+                "_id": 193
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "AGUSTIN CUEVAS ACHUCARRO",
+                "_full_text": "'achucarro':4 'agustin':2 'cueva':3 'intendent':1",
+                "_id": 194
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "17",
+                "NOMBRE": "AMELIO DEJESUS ESPINOZA ROJAS",
+                "_full_text": "'amelio':2 'dejesus':3 'espinoza':4 'intendent':1 'roja':5",
+                "_id": 195
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "19",
+                "NOMBRE": "MARCOS IBARROLA AMARILLA",
+                "_full_text": "'amarilla':4 'ibarrola':3 'intendent':1 'marco':2",
+                "_id": 196
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "2",
+                "MUNIC": "21",
+                "NOMBRE": "FABIO PABLINO ROJAS FERNANDEZ",
+                "_full_text": "'fabio':2 'fernandez':5 'intendent':1 'pablino':3 'roja':4",
+                "_id": 197
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "23",
+                "NOMBRE": "RAMON ISIDRO GHIRINGHELLI MELGAREJO",
+                "_full_text": "'ghiringhelli':4 'intendent':1 'isidro':3 'melgarejo':5 'ramon':2",
+                "_id": 198
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "25",
+                "NOMBRE": "ANTOLIANO LEGUIZAMON",
+                "_full_text": "'antoliano':2 'intendent':1 'leguizamon':3",
+                "_id": 199
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "2",
+                "MUNIC": "27",
+                "NOMBRE": "PATRICIO ARSENIO PAREDES SOSA",
+                "_full_text": "'arsenio':3 'intendent':1 'pared':4 'patricio':2 'sosa':5",
+                "_id": 200
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "12",
+                "LISTA": "1",
+                "MUNIC": "29",
+                "NOMBRE": "RAMON ANASTASIO VERA RIOS",
+                "_full_text": "'anastasio':3 'intendent':1 'ramon':2 'rio':5 'vera':4",
+                "_id": 201
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "13",
+                "LISTA": "2",
+                "MUNIC": "0",
+                "NOMBRE": "FRANCISCA ANGELCA VALDES BARBOZA",
+                "_full_text": "'angelca':3 'barboza':5 'francisca':2 'intendent':1 'vald':4",
+                "_id": 202
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "13",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "RIGOBERTO CABALLERO GONZALEZ",
+                "_full_text": "'caballero':3 'gonzalez':4 'intendent':1 'rigoberto':2",
+                "_id": 203
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "13",
+                "LISTA": "1",
+                "MUNIC": "3",
+                "NOMBRE": "EDWARD HONORIO GRAU DOMINGUEZ",
+                "_full_text": "'dominguez':5 'edward':2 'grau':4 'honorio':3 'intendent':1",
+                "_id": 204
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "JOSE ALBERTO BAREIRO CANTERO",
+                "_full_text": "'alberto':3 'bareiro':4 'cantero':5 'intendent':1 'jose':2",
+                "_id": 205
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "PABLO DARIO HEREBIA GONZALEZ",
+                "_full_text": "'dario':3 'gonzalez':5 'herebia':4 'intendent':1 'pablo':2",
+                "_id": 206
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "2",
+                "MUNIC": "3",
+                "NOMBRE": "GUIDO FRUCTUOSO RIVAS ALMADA",
+                "_full_text": "'almada':5 'fructuoso':3 'guido':2 'intendent':1 'riva':4",
+                "_id": 207
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "GUSMAN LOPEZ VARGAS",
+                "_full_text": "'gusman':2 'intendent':1 'lopez':3 'varga':4",
+                "_id": 208
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "CECILIO RAMON BENITEZ AÑAZCO",
+                "_full_text": "'aÑazco':5 'benitez':4 'cecilio':2 'intendent':1 'ramon':3",
+                "_id": 209
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "12",
+                "MUNIC": "9",
+                "NOMBRE": "AVELINO RIVAS GIMENEZ",
+                "_full_text": "'avelino':2 'gimenez':4 'intendent':1 'riva':3",
+                "_id": 210
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "2",
+                "MUNIC": "13",
+                "NOMBRE": "FRANCISCO JAVIER PAEZ GIMENEZ",
+                "_full_text": "'francisco':2 'gimenez':5 'intendent':1 'javier':3 'paez':4",
+                "_id": 211
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "1",
+                "MUNIC": "15",
+                "NOMBRE": "MARIN PERALTA MOREL",
+                "_full_text": "'intendent':1 'marin':2 'morel':4 'peralta':3",
+                "_id": 212
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "14",
+                "LISTA": "2",
+                "MUNIC": "17",
+                "NOMBRE": "ULISES BENTOS VARGAS",
+                "_full_text": "'bento':3 'intendent':1 'ulis':2 'varga':4",
+                "_id": 213
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "15",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "JUAN ALBERTO ROJAS MACEDO",
+                "_full_text": "'alberto':3 'intendent':1 'juan':2 'macedo':5 'roja':4",
+                "_id": 214
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "15",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "JOSE DEJESUS JARA VERA",
+                "_full_text": "'dejesus':3 'intendent':1 'jara':4 'jose':2 'vera':5",
+                "_id": 215
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "15",
+                "LISTA": "1",
+                "MUNIC": "5",
+                "NOMBRE": "GLADY SUNILDA MORENO DE ZAYAS",
+                "_full_text": "'de':5 'gladi':2 'intendent':1 'moreno':4 'sunilda':3 'zaya':6",
+                "_id": 216
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "15",
+                "LISTA": "1",
+                "MUNIC": "7",
+                "NOMBRE": "FERMIN SANGUINES SILGUERO",
+                "_full_text": "'fermin':2 'intendent':1 'sanguin':3 'silguero':4",
+                "_id": 217
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "16",
+                "LISTA": "1",
+                "MUNIC": "0",
+                "NOMBRE": "JUAN FRANCISCO SERVIN BRUN",
+                "_full_text": "'brun':5 'francisco':3 'intendent':1 'juan':2 'servin':4",
+                "_id": 218
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "16",
+                "LISTA": "1",
+                "MUNIC": "1",
+                "NOMBRE": "PEDRO MARTINEZ SEGOVIA",
+                "_full_text": "'intendent':1 'martinez':3 'pedro':2 'segovia':4",
+                "_id": 219
+            },
+            {
+                "CANDIDATURA": "INTENDENTE",
+                "DPTO": "17",
+                "LISTA": "10",
+                "MUNIC": "0",
+                "NOMBRE": "HERMANN RATZLAFF KLIPPENSTEIN",
+                "_full_text": "'hermann':2 'intendent':1 'klippenstein':4 'ratzlaff':3",
+                "_id": 220
+            },
+            {
+                "CANDIDATURA": "",
+                "DPTO": null,
+                "LISTA": null,
+                "MUNIC": null,
+                "NOMBRE": "",
+                "_full_text": "",
+                "_id": 221
+            }
+        ],
+        "sql": "SELECT * FROM \"4179e23b-910c-4b80-bef1-0bef3fdc3da4\" ;"
+    },
+    "success": true
+}

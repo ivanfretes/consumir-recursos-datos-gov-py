@@ -1,0 +1,203 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "COD.",
+                "type": "numeric"
+            },
+            {
+                "id": "DISTRITO",
+                "type": "text"
+            },
+            {
+                "id": "ELECTORES",
+                "type": "numeric"
+            },
+            {
+                "id": "MESAS",
+                "type": "numeric"
+            },
+            {
+                "id": "ANR",
+                "type": "numeric"
+            },
+            {
+                "id": "UNACE",
+                "type": "numeric"
+            },
+            {
+                "id": "P-MAS",
+                "type": "numeric"
+            },
+            {
+                "id": "ERES",
+                "type": "numeric"
+            },
+            {
+                "id": "MPO",
+                "type": "numeric"
+            },
+            {
+                "id": "ADB",
+                "type": "numeric"
+            },
+            {
+                "id": "ARENA",
+                "type": "numeric"
+            },
+            {
+                "id": "MPT",
+                "type": "numeric"
+            },
+            {
+                "id": "BLANCOS",
+                "type": "numeric"
+            },
+            {
+                "id": "NULOS",
+                "type": "numeric"
+            },
+            {
+                "id": "TOTAL",
+                "type": "numeric"
+            },
+            {
+                "id": "PARTICIPACION",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "ADB": "2501",
+                "ANR": "693",
+                "ARENA": "4",
+                "BLANCOS": "93",
+                "COD.": "0",
+                "DISTRITO": "FILADELFIA",
+                "ELECTORES": "5058",
+                "ERES": "7",
+                "MESAS": "25",
+                "MPO": "4",
+                "MPT": "15",
+                "NULOS": "51",
+                "P-MAS": "7",
+                "PARTICIPACION": "0",
+                "TOTAL": "3472",
+                "UNACE": "97",
+                "_full_text": "'filadelfia':1",
+                "_id": 1
+            },
+            {
+                "ADB": "1473",
+                "ANR": "1102",
+                "ARENA": "5",
+                "BLANCOS": "196",
+                "COD.": "1",
+                "DISTRITO": "LOMA PLATA",
+                "ELECTORES": "5864",
+                "ERES": "2",
+                "MESAS": "29",
+                "MPO": "7",
+                "MPT": "7",
+                "NULOS": "46",
+                "P-MAS": "2",
+                "PARTICIPACION": "0",
+                "TOTAL": "3202",
+                "UNACE": "362",
+                "_full_text": "'loma':1 'plata':2",
+                "_id": 2
+            },
+            {
+                "ADB": "2655",
+                "ANR": "2396",
+                "ARENA": "9",
+                "BLANCOS": "201",
+                "COD.": "3",
+                "DISTRITO": "MCAL. ESTIGARRIBIA",
+                "ELECTORES": "8562",
+                "ERES": "2",
+                "MESAS": "44",
+                "MPO": "15",
+                "MPT": "27",
+                "NULOS": "101",
+                "P-MAS": "33",
+                "PARTICIPACION": "0",
+                "TOTAL": "5709",
+                "UNACE": "270",
+                "_full_text": "'estigarribia':2 'mcal':1",
+                "_id": 3
+            },
+            {
+                "ADB": null,
+                "ANR": null,
+                "ARENA": null,
+                "BLANCOS": null,
+                "COD.": null,
+                "DISTRITO": "",
+                "ELECTORES": null,
+                "ERES": null,
+                "MESAS": null,
+                "MPO": null,
+                "MPT": null,
+                "NULOS": null,
+                "P-MAS": null,
+                "PARTICIPACION": null,
+                "TOTAL": null,
+                "UNACE": null,
+                "_full_text": "",
+                "_id": 4
+            },
+            {
+                "ADB": "6629",
+                "ANR": "4191",
+                "ARENA": "18",
+                "BLANCOS": "490",
+                "COD.": null,
+                "DISTRITO": "TOTALES",
+                "ELECTORES": "19484",
+                "ERES": "11",
+                "MESAS": "98",
+                "MPO": "26",
+                "MPT": "49",
+                "NULOS": "198",
+                "P-MAS": "42",
+                "PARTICIPACION": null,
+                "TOTAL": "12383",
+                "UNACE": "729",
+                "_full_text": "'total':1",
+                "_id": 5
+            },
+            {
+                "ADB": "0",
+                "ANR": "0",
+                "ARENA": "0",
+                "BLANCOS": "0",
+                "COD.": null,
+                "DISTRITO": "PORCENTAJE VOTACION",
+                "ELECTORES": null,
+                "ERES": "0",
+                "MESAS": null,
+                "MPO": "0",
+                "MPT": "0",
+                "NULOS": "0",
+                "P-MAS": "0",
+                "PARTICIPACION": null,
+                "TOTAL": null,
+                "UNACE": "0",
+                "_full_text": "'porcentaj':1 'votacion':2",
+                "_id": 6
+            }
+        ],
+        "sql": "SELECT * FROM \"c57a7bf4-fe0e-449a-aca0-cf7abf7bcdcb\" ;"
+    },
+    "success": true
+}

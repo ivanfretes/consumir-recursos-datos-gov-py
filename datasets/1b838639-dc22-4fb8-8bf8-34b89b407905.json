@@ -1,0 +1,309 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Año",
+                "type": "text"
+            },
+            {
+                "id": "2003",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "2003": "Elección Municipal",
+                "Año": "Tipo Elección:",
+                "_full_text": "'elección':2,3 'municip':4 'tipo':1",
+                "_id": 1
+            },
+            {
+                "2003": "2",
+                "Año": "Departamento",
+                "_full_text": "'2':2 'departamento':1",
+                "_id": 2
+            },
+            {
+                "2003": "32",
+                "Año": "Distrito",
+                "_full_text": "'32':2 'distrito':1",
+                "_id": 3
+            },
+            {
+                "2003": "6319",
+                "Año": "Habilitados",
+                "_full_text": "'6319':2 'habilitado':1",
+                "_id": 4
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 5
+            },
+            {
+                "2003": "",
+                "Año": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 6
+            },
+            {
+                "2003": "Intendente",
+                "Año": "Candidatura",
+                "_full_text": "'candidatura':1 'intendent':2",
+                "_id": 7
+            },
+            {
+                "2003": "539",
+                "Año": "ANR",
+                "_full_text": "'539':2 'anr':1",
+                "_id": 8
+            },
+            {
+                "2003": "866",
+                "Año": "PLRA",
+                "_full_text": "'866':2 'plra':1",
+                "_id": 9
+            },
+            {
+                "2003": "74",
+                "Año": "PPL",
+                "_full_text": "'74':2 'ppl':1",
+                "_id": 10
+            },
+            {
+                "2003": "66",
+                "Año": "NULOS",
+                "_full_text": "'66':2 'nulo':1",
+                "_id": 11
+            },
+            {
+                "2003": "120",
+                "Año": "BLANCOS",
+                "_full_text": "'120':2 'blanco':1",
+                "_id": 12
+            },
+            {
+                "2003": "1665",
+                "Año": "TOTALES",
+                "_full_text": "'1665':2 'total':1",
+                "_id": 13
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 14
+            },
+            {
+                "2003": "Electo",
+                "Año": "LISTA",
+                "_full_text": "'electo':2 'lista':1",
+                "_id": 15
+            },
+            {
+                "2003": "RAUL CARDOZO MARTINEZ ",
+                "Año": "PLRA",
+                "_full_text": "'cardozo':3 'martinez':4 'plra':1 'raul':2",
+                "_id": 16
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 17
+            },
+            {
+                "2003": "",
+                "Año": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 18
+            },
+            {
+                "2003": "Junta Municipal",
+                "Año": "Candidatura",
+                "_full_text": "'candidatura':1 'junta':2 'municip':3",
+                "_id": 19
+            },
+            {
+                "2003": "546",
+                "Año": "ANR",
+                "_full_text": "'546':2 'anr':1",
+                "_id": 20
+            },
+            {
+                "2003": "854",
+                "Año": "PLRA",
+                "_full_text": "'854':2 'plra':1",
+                "_id": 21
+            },
+            {
+                "2003": "73",
+                "Año": "PPL",
+                "_full_text": "'73':2 'ppl':1",
+                "_id": 22
+            },
+            {
+                "2003": "83",
+                "Año": "NULOS",
+                "_full_text": "'83':2 'nulo':1",
+                "_id": 23
+            },
+            {
+                "2003": "110",
+                "Año": "BLANCOS",
+                "_full_text": "'110':2 'blanco':1",
+                "_id": 24
+            },
+            {
+                "2003": "1663",
+                "Año": "TOTALES",
+                "_full_text": "'1663':2 'total':1",
+                "_id": 25
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 26
+            },
+            {
+                "2003": "Orden",
+                "Año": "LISTA",
+                "_full_text": "'lista':1 'orden':2",
+                "_id": 27
+            },
+            {
+                "2003": "1",
+                "Año": "PLRA",
+                "_full_text": "'1':2 'plra':1",
+                "_id": 28
+            },
+            {
+                "2003": "2",
+                "Año": "ANR",
+                "_full_text": "'2':2 'anr':1",
+                "_id": 29
+            },
+            {
+                "2003": "3",
+                "Año": "PLRA",
+                "_full_text": "'3':2 'plra':1",
+                "_id": 30
+            },
+            {
+                "2003": "4",
+                "Año": "PLRA",
+                "_full_text": "'4':2 'plra':1",
+                "_id": 31
+            },
+            {
+                "2003": "5",
+                "Año": "ANR",
+                "_full_text": "'5':2 'anr':1",
+                "_id": 32
+            },
+            {
+                "2003": "6",
+                "Año": "PLRA",
+                "_full_text": "'6':2 'plra':1",
+                "_id": 33
+            },
+            {
+                "2003": "7",
+                "Año": "ANR",
+                "_full_text": "'7':2 'anr':1",
+                "_id": 34
+            },
+            {
+                "2003": "8",
+                "Año": "PLRA",
+                "_full_text": "'8':2 'plra':1",
+                "_id": 35
+            },
+            {
+                "2003": "9",
+                "Año": "PLRA",
+                "_full_text": "'9':2 'plra':1",
+                "_id": 36
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 37
+            },
+            {
+                "2003": "Orden",
+                "Año": "LISTA",
+                "_full_text": "'lista':1 'orden':2",
+                "_id": 38
+            },
+            {
+                "2003": "1",
+                "Año": "PLRA",
+                "_full_text": "'1':2 'plra':1",
+                "_id": 39
+            },
+            {
+                "2003": "2",
+                "Año": "ANR",
+                "_full_text": "'2':2 'anr':1",
+                "_id": 40
+            },
+            {
+                "2003": "3",
+                "Año": "PLRA",
+                "_full_text": "'3':2 'plra':1",
+                "_id": 41
+            },
+            {
+                "2003": "4",
+                "Año": "PLRA",
+                "_full_text": "'4':2 'plra':1",
+                "_id": 42
+            },
+            {
+                "2003": "5",
+                "Año": "ANR",
+                "_full_text": "'5':2 'anr':1",
+                "_id": 43
+            },
+            {
+                "2003": "6",
+                "Año": "PLRA",
+                "_full_text": "'6':2 'plra':1",
+                "_id": 44
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 45
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 46
+            },
+            {
+                "2003": "",
+                "Año": "",
+                "_full_text": "",
+                "_id": 47
+            }
+        ],
+        "sql": "SELECT * FROM \"1b838639-dc22-4fb8-8bf8-34b89b407905\" ;"
+    },
+    "success": true
+}

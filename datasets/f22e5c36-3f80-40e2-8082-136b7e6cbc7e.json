@@ -1,0 +1,348 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "urlTitle",
+                "type": "text"
+            },
+            {
+                "id": "id_",
+                "type": "numeric"
+            },
+            {
+                "id": "addiitonalType",
+                "type": "text"
+            },
+            {
+                "id": "name",
+                "type": "text"
+            },
+            {
+                "id": "LegalName",
+                "type": "text"
+            },
+            {
+                "id": "url",
+                "type": "text"
+            },
+            {
+                "id": "description",
+                "type": "text"
+            },
+            {
+                "id": "address",
+                "type": "text"
+            },
+            {
+                "id": "email",
+                "type": "text"
+            },
+            {
+                "id": "telephone",
+                "type": "text"
+            },
+            {
+                "id": "image",
+                "type": "text"
+            },
+            {
+                "id": "location",
+                "type": "text"
+            },
+            {
+                "id": "logo",
+                "type": "text"
+            },
+            {
+                "id": "authority",
+                "type": "text"
+            },
+            {
+                "id": "vision",
+                "type": "text"
+            },
+            {
+                "id": "mission",
+                "type": "text"
+            },
+            {
+                "id": "publicServantList",
+                "type": "text"
+            },
+            {
+                "id": "version",
+                "type": "numeric"
+            },
+            {
+                "id": "structureId",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "LegalName": "Ministerio de Obras Públicas y Comunicaciones",
+                "_full_text": "'/nomina-de-funcionarios-i38':217 '021':95 '1221':92 '411':89 '4149000':96 '595':94 'actual':164,171 'alberdi':87 'alcanzar':190 'altament':33,110 'asunción':97 'año':194 'básica':212 'c.p':90 'calidad':214 'cargo':78 'clave':188 'client':161 'comprometida':37,114 'comunicacion':7,14,20,47,130 'comunicaciones@mopc.gov.py':93 'con':38,115,156 'coordinación':83 'cómo':151 'de':3,10,16,29,43,52,71,79,82,106,121,126,147,159,176,205,208,210,213 'del':61,201 'desarrollo':26,103,197 'determina':150 'determinar':136 'disposicion':60 'e':179 'económico':198 'ejecutar':56 'ejecutivo':63 'el':25,39,41,49,102,116,119,124,196 'elaborar':53 'en':24,101,118,154,181,191 'encargado':51 'es':48 'establecido':132 'funcion':178 'futuro':173 'ha':131 'iirsa':76 'impacto':180 'infraestructura':31,73,108,211 'iniciativa':67 'institucion':84 'institucional':139,187 'integración':70 'interesada':163 'la':30,69,72,80,107,148,157,174,182,206 'largo':143 'las':57,66 'los':192 'mantenimiento':28,105 'marco':120 'mediano':141 'ministerio':2,9,15,42,125 'ministerio-de-obras-publicas-y-comunicacion':1 'misiÓn':123 'misma':149 'nacion':32,109 'nº':88,91 'objetivo':138 'obra':4,11,17,44,127 'oliva':85 'organismo':22,50,99 'para':68,135 'paraguay':98,202 'part':162 'plazo':144 'poder':62 'política':58 'potencial':166 'pretend':189 'profesion':34,111 'promov':195 'propon':54 'provisión':207 'próximo':193 'publica':5 'pública':12,18,45,128 'quier':152 'qué':185 'rector':23,100 'referent':64 'region':74 'relación':155 'respecto':167 'resultado':40,117,186 'satisfacción':158,175 'servicio':170,209 'social':200 'sociedad':183 'su':122,133 'sudamericana':75 'sus':137,160,169,177 'transparent':35,112 'travé':146,204 'unidad':81 'vers':153 'visiÓn':134 'www.mopc.gov.py':8,21,216 'www.mopc.gov.py/nomina-de-funcionarios-i38':215 'y':6,13,19,27,36,46,55,59,86,104,113,129,142,165,172,184,199",
+                "_id": 1,
+                "addiitonalType": "<a href=\"http://www.mopc.gov.py/\" target=\"_blank\">http://www.mopc.gov.py/</a>",
+                "address": "Oliva y Alberdi Nº 411, C.P. Nº 1221",
+                "authority": "Organismo rector en el desarrollo y mantenimiento de la infraestructura nacional altamente profesional, transparente y comprometida con el resultado.",
+                "description": "<p>\n\tOrganismo rector en el desarrollo y mantenimiento de la infraestructura nacional altamente profesional, transparente y comprometida con el resultado.</p>\n<p>\n\tEl Ministerio de Obras Públicas y Comunicaciones es el organismo encargado de elaborar, proponer y ejecutar las políticas y disposiciones del Poder Ejecutivo referente a las Iniciativa para la Integración de la Infraestructura Regional Sudamericana, IIRSA, a cargo de la Unidad de Coordinación Institucional.</p>",
+                "email": "<a href=\"mailto:comunicaciones@mopc.gov.py \">comunicaciones@mopc.gov.py</a>",
+                "id_": "15263",
+                "image": "<img alt=\"\" src=\"http://www.mopc.gov.py/img/logo-mopc.png\" style=\"width: 256px; height: 54px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mopc.gov.py/img/logo-mopc.png\" style=\"width: 256px; height: 54px;\" />",
+                "mission": "Promover el desarrollo económico y social del Paraguay a través de la provisión de servicios de infraestructura básica de calidad.",
+                "name": "Ministerio de Obras Públicas y Comunicaciones",
+                "publicServantList": "<a href=\"http://www.mopc.gov.py/nomina-de-funcionarios-i38\" target=\"_blank\">http://www.mopc.gov.py/nomina-de-funcionarios-i38</a>",
+                "structureId": "13527",
+                "telephone": "595 (021) 4149000",
+                "url": "<a href=\"http://www.mopc.gov.py/\" target=\"_blank\">http://www.mopc.gov.py/</a>",
+                "urlTitle": "ministerio-de-obras-publicas-y-comunicaciones",
+                "version": "1.1",
+                "vision": "En el marco de su MISIÓN el Ministerio de Obras Públicas y Comunicaciones ha establecido su VISIÓN para determinar sus Objetivos Institucionales a mediano y largo plazo. A través de la misma determina cómo quiere verse en relación con:\n<p style=\"text-align: justify;\">\n\t* la satisfacción de sus clientes (partes interesadas) actuales y potenciales,<br />\n\t* respecto a sus servicios actuales y futuros,<br />\n\t* la satisfacción de sus funciones e impacto en la sociedad y<br />\n\t* qué resultados institucionales claves pretende alcanzar en los próximos años</p>"
+            },
+            {
+                "LegalName": "Ministerio de Agricultura y Ganadería",
+                "_full_text": "'+595':66 '21':67 '25':56 '450':68 '937':69 'actividad':46 'agr':73 'agraria':49 'agrario':94,109 'agricultura':4,10,15,22 'al':35,92,114 'asunción':70 'brinda':88 'calificado':86 'cerro':60 'competencia':33 'con':83,95 'conceptu':37 'condicion':118 'contribuyendo':113 'corá':61 'cual':42 'de':3,9,14,21,29,47,57,90,116,119,121,125 'del':41,52 'dentro':40 'desarrollan':44 'desarrollo':108 'e':55,105 'edificio':62 'eficient':80 'el':19,26,107 'en':97 'encargado':28 'es':25 'espacio':36 'estado':53 'excelencia':91 'familia':99 'funcion':31 'funcionario':126 'físico':39 'ganadera':51 'ganaderia':6 'ganadería':12,17,24 'gattini':75 'humano':85 'impulsar':106 'ing':72 'institución':78 'jorg':74 'la':98,102,122 'las':30,45,117 'líder':79 'mayo':58 'mejoramiento':115 'ministerio':2,8,13,20 'ministerio-de-agricultura-y-ganaderia':1 'naturaleza':48 'nómina':124 'organismo':27 'paraguay':71 'población':123 'política':103 'prensa@mag.gov.py':65 'que':87 'rafael':64 'recurso':84 'regir':101 'relacionada':34 'rural':100 'san':63 'se':43 'sector':93 'sectori':104 'ser':76 'servicio':89 'sosten':112 'sustent':110 'transparent':82 'una':77 'vida':120 'www.mag.gov.py':7,18 'y':5,11,16,23,32,38,50,59,81,111 'yegro':54 'énfasi':96",
+                "_id": 2,
+                "addiitonalType": "<a href=\"http://www.mag.gov.py/\">http://www.mag.gov.py/</a>",
+                "address": "Yegros e/ 25 de Mayo y Cerro Corá, Edificio San Rafael",
+                "authority": "Ing. Agr. Jorge Gattini",
+                "description": "<p>\n\t<span style=\"line-height: 1.4;\">El Ministerio de Agricultura y Ganadería&nbsp;es&nbsp;el organismo&nbsp;encargado&nbsp;de las funciones y competencias relacionadas&nbsp;al espacio conceptual&nbsp;y físico dentro del cual se desarrollan las actividades de naturaleza agraria y ganadera del Estado.</span></p>",
+                "email": "<a href=\"mailto:prensa@mag.gov.py\" style=\"line-height: 1.4;\" target=\"_blank\">prensa@mag.gov.py</a>",
+                "id_": "16306",
+                "image": "<img alt=\"\" src=\"http://www.mag.gov.py/images/mecip/Logo-MAG-02-02.png\" style=\"width: 300px; height: 91px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mag.gov.py/images/mecip/Logo-MAG-02-02.png\" style=\"width: 300px; height: 91px;\" />",
+                "mission": "Regir la política sectorial e impulsar el desarrollo agrario sustentable y sostenible contribuyendo al mejoramiento de las condiciones de vida de la población.",
+                "name": "Ministerio de Agricultura y Ganadería",
+                "publicServantList": "<a href=\"http://www.mag.gov.py/nomina-MAG.pdf\" target=\"_blank\">Nómina de Funcionarios</a>",
+                "structureId": "13527",
+                "telephone": "+595 21 450 937",
+                "url": "<a href=\"http://www.mag.gov.py/\" target=\"_blank\">http://www.mag.gov.py/</a>",
+                "urlTitle": "ministerio-de-agricultura-y-ganaderia",
+                "version": "1.4",
+                "vision": "Ser una institución líder, eficiente y transparente; con recursos humanos calificados; que brinda servicios de excelencia al sector agrario con énfasis en la familia rural."
+            },
+            {
+                "LegalName": "Ministerio de Defensa Nacional",
+                "_full_text": "'+59521':57 '2490000':58 'administrativa':41,120 'altament':75 'armada':45,124 'asunción':59 'avda':49 'bernardino':64 'calificado':76 'capit':72 'como':99 'con':71 'de':3,8,12,21,27,38,42,46,77,84,88,106,117,121,125,130 'defensa':4,9,13,33,89,112 'del':94 'desempeño':37,116 'dirección':23,102 'e':52 'ejecución':26,105 'ejecutivo':96 'ejto':62 'el':16,19,36,86,92,115 'elevado':82 'encargado':20 'es':18,91 'estigarribia':66 'fuerza':44,123 'funcion':40,119 'funcionario':131 'función':100 'gestión':24,103 'gral':61 'humano':73 'informatica@mdn.gov.py':56 'institución':69 'la':22,28,32,47,101,107,111,126 'las':39,43,118,122 'lópez':51 'marisc':50 'mdn':17 'ministerio':2,7,11,87 'ministerio-de-defensa-nacion':1 'moderna':70 'moral':80 'nacion':5,10,14,34,90,113 'nación':48,127 'nómina':129 'organismo':93 'paraguay':60 'pertenencia':85 'poder':95 'política':29,108 'president':54 'profesion':74 'que':97 'r':63 'referent':30,109 'sentido':83 'ser':67 'soto':65 'sánchez':55 'sólido':78 'tien':98 'una':68 'valor':79 'ver':128 'vice':53 'www.mdn.gov.py':6,15 'y':25,35,81,104,114",
+                "_id": 3,
+                "addiitonalType": "<a href=\"http://www.mdn.gov.py/\">http://www.mdn.gov.py/</a>",
+                "address": "Avda. Mariscal López e/ Vice Presidente Sánchez&nbsp;",
+                "authority": "Gral. Ejto. (R) BERNARDINO SOTO ESTIGARRIBIA",
+                "description": "El MDN es el encargado de la dirección, gestión y ejecución de la política referente a la Defensa Nacional, y el desempeño de las funciones administrativas de las Fuerzas Armadas de la Nación.",
+                "email": "<a href=\"mailto:informatica@mdn.gov.py\">informatica@mdn.gov.py</a>",
+                "id_": "20361",
+                "image": "<img alt=\"\" src=\"http://www.mdn.gov.py/imagenes/src/mdn3.png\" style=\"width: 337px; height: 69px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mdn.gov.py/imagenes/src/mdn3.png\" style=\"width: 337px; height: 69px;\" />",
+                "mission": "El Ministerio de Defensa Nacional es el organismo del Poder Ejecutivo, que tiene como función la dirección, gestión y ejecución de la política referente a la Defensa Nacional, y el desempeño de las funciones administrativas de las Fuerzas Armadas de la Nación.",
+                "name": "Ministerio de Defensa Nacional",
+                "publicServantList": "<a href=\"http://www.mdn.gov.py/funcionarios.php\" target=\"_blank\">Ver Nómina de Funcionarios</a>",
+                "structureId": "13527",
+                "telephone": "+59521 2490000",
+                "url": "<a href=\"http://www.mdn.gov.py/\" target=\"_blank\">http://www.mdn.gov.py/</a>",
+                "urlTitle": "ministerio-de-defensa-nacional",
+                "version": "1.3",
+                "vision": "Ser una Institución moderna, con capital humano profesional, altamente calificado, de sólidos valores morales y elevado sentido de pertenencia"
+            },
+            {
+                "LegalName": "Ministerio de Justicia y Trabajo",
+                "_full_text": "'-209':78 '/descargas/documentos/102430/funcionarios_mjt.pdf':169 '021':76 '493':77 'abe':82 'acceso':100 'administrativa':51 'asunción':79 'avda':65 'capacidad':96,121 'colectivo':163 'con':95,119 'condicion':117 'contra':55 'corrupción':57 'cumplimiento':153 'de':3,9,14,21,31,34,41,70,85,92,97,106,116,122,130,134,144,158,164 'del':154 'derecho':63,132,146,160 'desempeño':43 'destacado':47 'dr':66 'efectiva':142 'eficaz':44,109 'eficient':46,108 'ejercicio':128 'el':19,26,59,83,99,127,151 'empleo':35 'en':114 'ent':27 'es':25,89 'esq':72 'estado':73 'estricto':152 'francia':71 'garantizar':126 'gaspar':68 'generador':30 'gestión':50 'humano':64,133,147 'igualdad':115 'individual':161 'info@mjt.gov.py':75 'institución':91 'josé':67 'justicia':4,10,15,22,86,103 'la':53,56,102,120,141 'labor':156 'las':32 'los':62,131,136,145,159,165 'lucha':54 'manera':107 'ministerio':2,8,13,20,84 'ministerio-de-justicia-y-trabajo':1 'oportuna':112 'pacífica':111 'para':104 'paraguay':80 'paraguaya':139 'paraguayo':137 'pleno':129 'política':33 'por':48,150 'posiblilitar':98 'promov':123,140 'proteg':124 'público':94 'rector':28 'respeto':60 'rodríguez':69 'régimen':155 'seguridad':37 'servicio':93 'sheila':81 'social':38 'todo':105,135 'trabajador':166 'trabajo':6,12,17,24,88 'transparent':52,110 'travé':40 'un':42 'una':49,90 'unido':74 'velar':149 'vigencia':143 'www.mjt.gov.py':7,18,168 'www.mjt.gov.py/descargas/documentos/102430/funcionarios_mjt.pdf':167 'y':5,11,16,23,29,36,45,58,87,113,118,125,138,148,157,162",
+                "_id": 4,
+                "addiitonalType": "<a href=\"http://www.mjt.gov.py\">http://www.mjt.gov.py</a>",
+                "address": "Avda. Dr. José Gaspar Rodríguez de Francia esq. Estados Unidos",
+                "authority": "Sheila Abed",
+                "description": "<span style=\"line-height: 1.4;\">El Ministerio de Justicia y Trabajo es el ente rector y generador de las políticas de empleo y seguridad social, a través de un desempeño eficaz y eficiente, destacado por una gestión administrativa transparente, la lucha contra la corrupción y el respeto a los Derechos Humanos.</span>",
+                "email": "<a href=\"mailto:info@mjt.gov.py\">info@mjt.gov.py</a>",
+                "id_": "20514",
+                "image": "<img alt=\"\" src=\"http://www.mjt.gov.py/gfx/logo.jpg\" style=\"width: 210px; height: 57px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mjt.gov.py/gfx/logo.jpg\" style=\"width: 210px; height: 57px;\" />",
+                "mission": "Promover la efectiva vigencia de los Derechos Humanos y velar por el estricto cumplimiento del Régimen Laboral y de los Derechos Individuales y Colectivos de los Trabajadores.",
+                "name": "Ministerio de Justicia y Trabajo",
+                "publicServantList": "<a href=\"http://www.mjt.gov.py/descargas/documentos/102430/funcionarios_mjt.pdf\" target=\"_blank\">http://www.mjt.gov.py/descargas/documentos/102430/funcionarios_mjt.pdf</a>",
+                "structureId": "13527",
+                "telephone": "(021) 493-209",
+                "url": "<a href=\"http://www.mjt.gov.py\" target=\"_blank\">http://www.mjt.gov.py</a>",
+                "urlTitle": "ministerio-de-justicia-y-trabajo",
+                "version": "2.2",
+                "vision": "El Ministerio de Justicia y Trabajo es una Institución de servicio público con capacidad de posiblilitar el acceso a la Justicia para todos de manera eficiente, eficaz, transparente, pacífica, oportuna y en igualdad de condiciones, y con la capacidad de promover, proteger y garantizar el ejercicio pleno de los Derechos Humanos de todos los paraguayos y paraguayas."
+            },
+            {
+                "LegalName": "Ministerio de Industria y Comercio",
+                "_full_text": "'+595':156 '-21':157 '-3000':159 '3333':149 '616':158 'abastecimiento':40 'actividad':94 'actual':53 'adoptar':20 'al':176 'ambient':87 'aprovechamiento':117 'armonizar':198 'asistencia':144 'asunción':160 'av':146 'bien':42,68,214 'buscando':185 'c':150 'calidad':49 'canalizando':142 'capit':119 'circulación':209 'clara':174 'comerci':80,181 'comercial':139 'comercialización':65 'comercio':6,12,17,221,236 'competencia':230 'con':23,36,45,63 'consumidor':246 'consumo':211 'convenient':31 'coordinación':22 'creación':134 'dato':165 'de':3,9,14,39,41,50,54,60,66,76,99,129,135,140,169,183,197,201,212,215,228,235,242,252 'defensa':241 'del':118,125,178,193,245 'demanda':52,106 'derecho':244 'desarrollo':77,98,170 'dicho':67 'diferent':203 'dirigido':102 'distribución':208 'dr':151 'económica':29,192 'el':46,85,97,115,167,220 'empresa':137 'en':21,58,225 'equidad':187 'establec':172 'externo':112,224 'facilitando':206 'fin':196 'fomentando':231 'fomentar':92,114 'formular':72 'fortalecimiento':177 'fuent':38 'funcionario':253 'futura':62 'gubernament':145 'gustavo':162 'humano':122 'incorporando':81 'industri':78,95,180 'industria':4,10,15 'industrial':138 'industrialización':131 'info@mic.gov.py':155 'intelectu':250 'interes':200 'interna':107 'interno':222 'la':27,33,51,61,64,93,105,130,133,143,186,190,207,240,248 'las':37,232 'legal':234 'leit':163 'libr':229 'liderar':166 'los':55,110,120,199,202,213,243 'lópez':148 'marco':227 'mcal':147 'medio':86 'mejor':116 'mercado':111 'ministerio':2,8,13 'ministerio-de-industria-y-comercio':1 'mismo':56 'morra':154 'más':30 'nacion':217 'nación':34 'natural':124 'nueva':82,136 'nuevo':100 'nómina':251 'oficial':26 'organismo':25 'orientada':175 'origen':216 'otro':24 'paraguay':161 'paí':126,194 'plane':73 'política':28,173 'por':239 'preservando':84 'previsión':59 'proceso':168 'productivo':205 'producto':101 'programa':75 'promov':89,219 'propiciando':96 'propiciar':189 'propiedad':249 'proteg':90 'práctica':233 'reconversión':191 'recurso':121 'relacionada':35 'satisfac':104 'sector':179,204 'servicio':44,70,141,184 'sin':164 'social':188 'sosten':171 'tecnología':83 'travé':128 'un':226 'velando':238 'villa':153 'volumen':47 'weiss':152 'www.mic.gov.py':7,18 'y':5,11,16,43,48,57,69,74,79,91,108,123,132,182,210,218,223,237,247 '·':19,71,88,113",
+                "_id": 5,
+                "addiitonalType": "<a href=\"http://www.mic.gov.py\">http://www.mic.gov.py</a>",
+                "address": "<span class=\"imgupl_styles_spacing_5 imgupl_styles_spacing_10 imgupl_styles_spacing_20 imgupl_floating_right\">Av. Mcal. López 3333 c/ Dr. Weiss, Villa Morra</span>",
+                "authority": "GUSTAVO LEITE",
+                "description": "<p>\n\t·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adoptar, en coordinación con otros organismos oficiales, la política económica más conveniente a la Nación, relacionada con las fuentes de abastecimiento de bienes y servicios, con el volumen y calidad de la demanda actual de los mismos, y en previsión de la futura, con la comercialización de dichos bienes y servicios.</p>\n<p>\n\t·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formular planes y programas de desarrollo industrial y comercial incorporando nuevas tecnologías, preservando el medio ambiente.</p>\n<p>\n\t·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Promover, proteger y fomentar la actividad industrial propiciando el desarrollo de nuevos productos dirigidos a satisfacer la demanda interna y a los mercados externos.</p>\n<p>\n\t·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fomentar el mejor aprovechamiento del capital, los recursos humanos y naturales del País a través de la industrialización y la creación de nuevas empresas industriales, comerciales, de servicios, canalizando la asistencia gubernamental. &nbsp;</p>",
+                "email": "<a href=\"mailto:info@mic.gov.py\" target=\"_blank\">info@mic.gov.py</a>",
+                "id_": "20553",
+                "image": "<img alt=\"\" src=\"http://www.mic.gov.py/v1/sites/all/themes/mic/logomic.jpg\" style=\"width: 223px; height: 77px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mic.gov.py/v1/sites/all/themes/mic/logomic.jpg\" style=\"width: 223px; height: 77px;\" />",
+                "mission": "Liderar el proceso de desarrollo sostenible; establecer políticas claras, orientadas al fortalecimiento del sector industrial, comercial y de servicios buscando la equidad social. Propiciar la reconversión económica del país, a fin de armonizar los intereses de los diferentes sectores productivos, facilitando la distribución, circulación y consumo de los bienes de origen nacional y promover el comercio interno y externo, en un marco de libre competencia, fomentando las prácticas legales de comercio y velando por la defensa de los derechos del consumidor y la propiedad intelectual.",
+                "name": "Ministerio de Industria y Comercio",
+                "publicServantList": "<a href=\"http://www.mic.gov.py/v1/node/697\">Nómina de Funcionarios</a>",
+                "structureId": "13527",
+                "telephone": "<span class=\"imgupl_styles_spacing_5 imgupl_styles_spacing_10 imgupl_styles_spacing_20 imgupl_floating_right\">+595 -21 616-3000 </span>",
+                "url": "<a href=\"http://www.mic.gov.py\" target=\"_blank\">http://www.mic.gov.py</a>",
+                "urlTitle": "ministerio-de-industria-y-comercio",
+                "version": "1.5",
+                "vision": "SIN DATO"
+            },
+            {
+                "LegalName": "Ministerio de Interior",
+                "_full_text": "'de':6,9 'del':3 'interior':4,7,10 'ministerio':2,5,8 'ministerio-del-interior':1",
+                "_id": 11,
+                "addiitonalType": "",
+                "address": "",
+                "authority": "",
+                "description": "",
+                "email": "",
+                "id_": "29345",
+                "image": "",
+                "location": "",
+                "logo": "",
+                "mission": "",
+                "name": "Ministerio de Interior",
+                "publicServantList": "",
+                "structureId": "13527",
+                "telephone": "",
+                "url": "",
+                "urlTitle": "ministerio-del-interior",
+                "version": "1.7",
+                "vision": ""
+            },
+            {
+                "LegalName": "Ministerio de la Mujer",
+                "_full_text": "'-2017':93 '/2012':29 '036/8':111 '11':143 '13':101 '15':133 '20':120 '2008':92 '21':109,118,130,141 '4.675':28 '45':119 '450':110 '49':131,142 '595':108,117,129,140 '60/2':121 '76':144 '78':132 'acción':64 'actualment':78 'al':32,180 'ana':147 'articula':196 'asunción':145 'atención':112,122 'autonomía':56 'ayfra':99 'ayola':97 'b':103 'baiardi':149 'baja':106 'bloqu':102 'comunicación':136 'con':55,202 'consolidación':186 'coordina':79 'creado':25 'cultura':138 'de':3,8,12,18,34,39,50,53,59,63,69,86,115,125,127,135,153,159,162,171,187,192,204,210,217 'del':82 'democracia':189 'democrática':139 'derecho':211 'desarrollo':181 'dirección':134 'edificio':98 'ejecuta':198 'el':16,151,169,190 'elabora':195 'eleva':31 'en':164 'enfoqu':203 'entr':74,88,175,212 'equidad':73 'es':21,42 'esq':96 'estratégica':49 'franco':95 'funcionario':218 'gestión':60 'gubernament':45 'género':54,163,205 'hombr':77,91,178,215 'humano':182 'igualdad':68,87,173,209 'iii':83 'implementación':81 'impulsa':61 'instancia':44 'la':4,9,13,19,37,40,43,67,72,80,154,157,160,172,185,188,193,208 'las':51,165,199 'ley':27 'lograr':207 'logro':170 'maría':148 'ministerio':2,7,11,17,35,152,191 'ministerio-de-la-muj':1 'mujer':5,10,14,20,41,75,89,155,176,194,213 'nacion':85 'normativa':47 'nómina':216 'oportunidad':70 'organismo':23 'orientada':179 'para':65,168,206 'paraguay':146 'persona':128 'perspectiva':161 'piso':100 'plan':84 'plane':62 'planta':105 'política':52,166,200 'por':26 'president':94 'promov':66 'promuev':156 'pública':167,201 'público':24 'que':30 'quesnel':150 'rango':33 'real':174 'rectora':46 'secretariaprivada@mujer.gov.py':107 'secretaría':38 'transversalización':158 'trata':126 'técnica':57 'un':22 'violencia':116 'víctima':114,124 'www.mujer.gov.py':6,15 'y':48,58,71,76,90,104,137,177,183,197,214",
+                "_id": 6,
+                "addiitonalType": "<a href=\"http://www.mujer.gov.py\">http://www.mujer.gov.py</a>",
+                "address": "<p>\n\tPresidente Franco esq. Ayolas</p>\n<p>\n\tEdificio Ayfra, Piso 13, bloque B y Planta Baja</p>",
+                "authority": "Ana María Baiardi Quesnel",
+                "description": "<p style=\"text-align: justify;\">\n\tEl&nbsp;Ministerio de la Mujer&nbsp;es un organismo público creado por&nbsp; ley 4.675/2012&nbsp;que eleva al rango de Ministerio a la Secretaría de la Mujer.</p>\n<p style=\"text-align: justify;\">\n\tEs la instancia gubernamental, rectora normativa y estratégica de las políticas de género. Con autonomía técnica y de gestión, impulsa planes de acción para promover la igualdad de oportunidades y la equidad entre mujeres y hombres. Actualmente coordina la implementación del&nbsp; III Plan Nacional de Igualdad entre Mujeres y Hombres 2008-2017.</p>",
+                "email": "<p>\n\t<a href=\"mailto:secretariaprivada@mujer.gov.py\">secretariaprivada@mujer.gov.py</a></p>",
+                "id_": "20594",
+                "image": "<img alt=\"\" src=\"http://www.mujer.gov.py/userfiles/image/teyJ4IjoxNDUsInkiOjE1MSwiciI6MCwiYyI6MSwidyI6MH0-/logo-nuevo_1.jpg\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mujer.gov.py/userfiles/image/teyJ4IjoxNDUsInkiOjE1MSwiciI6MCwiYyI6MSwidyI6MH0-/logo-nuevo_1.jpg\" />",
+                "mission": "<p>\n\tEl Ministerio de la Mujer elabora, articula y ejecuta las políticas públicas con enfoque de género para lograr la igualdad de derechos entre mujeres y hombres.</p>",
+                "name": "Ministerio de la Mujer",
+                "publicServantList": "<a href=\"http://www.mujer.gov.py/lista-de-funcionarios-as-permanentes-y-contratados-as-p1\" target=\"_blank\">Nómina de funcionarios</a>",
+                "structureId": "13527",
+                "telephone": "<p>\n\t(595 21) 450 036/8</p>\n<p>\n\tAtención a víctimas de violencia: (595 21) 45 20 60/2</p>\n<p>\n\tAtención a víctimas de trata de personas: (595 21) 49 78 15</p>\n<p>\n\tDirección de Comunicación y Cultura Democrática: (595 21) 49 11 76</p>",
+                "url": "<a href=\"http://www.mujer.gov.py\" target=\"_blank\">http://www.mujer.gov.py</a>",
+                "urlTitle": "ministerio-de-la-mujer",
+                "version": "1.4",
+                "vision": "<span style=\"line-height: 1.4;\">El Ministerio de la Mujer promueve la transversalización de la perspectiva de género en las políticas públicas para el logro de la igualdad real entre mujeres y hombres, orientada al desarrollo humano y a la consolidación de la democracia.&nbsp;</span>"
+            },
+            {
+                "LegalName": "Ministerio de Salud Pública y Bienestar Social",
+                "_full_text": "'-1935':106 '-601':335 '/3':336 '/36':49,63,201 '/98':211 '/transparencia/funcionarios-de-salud/':437 '15':51 '1932':105 '1936':26,55,80 '1998':194 '2.000':48 '2.001':62,200 '204':334 '21':333 '21.376':210 '595':332 'accion':407 'activa':382 'administrado':89 'ahora':279 'al':330 'ambient':294 'andré':249 'anterioridad':78 'antonio':340 'artículo':258 'asistencia':140,363 'asunción':337 'atención':329 'bajo':27 'barrio':341 'bienestar':7,15,22,227,297,348,391,417 'brasil':324 'brindar':139 'calidad':413 'carlo':242 'cartera':135 'chaco':104,181 'chaqueña':150 'ciudadana':384 'combatient':187 'como':161,425 'con':77,182,204,260,410 'concluida':177 'consonancia':253 'constitución':266,433 'contienda':149 'controlar':152 'convenient':116 'coronel':31 'creación':118 'creyera':115 'creó':35 'cual':214 'cumplir':301 'de':3,11,18,38,52,54,71,75,84,119,122,129,133,136,147,159,185,223,238,264,274,289,296,304,310,316,328,344,359,377,387,399,401,414,422 'debía':300 'decreto':45,59,197,208 'del':30,44,50,93,103,180,207,221,271 'derecho':426 'derogado':203 'desarrollo':270 'determinant':376 'disentería':165 'documento':230 'dr':339 'efectivament':153 'eficient':350 'ejecuta':406 'ejerc':352 'el':28,36,91,113,154,162,183,213,235,247,269,302,356,385,416 'en':25,107,125,252,256,276,285,355,431 'enfermedad':160 'entidad':395 'entonc':127,236 'equidad':411 'equitativa':367 'era':138 'eran':86 'es':393 'ese':126,196,311 'especi':283 'esq':323 'est':229 'esta':277 'establecida':65 'establecido':430 'estableció':216 'estado':76,137 'etapa':315 'factor':375 'favorablement':372 'firmado':233 'franco':33 'fue':192,202,232 'funcion':70,220 'función':287 'fundament':427 'físico':418 'garanticen':409 'garantizando':361 'gobierno':29,114 'guerra':102,179 'hacia':171 'hasta':193 'herido':144 'hicieron':111 'hogar':190 'humana':292 'incidir':371 'inició':313 'integr':365 'interior':94 'intersectorialment':369 'interviniendo':368 'juan':241 'junio':53 'la':42,66,72,101,108,117,134,148,157,164,167,172,178,205,217,239,265,286,290,362,378,381,394,412,432 'las':69,96,423 'legislativa':321 'ley':46,60,198 'los':82,130,143,186,261,374 'mediant':41 'mental':419 'mientra':56 'migraron':170 'ministerio':2,10,17,37,92,121,222,303,343,386 'ministerio-de-salud-publica-y-bienestar-soci':1 'ministro':248 'misión':354 'modernizacion':319 'momento':312 'moral':251 'mutilado':146 'médica':141 'nacion':267,273,358,434 'normativa':278 'nueva':73,218 'n°':61 'nº':47,199,209 'objetivo':131 'occident':174 'ofici':231 'organización':67,219 'paludismo':163 'para':370 'paraguay':338 'paraguaya':110 'participación':383 'partir':309 'pero':95 'persona':424 'pertinent':263 'pettirossi':322 'población':109 'por':58,90,212,234,246 'precepto':262 'president':237 'prestadora':398 'primero':259 'principal':132 'principalment':320 'produjo':100 'promoviendo':380 'promuev':404 'promulgación':43,206 'propiciado':245 'proveído':87 'publica':5 'puso':282 'pública':13,20,40,124,225,306,346,389 'que':57,99,112,169,195,299,307,351,403,408 'quedaron':64 'rafael':32 'rectora':288,396 'reforma':317 'región':173 'república':240 'retorno':184 'reza':255 'salud':4,12,19,39,85,123,224,275,291,305,345,360,379,388,402 'sanitaria':98,364 'sau':326 'sau@mspbs.gov.py':325 'se':34,215,281 'secretaría':74 'secuela':97 'según':254 'servicio':83,327,400 'sistema':272,357 'sobr':373 'social':8,16,23,228,298,349,392,421 'su':257,353 'sus':189 'tifoidea':168 'todo':81 'transmisión':158 'tratamiento':155 'un':120,342 'una':175,314 'univers':429 'uno':128 'usuario':331 'vez':176 'vida':415 'vidovich':250 'vigent':280 'wasmosi':243 'www.mspbs.gov.py':9,24,436 'www.mspbs.gov.py/transparencia/funcionarios-de-salud/':435 'y':6,14,21,68,88,145,151,156,166,226,244,268,293,295,318,347,366,390,397,405,420,428 'énfasi':284",
+                "_id": 7,
+                "addiitonalType": "<a href=\"http://www.mspbs.gov.py\">http://www.mspbs.gov.py</a>",
+                "address": "Pettirossi Esq. Brasil",
+                "authority": "Dr. Antonio Barrios",
+                "description": "<p style=\"text-align: justify;\">\n\tEn 1936, bajo el gobierno del coronel Rafael Franco, se creó el Ministerio de Salud Pública, mediante la promulgación del Decreto Ley Nº 2.000/36 del 15 de junio de 1936; mientras que por Decreto Ley N° 2.001/36 quedaron establecidas la organización y las funciones de la nueva Secretaría de Estado. Con anterioridad a 1936, todos los servicios de salud eran proveídos y administrados por el Ministerio del Interior, pero las secuelas sanitarias que produjo la Guerra del Chaco (1932-1935) en la población paraguaya hicieron que el Gobierno creyera conveniente la creación de un Ministerio de Salud Pública.<br />\n\t<br />\n\tEn ese entonces, uno de los objetivos principales de la cartera de Estado era brindar asistencia médica a los heridos y mutilados de la contienda chaqueña, y controlar efectivamente el tratamiento y la transmisión de enfermedades como el paludismo, la disentería y la tifoidea, que migraron hacia la Región Occidental una vez concluida la Guerra del Chaco, con el retorno de los combatientes a sus hogares.<br />\n\t<br />\n\tNo fue hasta 1998, que ese Decreto Ley Nº 2.001/36 fue derogado con la promulgación del Decreto Nº 21.376/98, por el cual se estableció la nueva organización funcional del Ministerio de Salud Pública y Bienestar Social. Este documento oficial fue firmado por el entonces Presidente de la República, Juan Carlos Wasmosy y propiciado por el Ministro Andrés Vidovich Morales, en consonancia, según reza en su artículo primero, con los preceptos pertinentes de la Constitución Nacional y el desarrollo del Sistema Nacional de Salud.&nbsp;<br />\n\tEn esta normativa, ahora vigente, se puso especial énfasis en la función rectora de la salud humana y ambiental, y de bienestar social, que debía cumplir el Ministerio de Salud Pública, que a partir de ese momento inició una etapa de reformas y modernizaciones, principalmente legislativas.</p>",
+                "email": "<a href=\"mailto:sau@mspbs.gov.py\">sau@mspbs.gov.py</a> &nbsp;(SAU: Servicio de Atención al Usuario)",
+                "id_": "22719",
+                "image": "<img alt=\"\" src=\"http://www.mspbs.gov.py/v2/images/cabezera.jpg\" style=\"width: 600px; height: 91px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mspbs.gov.py/v2/images/cabezera.jpg\" style=\"width: 600px; height: 91px;\" />",
+                "mission": "<p style=\"text-align: justify;\">\n\tEl Ministerio de Salud Pública y Bienestar Social es la entidad rectora y prestadora de servicios de salud, que promueve y ejecuta acciones que garanticen con equidad la calidad de vida, el bienestar físico, mental y social de las personas, como derecho fundamental y universal establecidos en la Constitución Nacional.</p>",
+                "name": "Ministerio de Salud Pública y Bienestar Social",
+                "publicServantList": "<p>\n\t<a href=\"http://www.mspbs.gov.py/transparencia/funcionarios-de-salud/\" target=\"_blank\">http://www.mspbs.gov.py/transparencia/funcionarios-de-salud/</a></p>",
+                "structureId": "13527",
+                "telephone": "(595) 21 - 204-601/3",
+                "url": "<a href=\"http://www.mspbs.gov.py\" target=\"_blank\">http://www.mspbs.gov.py</a>",
+                "urlTitle": "ministerio-de-salud-publica-y-bienestar-social",
+                "version": "1.3",
+                "vision": "<p style=\"text-align: justify;\">\n\tUn Ministerio de Salud Pública y Bienestar Social eficiente, que ejerce su Misión en el Sistema Nacional de Salud, garantizando la asistencia sanitaria integral y equitativa, interviniendo intersectorialmente para incidir favorablemente sobre los factores determinantes de la salud, promoviendo la activa participación ciudadana.</p>"
+            },
+            {
+                "LegalName": "Ministerio de Relaciones Exteriores",
+                "_full_text": "'-21':64,67,70 '/v1/contacto.aspx':62 '/v1/contenido/462-lista-de-funcionarios.aspx':122 '/v1/default.aspx':18 '14':54 '445536':71 '493902':68 '493928':65 '595':63,66,69 'actividad':41 'asunción':72 'así':35 'benigno':58 'cancillería':47 'como':36 'con':83 'control':38 'coordinar':96 'de':3,9,13,25,39,45,55,89,108 'defensa':107 'del':29,49,93,111,117 'derecho':118 'dirección':19 'eficient':79 'ejecutar':98 'el':37 'eladio':74 'estado':30,112 'estratégica':24 'exterior':5,11,15,51,92,101 'externa':44 'gestión':23,88 'interes':110 'interna':42 'internacion':34,119 'internacional':28 'interno':85 'la':22,40,46,87,90,104 'las':26 'liderazgo':84 'loizaga':75 'los':109 'lópez':59 'mayo':56 'ministerio':2,8,12,78 'ministerio-de-relaciones-exteriores-mr':1 'mre':6 'nacional':115 'orientada':102 'palacio':57 'palma':52 'para':86 'paraguay':73 'paí':94 'planificar':95 'política':20,91,100 'profesion':80 'promoción':105 'relacion':4,10,14,27 'representación':33 'ser':76 'servicio':50 'su':32 'sus':114 'transparent':82 'un':77 'una':99 'www.mre.gov.py':7,17,61,121 'www.mre.gov.py/v1/contacto.aspx':60 'www.mre.gov.py/v1/contenido/462-lista-de-funcionarios.aspx':120 'www.mre.gov.py/v1/default.aspx':16 'y':21,31,43,48,53,81,97,106,113,116",
+                "_id": 8,
+                "addiitonalType": "<a href=\"http://www.mre.gov.py\" target=\"_blank\">http://www.mre.gov.py</a>",
+                "address": "Palma y 14 de Mayo Palacio Benigno López",
+                "authority": "ELADIO LOIZAGA",
+                "description": "<span id=\"ctl00_ContentPlaceHolder1_lblContenido\">Dirección política y la gestión estratégica de las relaciones internacionales del Estado, y su representación internacional, así como el control de la actividad interna y externa de la Cancillería y del Servicio Exterior</span>",
+                "email": "<a href=\"http://www.mre.gov.py/v1/Contacto.aspx\" target=\"_blank\">http://www.mre.gov.py/v1/Contacto.aspx</a>",
+                "id_": "23021",
+                "image": "<img alt=\"\" src=\"http://www.mre.gov.py/v1/img/logo.png\" style=\"width: 230px; height: 79px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"Ministerio de Relaciones Exteriores\" src=\"http://www.mre.gov.py/v1/img/logo.png\" />",
+                "mission": "<span id=\"ctl00_ContentPlaceHolder1_lblContenido\">Planificar, coordinar y ejecutar una política exterior orientada a la promoción y defensa de los intereses del Estado y sus nacionales, y del Derecho Internacional.</span>",
+                "name": "Ministerio de Relaciones Exteriores",
+                "publicServantList": "<a href=\"http://www.mre.gov.py/v1/Contenido/462-lista-de-funcionarios.aspx\" target=\"_blank\">http://www.mre.gov.py/v1/Contenido/462-lista-de-funcionarios.aspx</a>",
+                "structureId": "13527",
+                "telephone": "<p>\n\t(595-21) 493928</p>\n<p>\n\t(595-21) 493902,</p>\n<p>\n\t(595-21) 445536</p>",
+                "url": "<a href=\"http://www.mre.gov.py/v1/default.aspx\" target=\"_blank\">http://www.mre.gov.py/v1/default.aspx</a>",
+                "urlTitle": "ministerio-de-relaciones-exteriores-mre-",
+                "version": "1.3",
+                "vision": "<span id=\"ctl00_ContentPlaceHolder1_lblContenido\">Ser un Ministerio eficiente, profesional y transparente con liderazgo interno para la gestión de la política exterior del país.</span>"
+            },
+            {
+                "LegalName": "Ministerio de Hacienda",
+                "_full_text": "'+595':154,161 '-010':157 '-21':155,162 '-283':164 '1220':152 '154/08':196 '17':159 '252':151 '36/12':248 '440':156 '448':163 'administración':180 'administrando':212 'air':86 'al':76,87,158,228 'alcald':107 'ambientalment':240 'antigua':121 'asunción':165 'atribución':66 'año':54 'bienestar':173 'bueno':85 'cargo':45 'chile':150 'coloni':58,145 'colonización':34 'con':188,219,223,238,243 'conquista':32 'contador':88,98 'contaduría':80 'contribuir':227 'corregidor':71 'cosa':41 'crecimiento':236 'cuando':36 'cuenta':83 'cuyo':132 'de':3,7,10,17,19,28,30,39,46,55,62,67,78,82,84,89,94,113,122,125,127,137,179,184,208,226,250 'del':15,22,49,130,143,174,205,230,235 'desarrollo':229 'durant':52 'económico':237 'eficiencia':220 'eficient':181 'el':37,111,148,172,203,224 'en':147 'equidad':239 'equitativa':210 'era':65 'es':115,134 'español':146 'española':35,59 'esta':73 'estaba':43 'estado':126 'fax':160 'fin':225 'finanza':217 'fiscal':190 'funcion':74 'funcionamiento':204 'funcionario':251 'germán':167 'gestión':199 'gobernador':69 'gobierno':144 'hacienda':4,8,11,18,97,114,140 'hugo':168 'important':141 'impulsando':202 'inclusión':244 'info@hacienda.gov.py':153 'institucion':27 'intendent':103 'irigoyen':170 'la':20,31,40,56,60,79,95,116,119,128,135,138,233 'las':123,216 'liderando':176 'lograr':171 'los':13,47,63,68,92,102,106,185,213 'macroeconómica':200 'manejo':38 'manera':209 'mayor':81 'ministerio':2,6,9,16,112 'ministerio-de-hacienda':1 'ministro':93 'modelo':178 'mucho':53 'más':120 'n':194 'nº':247 'nómina':249 'oficial':48 'oficina':136 'ordinario':108 'orígen':14 'paraguay':23,131,149,166 'pasaron':75 'paí':231 'por':232 'posteriorment':72 'precedent':133 'primera':117 'promov':197 'pueblo':175 'pública':42,218 'público':187 'real':51,96,139 'recaudación':61 'recurso':186,214 'remontan':25 'repartición':142 'republica':129 'república':21 'res':193,246 'respons':201 'responsabilidad':189 'retasa':90 'roja':169 'régimen':206 'se':24 'secretaria':124 'social':192,245 'subdelegado':110 'sustent':241 'tesorero':100 'tesoro':50 'transparencia':222 'transparent':183 'tribun':77 'tributario':207 'tributo':64 'un':177 'una':198 'vía':234 'www.hacienda.gov.py':5,12 'y':33,70,99,104,109,118,182,191,211,215,221,242 '°':195 'época':29,57",
+                "_id": 9,
+                "addiitonalType": "<a href=\"http://www.hacienda.gov.py\" target=\"_blank\">http://www.hacienda.gov.py</a>",
+                "address": "Chile 252 | 1220",
+                "authority": "Germán Hugo Rojas Irigoyen",
+                "description": "<p style=\"text-align: justify;\">\n\tLos orígenes del Ministerio de Hacienda de la República del Paraguay se remontan a instituciones de época de la conquista y colonización española, cuando el manejo de la cosa pública estaba a cargo de los oficiales del Tesoro Real.<br />\n\t<br />\n\tDurante muchos años de la época colonial española, la recaudación de los tributos era atribución de los gobernadores y corregidores. Posteriormente estas funciones pasaron al Tribunal de la Contaduría Mayor de Cuentas de Buenos Aires, al contador de Retasas, a los ministros de la Real Hacienda, contadores y tesoreros, a los intendentes y a los alcaldes ordinarios y subdelegados.<br />\n\t<br />\n\tEl Ministerio de Hacienda es la primera y la más antigua de las secretarias de Estado de la Republica del Paraguay, cuyo precedente es la Oficina de la Real Hacienda, importante repartición del gobierno colonial español en el Paraguay.</p>",
+                "email": "<a class=\"cpst-link\" href=\"mailto:info@hacienda.gov.py\" target=\"_self\">info@hacienda.gov.py</a>",
+                "id_": "27060",
+                "image": "<img alt=\"\" src=\"http://www.hacienda.gov.py/web-hacienda/archivos_de_disenho/imagenes/images/banner_top.jpg\" style=\"width: 530px; height: 47px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.hacienda.gov.py/web-hacienda/archivos_de_disenho/imagenes/images/banner_top.jpg\" style=\"width: 530px; height: 47px;\" />",
+                "mission": "<p style=\"text-align: justify;\">\n\t<span style=\"line-height: 1.4;\">Promover una gestión macroeconómica responsables, impulsando el funcionamiento del régimen tributario de manera equitativa y administrando los recursos y las finanzas públicas con eficiencia y transparencia, con el fin de contribuir al desarrollo del país por la vía del crecimiento económico con equidad, ambientalmente sustentable y con inclusión social. Res. Nº 36/12.</span></p>",
+                "name": "Ministerio de Hacienda",
+                "publicServantList": "<a href=\"http://www.hacienda.gov.py/web-hacienda/index.php?c=603\" target=\"_blank\">Nómina de Funcionarios</a>",
+                "structureId": "13527",
+                "telephone": "<p>\n\t+595-21 440-010 al 17 | Fax: +595-21 448-283</p>",
+                "url": "<a href=\"http://www.hacienda.gov.py\" target=\"_blank\">http://www.hacienda.gov.py</a>",
+                "urlTitle": "ministerio-de-hacienda",
+                "version": "1.5",
+                "vision": "<p style=\"text-align: justify;\">\n\t<span style=\"font-size: 11pt; line-height: 115%; font-family: Calibri, sans-serif;\">Lograr el Bienestar del Pueblo liderando un modelo de administración eficiente y transparente de los Recursos Públicos con Responsabilidad Fiscal y Social. Res. N ° 154/08.</span></p>"
+            },
+            {
+                "LegalName": "Ministerio de Educación y Cultura",
+                "_full_text": "'/cms/entradas/293743-difusion-de-datos-de-funcionarios-del-mec':674 '/planificacion_educativa/revistas/2010/py_edu_cifras2010_versionfinal260912.pdf':19 '021':31 '0800':40 '11':41 '15':20 '2024':474 '450014/15':32 '451025':34 '452895':36 '4975':42 '595':39 'abierto':50 'activa':319,348,552 'actividad':234 'activo':164,225 'actor':276 'actualización':509 'administración':460 'afectiva':254 'agosto':22 'al':157,309,331,661 'alcanzar':117 'ambient':145 'antropológico':83 'aprend':224 'aprenden':231 'aprendizaj':370,592 'aquello':110 'armónica':133 'asunción':43 'autodeterminars':103 'basado':605 'base':520 'bien':58 'brind':359 'busca':91 'calidad':363,448,494,656 'cambiar':109 'capac':222 'capacidad':206 'ciudadana':403 'ciudadano':401 'civil':559 'cognoscent':221 'cohesión':302 'colectivament':106,242 'como':57,80,160,177,199,219,456,587 'compañero':247 'competencia':611 'comprometido':277 'comunicación':568 'comunidad':99,325,555 'con':204,245,278,349,415,549,594 'concib':156 'condicion':101,665 'conform':619 'conoc':208 'conocimiento':244,330 'consensuada':263 'considera':192 'construcción':422 'construyen':241 'contexto':142,339 'continua':538 'continuament':442 'contrato':635 'contribuir':660 'contribuy':299,396 'cooperant':563 'crear':209 'crítico':226 'cualquier':149 'cuenta':480 'cultura':10,15,455,603,650 'de':3,7,12,21,64,71,148,151,153,167,172,196,223,255,261,268,292,307,313,320,329,340,352,362,377,379,400,406,423,452,458,472,478,482,495,536,539,553,567,612,629,647,655,659,663,666,668 'decision':262 'defensores/as':405 'del':86,184,335,356,393,411,462,469,498,514,530,546,584,623,645 'democrático':47,413 'demá':417 'derecho':61,408 'desafío':628 'desarrolla':54 'desarrollar':534 'desarrollo':332 'descentralizado':48 'dialógica':238 'dialógica-relacion':237 'dimensión':253 'dinamizar':593 'direcciongeneraldecomunicacion@mec.gov.py':30 'distinta':544 'docent':216 'dominación':154 'dotado':291 'díaz':25 'e':23,27,51,146,188,617 'económico':186 'educacion':4 'educación':8,13,56,198,257,361,453,473,641,648,654 'educador':526 'educativa':235,434,449,556 'educativo':128,464,548 'eficient':513 'ejecución':468 'el':243,266,338,450,591,599 'elaborar':532 'emprendedora':598 'en':75,120,125,232,264,280,337,387,420,490,519,606,637 'entorno':174 'entr':137 'es':651 'esencialment':236 'establecido':190 'estudiant':214 'etnia':315 'evaluar':489,518 'experiencia':616 'factor':152 'familia':322 'favoreciendo':368 'fin':658 'financiero':295 'forma':491 'formación':269,378,399,537 'formado':274 'fraterna':428 'fundado':74 'fundament':63,644 'garantizar':652 'generación':328 'general':24 'generando':615 'generar':502 'gestionado':271 'gestionar':542 'gestión':497,512,583 'gratuita':38 'género':308 'haedo':29 'histórico':189,202 'histórico-social':201 'humanidad':631 'humano':62,88,159,409 'igualdad':306 'impid':116 'impulsar':632 'incorporar':570 'independient':147 'individu':104 'innovacion':618 'innovar':444 'insertars':386 'instancia':545 'institucion':433,604 'instrumento':503 'integración':347 'integrando':251 'intercultur':52 'intersectori':343 'investigación':572 'justa':426 'la':55,84,94,98,112,131,168,197,212,249,252,256,259,288,301,305,317,321,324,327,346,353,388,398,421,447,459,467,476,493,496,507,550,554,557,571,573,576,582,607,610,630,640,642,670 'lafuent':46 'largo':70 'las':66,100,138,314,350,375,380,432,543,560,579,621,664 'le':115 'legal':504 'legislación':289 'les':384 'liberars':107 'libertad':85 'libr':163 'llamada':37 'lo':69 'logran':436 'los':194,369,407,416,437,483,486,524,540,562,565,627 'marta':45 'medio':566 'mejor':438 'mejoramiento':662 'mejorar':446 'mero':179 'ministerio':2,6,11,451,646 'ministerio-de-educacion':1 'misión':477,643 'mismo':541 'motiva':441 'mundo':357 'mérito':522 'nacion':351,471 'necesario':505 'necesidad':376,622 'nuevo':634 'o':181 'oprim':113 'orden':185 'organización':508 'para':102,207,364,466,506,581,590 'paradigma':127 'paraguay':44 'participación':318,551 'participativo':49 'partícip':419 'paí':336,394,624 'pedagogía':77 'pedagógico':589 'permanent':492,510 'permiten':385 'persona':67,95,139,381 'plan':470 'plane':535 'plena':205 'población':671 'política':342 'por':272,287 'potenci':123 'proceso':267,282,484 'productiva':392 'profesion':270 'profesional':273,525 'promov':500 'propia':170 'proporcionar':92 'propugna':130 'prospectiva':596 'práctica':577 'práctico':228 'práctico-reflexivo':227 'pública':461,481 'público':59,529 'que':53,78,90,111,129,155,191,230,240,298,358,372,383,395,429,435 'realidad':169,213 'realización':119 'receptor':180 'reconoc':79,430 'recurso':294,588 'reflejo':183 'reflexivo':229 'reflexión':574 'regido':286 'región':354 'relacion':239 'relación':132 'rendir':479 'respeto':310 'responden':373 'respons':334,404,457 'resultado':285,439,487 'seleccionar':516 'ser':87,158 'sere':200 'servidor':528,614 'significativo':371 'simpl':182 'sistema':412,463,499,515,531,547,585,600 'sobr':575 'social':143,175,187,203,303,390,569,636 'socialment':333 'sociedad':250,425,558 'solidarios/as':414 'son':217 'su':72,118,122,141,173,602 'suficient':293 'sujeto':162,195,220 'supuesto':82 'sus':246,281,284,613 'sustentado':124 'tecnológico':297 'tic':580 'tien':475 'tipo':150 'toda':65,367,669 'todo':121,265,365 'toma':260 'torno':638 'transformadora':134 'transparencia':279 'trasformador':166 'trasformar':211 'un':81,126,161,178,633 'una':76,233,341,360,424,653 'universidad':561 'v':28 'valoración':312 'valorado':218 'vida':73,389,667 'visión':595 'www.mec.gov.py':5,16,18,673 'www.mec.gov.py/cms/entradas/293743-difusion-de-datos-de-funcionarios-del-mec':672 'www.mec.gov.py/planificacion_educativa/revistas/2010/py_edu_cifras2010_versionfinal260912.pdf':17 'y':9,14,26,60,89,96,105,108,114,135,140,144,165,171,210,215,248,258,275,283,290,296,311,323,344,355,366,382,391,402,410,418,427,440,445,454,465,485,488,501,511,517,527,533,564,578,586,597,601,609,625,649 'ética':136,608 '–':33,35",
+                "_id": 10,
+                "addiitonalType": "<a href=\"http://www.mec.gov.py\">http://www.mec.gov.py</a>",
+                "address": "<p>\n\t15 de Agosto e/ General Díaz y E. V. Haedo</p>",
+                "authority": "<span class=\"st\">Marta Lafuente</span>",
+                "description": "<a href=\"http://www.mec.gov.py/planificacion_educativa/Revistas/2010/py_edu_cifras2010_VersionFinal260912.pdf\" style=\"line-height: 1.4;\" target=\"_blank\">http://www.mec.gov.py/planificacion_educativa/Revistas/2010/py_edu_cifras2010_VersionFinal260912.pdf</a>",
+                "email": "<a href=\"mailto:direcciongeneraldecomunicacion@mec.gov.py\" target=\"_blank\">direcciongeneraldecomunicacion@mec.gov.py</a>",
+                "id_": "27198",
+                "image": "<img alt=\"\" src=\"http://www.mec.gov.py/cms/images/encabezado_v2_2013.png?1377129805\" style=\"width: 530px; height: 52px;\" />",
+                "location": "Asunción - Paraguay",
+                "logo": "<img alt=\"\" src=\"http://www.mec.gov.py/cms/images/encabezado_v2_2013.png?1377129805\" style=\"width: 530px; height: 52px;\" />",
+                "mission": "<p style=\"text-align: justify;\">\n\t<span style=\"line-height: 1.4;\">El Ministerio de Educación y Cultura, como responsable de la&nbsp; administración pública del sistema educativo y para la ejecución&nbsp; del Plan Nacional de Educación 2024, tiene la misión de:</span></p>\n<p style=\"text-align: justify;\">\n\t* Rendir cuentas públicas de los procesos y los resultados, y evaluar en forma permanente la calidad de la gestión del sistema.</p>\n<p style=\"text-align: justify;\">\n\t* Promover y generar instrumentos legales necesarios para la organización, actualización permanente y gestión eficiente del sistema.</p>\n<p style=\"text-align: justify;\">\n\t* Seleccionar y evaluar en base a méritos a los profesionales, educadores y servidores públicos del sistema; elaborar y desarrollar planes de formación continua de los mismos.</p>\n<p style=\"text-align: justify;\">\n\t* Gestionar las distintas instancias del sistema educativo con la participación activa de la comunidad educativa la sociedad civil, las universidades, los cooperantes y los&nbsp; medios de comunicación social.</p>\n<p style=\"text-align: justify;\">\n\t* Incorporar la investigación, la reflexión sobre la práctica y las TIC para la gestión del sistema, y como recursos pedagógicos para el aprendizaje.</p>\n<p style=\"text-align: justify;\">\n\t* Dinamizar, con visión prospectiva y emprendedora, el sistema y su cultura institucional, basado en la ética y la competencia de sus servidores, generando experiencias e innovaciones conformes a las necesidades del país y a los desafíos de la humanidad.</p>\n<p style=\"text-align: justify;\">\n\t* Impulsar un nuevo contrato social en torno a la educación.</p>\n<p style=\"text-align: justify;\">\n\tLa misión fundamental del Ministerio de Educación y Cultura es garantizar una educación de calidad a fin de contribuir al mejoramiento de las condiciones de vida de toda la población</p>",
+                "name": "Ministerio de Educación y Cultura",
+                "publicServantList": "<a href=\"http://www.mec.gov.py/cms/entradas/293743-difusion-de-datos-de-funcionarios-del-mec\" target=\"_blank\">http://www.mec.gov.py/cms/entradas/293743-difusion-de-datos-de-funcionarios-del-mec</a>",
+                "structureId": "13527",
+                "telephone": "(021) 450014/15 – 451025 – 452895 &nbsp;<br />\n<p>\n\tLlamada Gratuita 595 0800 11 4975&nbsp;</p>",
+                "url": "<p>\n\t<a href=\"http://www.mec.gov.py\" target=\"_blank\">http://www.mec.gov.py</a></p>\n<p>\n\t<a href=\"https://www.facebook.com/MECDigital\" target=\"_blank\"><img alt=\"\" src=\"/documents/10179/12299/ico_facebook.png/ffd16669-8d48-410e-9314-b9c2e0a42a5f?t=1386936341000\" style=\"width: 30px; height: 30px;\" /></a></p>",
+                "urlTitle": "ministerio-de-educacion",
+                "version": "2",
+                "vision": "<p style=\"text-align: justify;\">\n\t<span style=\"line-height: 1.4;\">* Democrático, descentralizado, participativo, abierto e intercultural, que desarrolla la educación como bien público y derecho humano fundamental de todas las personas a lo largo de su vida.</span></p>\n<p style=\"text-align: justify;\">\n\t* Fundado en una pedagogía que reconoce como un supuesto antropológico la libertad del ser humano y que busca&nbsp; proporcionar a la persona y a la comunidad las condiciones para autodeterminarse, individual y colectivamente,&nbsp; liberarse y cambiar aquello que la oprime y le impide alcanzar su realización en todo su potencial.</p>\n<p style=\"text-align: justify;\">\n\t* Sustentado en un paradigma educativo que propugna la relación armónica, transformadora y ética entre las&nbsp; personas y su contexto social y ambiental, e independiente de cualquier tipo de factor de dominación.</p>\n<p style=\"text-align: justify;\">\n\t* Que concibe al ser humano como un sujeto libre, activo y trasformador de la realidad propia y de su entorno social,&nbsp; no como un mero receptor o simple reflejo del orden económico, social e histórico establecido.</p>\n<p style=\"text-align: justify;\">\n\t* Que considera a los sujetos de la educación como seres histórico-sociales, con plena capacidad para conocer,&nbsp; crear y trasformar la realidad. Estudiantes y docentes son valorados como sujetos cognoscentes, capaces de aprender,&nbsp; activos, críticos, práctico-reflexivos, que aprenden en una actividad educativa esencialmente dialógica-relacional,&nbsp; que construyen colectivamente el conocimiento con sus compañeros y la sociedad, integrando la dimensión afectiva&nbsp; de la educación y la toma de decisiones consensuadas en todo el proceso de formación profesional.</p>\n<p style=\"text-align: justify;\">\n\t* Gestionado por profesionales formados y actores comprometidos, con transparencia en sus procesos y sus&nbsp; resultados, regido por la legislación y dotado de suficientes recursos financieros y tecnológicos</p>\n<p style=\"text-align: justify;\">\n\t* Que contribuye a la cohesión social, a la igualdad de género, al respeto y valoración de las etnias, a la participación activa de la familia y la comunidad, a la generación de conocimientos, al desarrollo socialmente responsable del país en el contexto de una política intersectorial, y a la integración activa con las naciones de la región y del mundo.</p>\n<p style=\"text-align: justify;\">\n\t* Que brinde una educación de calidad para todos y todas,&nbsp; favoreciendo los aprendizajes significativos que responden&nbsp; a las necesidades de formación de las personas y que les&nbsp; permiten insertarse en la vida social y productiva del país.</p>\n<p style=\"text-align: justify;\">\n\t* Que contribuye a la formación de ciudadanos y ciudadanas&nbsp; responsables, defensores/as de los derechos humanos y del&nbsp; sistema democrático; solidarios/as con los demás y partícipes&nbsp; en la construcción de una sociedad justa y fraterna.</p>\n<p style=\"text-align: justify;\">\n\t* Que reconoce a las instituciones educativas que logran los mejores resultados y motiva, continuamente, a innovar y mejorar la calidad educativa.&nbsp;</p>"
+            }
+        ],
+        "sql": "SELECT * FROM \"f22e5c36-3f80-40e2-8082-136b7e6cbc7e\" ;"
+    },
+    "success": true
+}

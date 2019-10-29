@@ -1,0 +1,369 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Fecha",
+                "type": "text"
+            },
+            {
+                "id": "29/04/2012",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "29/04/2012": "Elección Municipal",
+                "Fecha": "Tipo Elección:",
+                "_full_text": "'elección':2,3 'municip':4 'tipo':1",
+                "_id": 1
+            },
+            {
+                "29/04/2012": "1",
+                "Fecha": "Departamento",
+                "_full_text": "'1':2 'departamento':1",
+                "_id": 2
+            },
+            {
+                "29/04/2012": "4",
+                "Fecha": "Distrito",
+                "_full_text": "'4':2 'distrito':1",
+                "_id": 3
+            },
+            {
+                "29/04/2012": "2954",
+                "Fecha": "Habilitados",
+                "_full_text": "'2954':2 'habilitado':1",
+                "_id": 4
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 5
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 6
+            },
+            {
+                "29/04/2012": "Intendente",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'intendent':2",
+                "_id": 7
+            },
+            {
+                "29/04/2012": "PARTIDO O MOVIMIENTO POLITICO ",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'movimiento':4 'o':3 'partido':2 'politico':5",
+                "_id": 8
+            },
+            {
+                "29/04/2012": "Partido Colorado",
+                "Fecha": "1",
+                "_full_text": "'1':1 'colorado':3 'partido':2",
+                "_id": 9
+            },
+            {
+                "29/04/2012": "Partido Liberal Radical Auténtico",
+                "Fecha": "2",
+                "_full_text": "'2':1 'auténtico':5 'liber':3 'partido':2 'radic':4",
+                "_id": 10
+            },
+            {
+                "29/04/2012": "Unión Nacional de Ciudadanos Éticos",
+                "Fecha": "7",
+                "_full_text": "'7':1 'ciudadano':5 'de':4 'nacion':3 'unión':2 'Ético':6",
+                "_id": 11
+            },
+            {
+                "29/04/2012": "Partido Popular Tekojoja",
+                "Fecha": "99",
+                "_full_text": "'99':1 'partido':2 'popular':3 'tekojoja':4",
+                "_id": 12
+            },
+            {
+                "29/04/2012": "Votos Nulos",
+                "Fecha": "",
+                "_full_text": "'nulo':2 'voto':1",
+                "_id": 13
+            },
+            {
+                "29/04/2012": "Votos en Blanco",
+                "Fecha": "",
+                "_full_text": "'blanco':3 'en':2 'voto':1",
+                "_id": 14
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 15
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 16
+            },
+            {
+                "29/04/2012": "Electo",
+                "Fecha": "LISTA",
+                "_full_text": "'electo':2 'lista':1",
+                "_id": 17
+            },
+            {
+                "29/04/2012": "Alfredo Mateo Zabala Alcaraz ",
+                "Fecha": "PLRA",
+                "_full_text": "'alcaraz ':5 'alfredo':2 'mateo':3 'plra':1 'zabala':4",
+                "_id": 18
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 19
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 20
+            },
+            {
+                "29/04/2012": "Junta Municipal",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'junta':2 'municip':3",
+                "_id": 21
+            },
+            {
+                "29/04/2012": "PARTIDO O MOVIMIENTO POLITICO ",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'movimiento':4 'o':3 'partido':2 'politico':5",
+                "_id": 22
+            },
+            {
+                "29/04/2012": "Partido Colorado",
+                "Fecha": "1",
+                "_full_text": "'1':1 'colorado':3 'partido':2",
+                "_id": 23
+            },
+            {
+                "29/04/2012": "Partido Liberal Radical Auténtico",
+                "Fecha": "2",
+                "_full_text": "'2':1 'auténtico':5 'liber':3 'partido':2 'radic':4",
+                "_id": 24
+            },
+            {
+                "29/04/2012": "Unión Nacional de Ciudadanos Éticos",
+                "Fecha": "7",
+                "_full_text": "'7':1 'ciudadano':5 'de':4 'nacion':3 'unión':2 'Ético':6",
+                "_id": 25
+            },
+            {
+                "29/04/2012": "Partido Popular Tekojoja",
+                "Fecha": "99",
+                "_full_text": "'99':1 'partido':2 'popular':3 'tekojoja':4",
+                "_id": 26
+            },
+            {
+                "29/04/2012": "Votos Nulos",
+                "Fecha": "",
+                "_full_text": "'nulo':2 'voto':1",
+                "_id": 27
+            },
+            {
+                "29/04/2012": "Votos en Blanco",
+                "Fecha": "",
+                "_full_text": "'blanco':3 'en':2 'voto':1",
+                "_id": 28
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 29
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 30
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Junta Municipal",
+                "_full_text": "'junta':1 'municip':2",
+                "_id": 31
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 32
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1",
+                "_id": 33
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "María Laude Morel Pereira",
+                "_full_text": "'laud':2 'maría':1 'morel':3 'pereira':4",
+                "_id": 34
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Mario Alarcón Centurión",
+                "_full_text": "'alarcón':2 'centurión':3 'mario':1",
+                "_id": 35
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Edgardo Ramírez Candia",
+                "_full_text": "'candia':3 'edgardo':1 'ramírez':2",
+                "_id": 36
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Salustiano Ozuna Gamarra",
+                "_full_text": "'gamarra':3 'ozuna':2 'salustiano':1",
+                "_id": 37
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "PLRA",
+                "_full_text": "'plra':1",
+                "_id": 38
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Emilio Diana",
+                "_full_text": "'diana':2 'emilio':1",
+                "_id": 39
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "José Salustiano Vadora Ocampo",
+                "_full_text": "'josé':1 'ocampo':4 'salustiano':2 'vadora':3",
+                "_id": 40
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Ignacio Ramón Trinidad",
+                "_full_text": "'ignacio':1 'ramón':2 'trinidad':3",
+                "_id": 41
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Justiniano Balbuena Cantero",
+                "_full_text": "'balbuena':2 'cantero':3 'justiniano':1",
+                "_id": 42
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Dora Bonzi de Mongelós",
+                "_full_text": "'bonzi':2 'de':3 'dora':1 'mongeló':4",
+                "_id": 43
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 44
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Junta Municipal",
+                "_full_text": "'junta':1 'municip':2",
+                "_id": 45
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 46
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1",
+                "_id": 47
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Francisco Gavier Sanches Ayala",
+                "_full_text": "'ayala':4 'francisco':1 'gavier':2 'sanch':3",
+                "_id": 48
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Alice Estela Alarcon Centurion",
+                "_full_text": "'alarcon':3 'alic':1 'centurion':4 'estela':2",
+                "_id": 49
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Oscar Diana Chavez",
+                "_full_text": "'chavez':3 'diana':2 'oscar':1",
+                "_id": 50
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Lino Alcides Yegros Torres",
+                "_full_text": "'alcid':2 'lino':1 'torr':4 'yegro':3",
+                "_id": 51
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "PLRA",
+                "_full_text": "'plra':1",
+                "_id": 52
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Rony Daniel Mińo Amarillo",
+                "_full_text": "'amarillo':4 'daniel':2 'mińo':3 'roni':1",
+                "_id": 53
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Daniel Florencio Vadora Sanchez",
+                "_full_text": "'daniel':1 'florencio':2 'sanchez':4 'vadora':3",
+                "_id": 54
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Vidal Balbuena Martinez",
+                "_full_text": "'balbuena':2 'martinez':3 'vidal':1",
+                "_id": 55
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Maria Angela Gomez de Balbuena",
+                "_full_text": "'angela':2 'balbuena':5 'de':4 'gomez':3 'maria':1",
+                "_id": 56
+            },
+            {
+                "29/04/2012": "",
+                "Fecha": "Mirta Concepcion Farińa Gomez",
+                "_full_text": "'concepcion':2 'farińa':3 'gomez':4 'mirta':1",
+                "_id": 57
+            }
+        ],
+        "sql": "SELECT * FROM \"0d1e1ef9-fa2c-4496-8c72-4305a46dbe10\" ;"
+    },
+    "success": true
+}

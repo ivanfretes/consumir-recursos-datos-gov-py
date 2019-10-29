@@ -1,0 +1,1119 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Nro.",
+                "type": "text"
+            },
+            {
+                "id": "Nombre y Apellido",
+                "type": "text"
+            },
+            {
+                "id": "lista",
+                "type": "text"
+            },
+            {
+                "id": "Siglas",
+                "type": "text"
+            },
+            {
+                "id": "Partido / Movimiento Político",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 1,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "ANTONIO GABRIEL ATTIS JIMENEZ",
+                "Nro.": "1",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':1,6 'anr':7 'antonio':2 'atti':4 'colorado':9 'gabriel':3 'jimenez':5 'partido':8",
+                "_id": 2,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "EMMANUEL FRIEDMANN SOSA",
+                "Nro.": "2",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':1,5 'autentico':10 'emmanuel':2 'friedmann':3 'liber':8 'partido':7 'plra':6 'radic':9 'sosa':4",
+                "_id": 3,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "TOMAS ENRIQUE BITTAR NAVARRO",
+                "Nro.": "3",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '3':1 'anr':7 'bittar':4 'colorado':9 'enriqu':3 'navarro':5 'partido':8 'toma':2",
+                "_id": 4,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "AMANDA ROSALIA NUŃEZ SANCHEZ",
+                "Nro.": "4",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '4':1 'amanda':2 'autentico':11 'liber':9 'nuŃez':4 'partido':8 'plra':7 'radic':10 'rosalia':3 'sanchez':5",
+                "_id": 5,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "CRESCENCIO HERMINIO CACERES SANTACRUZ",
+                "Nro.": "5",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '5':1 'anr':7 'cacer':4 'colorado':9 'crescencio':2 'herminio':3 'partido':8 'santacruz':5",
+                "_id": 6,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JOSE MANUEL TORRES MARTINEZ",
+                "Nro.": "6",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '6':1 'anr':7 'colorado':9 'jose':2 'manuel':3 'martinez':5 'partido':8 'torr':4",
+                "_id": 7,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ALBERTO IGNACIO AQUINO OCAMPO",
+                "Nro.": "7",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '7':1 'alberto':2 'aquino':4 'autentico':11 'ignacio':3 'liber':9 'ocampo':5 'partido':8 'plra':7 'radic':10",
+                "_id": 8,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "LUIS ALBERTO SARUBBI GAMARRA",
+                "Nro.": "8",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '8':1 'alberto':3 'anr':7 'colorado':9 'gamarra':5 'lui':2 'partido':8 'sarubbi':4",
+                "_id": 9,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "RICARDO NICOLAS CANESE KRIVOSHEIN",
+                "Nro.": "9",
+                "Partido / Movimiento Político": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'40':6 '9':1 'canes':4 'concertacion':8 'fg':7 'frent':10 'guasu':11 'krivoshein':5 'nacion':9 'nicola':3 'ricardo':2",
+                "_id": 10,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ANGEL GONZALEZ ERICO",
+                "Nro.": "10",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'10':1 '2':6 'angel':3 'autentico':11 'erico':5 'gonzalez':4 'liber':9 'miguel':2 'partido':8 'plra':7 'radic':10",
+                "_id": 11,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ALFONSO GONZALEZ NUŃEZ",
+                "Nro.": "11",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '11':1 'alfonso':2 'anr':6 'colorado':8 'gonzalez':3 'nuŃez':4 'partido':7",
+                "_id": 12,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ZACARIAS ERNESTO VERA CARDENAS",
+                "Nro.": "12",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '12':1 'anr':7 'cardena':5 'colorado':9 'ernesto':3 'partido':8 'vera':4 'zacaria':2",
+                "_id": 13,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MIRTHA ELIZABETH PALACIOS MELGAREJO",
+                "Nro.": "13",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'13':1 '2':6 'autentico':11 'elizabeth':3 'liber':9 'melgarejo':5 'mirtha':2 'palacio':4 'partido':8 'plra':7 'radic':10",
+                "_id": 14,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "CIRILA CONCEPCION CUBAS DE VILLAALTA",
+                "Nro.": "14",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '14':1 'anr':8 'cirila':2 'colorado':10 'concepcion':3 'cuba':4 'de':5 'partido':9 'villaalta':6",
+                "_id": 15,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JUAN ALBERTO ANTONIO DENIS PINTOS",
+                "Nro.": "15",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'15':1 '2':7 'alberto':3 'antonio':4 'autentico':12 'deni':5 'juan':2 'liber':10 'partido':9 'pinto':6 'plra':8 'radic':11",
+                "_id": 16,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "CALIXTO EDUARDO BERNAL AMARILLA",
+                "Nro.": "16",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '16':1 'amarilla':5 'anr':7 'bernal':4 'calixto':2 'colorado':9 'eduardo':3 'partido':8",
+                "_id": 17,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "RAMON ROBERTO DOMINGUEZ SANTACRUZ",
+                "Nro.": "17",
+                "Partido / Movimiento Político": "UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'17':1 '7':6 'ciudadano':11 'de':10 'dominguez':4 'etico':12 'nacion':9 'ramon':2 'roberto':3 'santacruz':5 'unac':7 'union':8",
+                "_id": 18,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL SOSA CABAŃAS",
+                "Nro.": "18",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '18':1 'anr':6 'cabaŃa':4 'colorado':8 'miguel':2 'partido':7 'sosa':3",
+                "_id": 19,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 20,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 21,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 22,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "Parlamentarios del Mercosur Suplentes",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "'del':2 'mercosur':3 'parlamentario':1 'suplent':4",
+                "_id": 23,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "Suplentes",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "'suplent':1",
+                "_id": 24,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 25,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Nro.": "Nro.",
+                "Partido / Movimiento Político": "Partido / Movimiento Político",
+                "Siglas": "Siglas",
+                "_full_text": "'apellido':4 'lista':5 'movimiento':8 'nombr':2 'nro':1 'partido':7 'político':9 'sigla':6 'y':3",
+                "_id": 26,
+                "lista": "lista"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 27,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "AMERICO RAMON PEREIRA RODI",
+                "Nro.": "1",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':1,6 'americo':2 'anr':7 'colorado':9 'partido':8 'pereira':4 'ramon':3 'rodi':5",
+                "_id": 28,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "DIANA MARIA VERA SANCHEZ",
+                "Nro.": "2",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':1,6 'autentico':11 'diana':2 'liber':9 'maria':3 'partido':8 'plra':7 'radic':10 'sanchez':5 'vera':4",
+                "_id": 29,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JUAN BERNARDO ZIETT CORREA",
+                "Nro.": "3",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '3':1 'anr':7 'bernardo':3 'colorado':9 'correa':5 'juan':2 'partido':8 'ziett':4",
+                "_id": 30,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "FRANCISCO AGUILAR RIOS",
+                "Nro.": "4",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '4':1 'aguilar':3 'autentico':10 'francisco':2 'liber':8 'partido':7 'plra':6 'radic':9 'rio':4",
+                "_id": 31,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JUAN PABLO ESTECHE ALFONSO",
+                "Nro.": "5",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '5':1 'alfonso':5 'anr':7 'colorado':9 'estech':4 'juan':2 'pablo':3 'partido':8",
+                "_id": 32,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "NELSON MENDOZA ROLON",
+                "Nro.": "6",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '6':1 'anr':6 'colorado':8 'mendoza':3 'nelson':2 'partido':7 'rolon':4",
+                "_id": 33,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "RUFINO BENITEZ CENTURION",
+                "Nro.": "7",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '7':1 'autentico':10 'benitez':3 'centurion':4 'liber':8 'partido':7 'plra':6 'radic':9 'rufino':2",
+                "_id": 34,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "EDGAR AMADO AMARILLA VERA",
+                "Nro.": "8",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '8':1 'amado':3 'amarilla':4 'anr':7 'colorado':9 'edgar':2 'partido':8 'vera':5",
+                "_id": 35,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "HUGO RUIZ DIAZ BALBUENA",
+                "Nro.": "9",
+                "Partido / Movimiento Político": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'40':6 '9':1 'balbuena':5 'concertacion':8 'diaz':4 'fg':7 'frent':10 'guasu':11 'hugo':2 'nacion':9 'ruiz':3",
+                "_id": 36,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "CRISTINA RAQUEL FLORENTIN CUETO",
+                "Nro.": "10",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'10':1 '2':6 'autentico':11 'cristina':2 'cueto':5 'florentin':4 'liber':9 'partido':8 'plra':7 'radic':10 'raquel':3",
+                "_id": 37,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "MERCEDES VIVIANA RASMUSSEN CORDAZZO",
+                "Nro.": "11",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '11':1 'anr':7 'colorado':9 'cordazzo':5 'merced':2 'partido':8 'rasmussen':4 'viviana':3",
+                "_id": 38,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JOSE RAMON BOGADO CARDOZO",
+                "Nro.": "12",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '12':1 'anr':7 'bogado':4 'cardozo':5 'colorado':9 'jose':2 'partido':8 'ramon':3",
+                "_id": 39,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "OSCAR MANUEL GARAY PEREIRA",
+                "Nro.": "13",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'13':1 '2':6 'autentico':11 'garay':4 'liber':9 'manuel':3 'oscar':2 'partido':8 'pereira':5 'plra':7 'radic':10",
+                "_id": 40,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "LUIS ADOLFO BELLO LOPEZ",
+                "Nro.": "14",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '14':1 'adolfo':3 'anr':7 'bello':4 'colorado':9 'lopez':5 'lui':2 'partido':8",
+                "_id": 41,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MARIA SUSANA DOMANICZKY DE AMIGO",
+                "Nro.": "15",
+                "Partido / Movimiento Político": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'15':1 '2':7 'amigo':6 'autentico':12 'de':5 'domaniczki':4 'liber':10 'maria':2 'partido':9 'plra':8 'radic':11 'susana':3",
+                "_id": 42,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "PEDRO MARTIN BENITEZ ALMIRON",
+                "Nro.": "16",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '16':1 'almiron':5 'anr':7 'benitez':4 'colorado':9 'martin':3 'partido':8 'pedro':2",
+                "_id": 43,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "AARON HERMINIO RUIZ DIAZ ROLON",
+                "Nro.": "17",
+                "Partido / Movimiento Político": "UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'17':1 '7':7 'aaron':2 'ciudadano':12 'de':11 'diaz':5 'etico':13 'herminio':3 'nacion':10 'rolon':6 'ruiz':4 'unac':8 'union':9",
+                "_id": 44,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "ARNALDO EDUARDO PENAYO",
+                "Nro.": "18",
+                "Partido / Movimiento Político": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '18':1 'anr':6 'arnaldo':2 'colorado':8 'eduardo':3 'partido':7 'penayo':4",
+                "_id": 45,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 46,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 47,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 48,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 49,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 50,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 51,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 52,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 53,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 54,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 55,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 56,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 57,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 58,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 59,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 60,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 61,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 62,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 63,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 64,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 65,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 66,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 67,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 68,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 69,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 70,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 71,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 72,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 73,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 74,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 75,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 76,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 77,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 78,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 79,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 80,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 81,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 82,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 83,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 84,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 85,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 86,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 87,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 88,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 89,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 90,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 91,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 92,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 93,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 94,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 95,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 96,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 97,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 98,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 99,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 100,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 101,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 102,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 103,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 104,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 105,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 106,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 107,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 108,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 109,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 110,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 111,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 112,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 113,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 114,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 115,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 116,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 117,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 118,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 119,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nro.": "",
+                "Partido / Movimiento Político": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 120,
+                "lista": ""
+            }
+        ],
+        "sql": "SELECT * FROM \"6549fe68-30a3-4070-917e-d2731c0c1e71\" ;"
+    },
+    "success": true
+}

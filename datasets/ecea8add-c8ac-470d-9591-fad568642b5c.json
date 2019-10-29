@@ -1,0 +1,405 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Fecha",
+                "type": "text"
+            },
+            {
+                "id": "29/01/2012",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "29/01/2012": "Elecciуn Municipal",
+                "Fecha": "Tipo Elecciуn:",
+                "_full_text": "'elecciуn':2,3 'municip':4 'tipo':1",
+                "_id": 1
+            },
+            {
+                "29/01/2012": "10",
+                "Fecha": "Departamento",
+                "_full_text": "'10':2 'departamento':1",
+                "_id": 2
+            },
+            {
+                "29/01/2012": "34",
+                "Fecha": "Distrito",
+                "_full_text": "'34':2 'distrito':1",
+                "_id": 3
+            },
+            {
+                "29/01/2012": "3325",
+                "Fecha": "Habilitados",
+                "_full_text": "'3325':2 'habilitado':1",
+                "_id": 4
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 5
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 6
+            },
+            {
+                "29/01/2012": "Intendente",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'intendent':2",
+                "_id": 7
+            },
+            {
+                "29/01/2012": "PARTIDO O MOVIMIENTO POLITICO ",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'movimiento':4 'o':3 'partido':2 'politico':5",
+                "_id": 8
+            },
+            {
+                "29/01/2012": "Partido Colorado",
+                "Fecha": "1",
+                "_full_text": "'1':1 'colorado':3 'partido':2",
+                "_id": 9
+            },
+            {
+                "29/01/2012": "Partido Liberal Radical Autйntico",
+                "Fecha": "2",
+                "_full_text": "'2':1 'autйntico':5 'liber':3 'partido':2 'radic':4",
+                "_id": 10
+            },
+            {
+                "29/01/2012": "Uniуn Nacional de Ciudadanos Йticos",
+                "Fecha": "7",
+                "_full_text": "'7':1 'ciudadano':5 'de':4 'nacion':3 'uniуn':2 'Йtico':6",
+                "_id": 11
+            },
+            {
+                "29/01/2012": "Patria Querida",
+                "Fecha": "8",
+                "_full_text": "'8':1 'patria':2 'querida':3",
+                "_id": 12
+            },
+            {
+                "29/01/2012": "Votos Nulos",
+                "Fecha": "",
+                "_full_text": "'nulo':2 'voto':1",
+                "_id": 13
+            },
+            {
+                "29/01/2012": "Votos en Blanco",
+                "Fecha": "",
+                "_full_text": "'blanco':3 'en':2 'voto':1",
+                "_id": 14
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 15
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 16
+            },
+            {
+                "29/01/2012": "Electo",
+                "Fecha": "LISTA",
+                "_full_text": "'electo':2 'lista':1",
+                "_id": 17
+            },
+            {
+                "29/01/2012": "Anibal Fidel Romero",
+                "Fecha": "PLRA",
+                "_full_text": "'anib':2 'fidel':3 'plra':1 'romero':4",
+                "_id": 18
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 19
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Resultados",
+                "_full_text": "'resultado':1",
+                "_id": 20
+            },
+            {
+                "29/01/2012": "Junta Municipal",
+                "Fecha": "Candidatura",
+                "_full_text": "'candidatura':1 'junta':2 'municip':3",
+                "_id": 21
+            },
+            {
+                "29/01/2012": "PARTIDO O MOVIMIENTO POLITICO ",
+                "Fecha": "LISTA",
+                "_full_text": "'lista':1 'movimiento':4 'o':3 'partido':2 'politico':5",
+                "_id": 22
+            },
+            {
+                "29/01/2012": "Partido Colorado",
+                "Fecha": "1",
+                "_full_text": "'1':1 'colorado':3 'partido':2",
+                "_id": 23
+            },
+            {
+                "29/01/2012": "Partido Liberal Radical Autйntico",
+                "Fecha": "2",
+                "_full_text": "'2':1 'autйntico':5 'liber':3 'partido':2 'radic':4",
+                "_id": 24
+            },
+            {
+                "29/01/2012": "Uniуn Nacional de Ciudadanos Йticos",
+                "Fecha": "7",
+                "_full_text": "'7':1 'ciudadano':5 'de':4 'nacion':3 'uniуn':2 'Йtico':6",
+                "_id": 25
+            },
+            {
+                "29/01/2012": "Patria Querida",
+                "Fecha": "8",
+                "_full_text": "'8':1 'patria':2 'querida':3",
+                "_id": 26
+            },
+            {
+                "29/01/2012": "Movimiento 20 de Abril",
+                "Fecha": "20",
+                "_full_text": "'20':1,3 'abril':5 'de':4 'movimiento':2",
+                "_id": 27
+            },
+            {
+                "29/01/2012": "Partido Popular Tekojoja",
+                "Fecha": "99",
+                "_full_text": "'99':1 'partido':2 'popular':3 'tekojoja':4",
+                "_id": 28
+            },
+            {
+                "29/01/2012": "Votos Nulos",
+                "Fecha": "",
+                "_full_text": "'nulo':2 'voto':1",
+                "_id": 29
+            },
+            {
+                "29/01/2012": "Votos en Blanco",
+                "Fecha": "",
+                "_full_text": "'blanco':3 'en':2 'voto':1",
+                "_id": 30
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 31
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 32
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Junta Municipal",
+                "_full_text": "'junta':1 'municip':2",
+                "_id": 33
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 34
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1",
+                "_id": 35
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Ligia Fabiola Jara Silva",
+                "_full_text": "'fabiola':2 'jara':3 'ligia':1 'silva':4",
+                "_id": 36
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Aricio Benнtez Lуpez",
+                "_full_text": "'aricio':1 'benнtez':2 'lуpez':3",
+                "_id": 37
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Gualberto Bбez Bбez",
+                "_full_text": "'bбez':2,3 'gualberto':1",
+                "_id": 38
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Cosme Damiбn Oruй Melgarejo",
+                "_full_text": "'cosm':1 'damiбn':2 'melgarejo':4 'oruй':3",
+                "_id": 39
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "PLRA",
+                "_full_text": "'plra':1",
+                "_id": 40
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Aldo Agustнn Casco Cardozo",
+                "_full_text": "'agustнn':2 'aldo':1 'cardozo':4 'casco':3",
+                "_id": 41
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Hйctor Bбez Mareco",
+                "_full_text": "'bбez':2 'hйctor':1 'mareco':3",
+                "_id": 42
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Martнn Persingola Nъсez",
+                "_full_text": "'martнn':1 'nъсez':3 'persingola':2",
+                "_id": 43
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "UNACE",
+                "_full_text": "'unac':1",
+                "_id": 44
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Gerуnimo Orlando Villalba Lуpez",
+                "_full_text": "'gerуnimo':1 'lуpez':4 'orlando':2 'villalba':3",
+                "_id": 45
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Mov. 20 de Abril",
+                "_full_text": "'20':2 'abril':4 'de':3 'mov':1",
+                "_id": 46
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Adolfo Lуpez Patiсo",
+                "_full_text": "'adolfo':1 'lуpez':2 'patiсo':3",
+                "_id": 47
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 48
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Junta Municipal",
+                "_full_text": "'junta':1 'municip':2",
+                "_id": 49
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "",
+                "_full_text": "",
+                "_id": 50
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "ANR",
+                "_full_text": "'anr':1",
+                "_id": 51
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Edgar Antonio Avalos Romero",
+                "_full_text": "'antonio':2 'avalo':3 'edgar':1 'romero':4",
+                "_id": 52
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Blanca Rosa Meza Britez",
+                "_full_text": "'blanca':1 'britez':4 'meza':3 'rosa':2",
+                "_id": 53
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Ignacio Alfredo Duarte Careaga",
+                "_full_text": "'alfredo':2 'careaga':4 'duart':3 'ignacio':1",
+                "_id": 54
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Charles Gimenez Vera",
+                "_full_text": "'charl':1 'gimenez':2 'vera':3",
+                "_id": 55
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "PLRA",
+                "_full_text": "'plra':1",
+                "_id": 56
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Eladio Gamarra Salina",
+                "_full_text": "'eladio':1 'gamarra':2 'salina':3",
+                "_id": 57
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Natividad Sacheralaridi",
+                "_full_text": "'natividad':1 'sacheralaridi':2",
+                "_id": 58
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Anibal Coronel Barrios",
+                "_full_text": "'anib':1 'barrio':3 'coronel':2",
+                "_id": 59
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "UNACE",
+                "_full_text": "'unac':1",
+                "_id": 60
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Alfredo Patiсo Cardozo",
+                "_full_text": "'alfredo':1 'cardozo':3 'patiсo':2",
+                "_id": 61
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Mov. 20 de Abril",
+                "_full_text": "'20':2 'abril':4 'de':3 'mov':1",
+                "_id": 62
+            },
+            {
+                "29/01/2012": "",
+                "Fecha": "Natividad Caceres Reyes",
+                "_full_text": "'cacer':2 'natividad':1 'rey':3",
+                "_id": 63
+            }
+        ],
+        "sql": "SELECT * FROM \"ecea8add-c8ac-470d-9591-fad568642b5c\" ;"
+    },
+    "success": true
+}

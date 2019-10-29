@@ -1,0 +1,591 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "ID   ",
+                "type": "numeric"
+            },
+            {
+                "id": "Nombre",
+                "type": "text"
+            },
+            {
+                "id": "Departamento",
+                "type": "text"
+            },
+            {
+                "id": "Distrito",
+                "type": "text"
+            },
+            {
+                "id": "Dirección",
+                "type": "text"
+            },
+            {
+                "id": "Zona Geográfica",
+                "type": "text"
+            },
+            {
+                "id": "Fuente de la Información",
+                "type": "text"
+            },
+            {
+                "id": "N° de registro",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "Departamento": "Capital",
+                "Dirección": "Mariscal Estigarribia esquina Iturbe",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "Varias (SNC; WEB del ANA)",
+                "ID   ": "1",
+                "Nombre": "Archivo Nacional de Asunción",
+                "N° de registro": "1",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'ana':17 'archivo':1 'asunción':4,6 'capit':5 'de':3 'del':16 'esquina':9 'estigarribia':8 'iturb':10 'marisc':7 'nacion':2 'snc':14 'urbana':12 'varia':13 'web':15 'zona':11",
+                "_id": 1
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Avenida Mariscal López y Vicepresidente Sánchez (Subsuelo)",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "2",
+                "Nombre": "Archivo del Instituto de Historia y Museo Militar del Ministerio de Defensa Nacional",
+                "N° de registro": "2",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':27 'archivo':1 'asunción':15 'avenida':16 'capit':14 'de':4,11 'defensa':12 'del':2,9 'historia':5 'instituto':3 'lópez':18 'marisc':17 'militar':8 'ministerio':10 'museo':7 'nacion':13 'nuevomundo.revues.org':26 'nuevomundo.revues.org/2187#tocto2n1':25 'subsuelo':22 'sánchez':21 'urbana':24 'vicepresident':20 'y':6,19 'zona':23",
+                "_id": 2
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Alonso y Testanova - Planta Baja (Palacio de Justicia)",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://www.pj.gov.py/boletin/noticia/6275-documentos-historicos-se-encuentran-a-disposicion-de-la-ciudadania-en-el-museo-de-justicia",
+                "ID   ": "3",
+                "Nombre": "Museo de la Justicia; Centro de Documentación y Archivo para la Defensa de los Derechos Humanos",
+                "N° de registro": "3",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/boletin/noticia/6275-documentos-historicos-se-encuentran-a-disposicion-de-la-ciudadania-en-el-museo-de-justicia':31 'alonso':19 'archivo':9 'asunción':18 'baja':23 'capit':17 'centro':5 'de':2,6,13,25 'defensa':12 'derecho':15 'documentación':7 'humano':16 'justicia':4,26 'la':3,11 'los':14 'museo':1 'palacio':24 'para':10 'planta':22 'testanova':21 'urbana':28 'www.pj.gov.py':30 'www.pj.gov.py/boletin/noticia/6275-documentos-historicos-se-encuentran-a-disposicion-de-la-ciudadania-en-el-museo-de-justicia':29 'y':8,20 'zona':27",
+                "_id": 3
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Alonso y Testanova - Subsuelo 1 (Palacio de Justicia)",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://www.pj.gov.py/contenido/144-archivo-general-de-los-tribunales/144",
+                "ID   ": "4",
+                "Nombre": "Archivo Central de Tribunales",
+                "N° de registro": "4",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/contenido/144-archivo-general-de-los-tribunales/144':19 '1':11 'alonso':7 'archivo':1 'asunción':6 'capit':5 'central':2 'de':3,13 'justicia':14 'palacio':12 'subsuelo':10 'testanova':9 'tribunal':4 'urbana':16 'www.pj.gov.py':18 'www.pj.gov.py/contenido/144-archivo-general-de-los-tribunales/144':17 'y':8 'zona':15",
+                "_id": 4
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "El Paraguayo Independiente; 14 de Mayo; Avenida de la República y 15 de Agosto",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "5",
+                "Nombre": "Archivo y Biblioteca de la Cámara de Senadores",
+                "N° de registro": "5",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':29 '14':14 '15':22 'agosto':24 'archivo':1 'asunción':10 'avenida':17 'biblioteca':3 'capit':9 'cámara':6 'de':4,7,15,18,23 'el':11 'independient':13 'la':5,19 'mayo':16 'nuevomundo.revues.org':28 'nuevomundo.revues.org/2187#tocto2n1':27 'paraguayo':12 'república':20 'senador':8 'urbana':26 'y':2,21 'zona':25",
+                "_id": 5
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Presidente Franco y O'leary (Edificio de la Vicepresudencia; 3° Pios)",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "6",
+                "Nombre": "Dirección de Documentación y Biblioteca del Ministerio de Relaciones Exteriores",
+                "N° de registro": "6",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':28 '3°':22 'asunción':12 'biblioteca':5 'capit':11 'de':2,8,19 'del':6 'dirección':1 'documentación':3 'edificio':18 'exterior':10 'franco':14 'la':20 'leari':17 'ministerio':7 'nuevomundo.revues.org':27 'nuevomundo.revues.org/2187#tocto2n1':26 'o':16 'pio':23 'president':13 'relacion':9 'urbana':25 'vicepresudencia':21 'y':4,15 'zona':24",
+                "_id": 6
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Presidente Franco y O'leary (Edificio de la Vicepresudencia; 3° Pios)",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "7",
+                "Nombre": "Archivo de la Dirección de Tratados del Ministerio de Relaciones Exteriores",
+                "N° de registro": "7",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':29 '3°':23 'archivo':1 'asunción':13 'capit':12 'de':2,5,9,20 'del':7 'dirección':4 'edificio':19 'exterior':11 'franco':15 'la':3,21 'leari':18 'ministerio':8 'nuevomundo.revues.org':28 'nuevomundo.revues.org/2187#tocto2n1':27 'o':17 'pio':24 'president':14 'relacion':10 'tratado':6 'urbana':26 'vicepresudencia':22 'y':16 'zona':25",
+                "_id": 7
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Azara 1079 c/ Brasil",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "8",
+                "Nombre": "Centro de Documentación y Archivo de la Policía Nacional",
+                "N° de registro": "8",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':20 '1079':13 'archivo':5 'asunción':11 'azara':12 'brasil':15 'c':14 'capit':10 'centro':1 'de':2,6 'documentación':3 'la':7 'nacion':9 'nuevomundo.revues.org':19 'nuevomundo.revues.org/2187#tocto2n1':18 'policía':8 'urbana':17 'y':4 'zona':16",
+                "_id": 8
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Concepción entre Lapacho y Cedro",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "9",
+                "Nombre": "Archivo de la Dirección del Registro Civil",
+                "N° de registro": "9",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':19 'archivo':1 'asunción':9 'capit':8 'cedro':14 'civil':7 'concepción':10 'de':2 'del':5 'dirección':4 'entr':11 'la':3 'lapacho':12 'nuevomundo.revues.org':18 'nuevomundo.revues.org/2187#tocto2n1':17 'registro':6 'urbana':16 'y':13 'zona':15",
+                "_id": 9
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Presidente Franco y Colón (Edificio Marco Polo)",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "10",
+                "Nombre": "Centro de Documentación y Archivo del Ministerio de Educación",
+                "N° de registro": "10",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':23 'archivo':5 'asunción':11 'capit':10 'centro':1 'colón':15 'de':2,8 'del':6 'documentación':3 'edificio':16 'educación':9 'franco':13 'marco':17 'ministerio':7 'nuevomundo.revues.org':22 'nuevomundo.revues.org/2187#tocto2n1':21 'polo':18 'president':12 'urbana':20 'y':4,14 'zona':19",
+                "_id": 10
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Tacuary 276 esquina Mariscal Estigarribia",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "11",
+                "Nombre": "Archivo del Instituto Nacional del Desarrollo Rural y de la Tierra",
+                "N° de registro": "11",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':23 '276':15 'archivo':1 'asunción':13 'capit':12 'de':9 'del':2,5 'desarrollo':6 'esquina':16 'estigarribia':18 'instituto':3 'la':10 'marisc':17 'nacion':4 'nuevomundo.revues.org':22 'nuevomundo.revues.org/2187#tocto2n1':21 'rural':7 'tacuari':14 'tierra':11 'urbana':20 'y':8 'zona':19",
+                "_id": 11
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Alonso y Testanova 9no. Piso Torre Sur",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "12",
+                "Nombre": "Centro de Documentación y Archivo y Biblioteca Jurídica del Poder Judicial",
+                "N° de registro": "12",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':25 '9no':17 'alonso':14 'archivo':5 'asunción':13 'biblioteca':7 'capit':12 'centro':1 'de':2 'del':9 'documentación':3 'judici':11 'jurídica':8 'nuevomundo.revues.org':24 'nuevomundo.revues.org/2187#tocto2n1':23 'piso':18 'poder':10 'sur':20 'testanova':16 'torr':19 'urbana':22 'y':4,6,15 'zona':21",
+                "_id": 12
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "Alberdi 782",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "13",
+                "Nombre": "Archivo del Arzobispado de la Santísima Asunción",
+                "N° de registro": "13",
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'/2187#tocto2n1':16 '782':11 'alberdi':10 'archivo':1 'arzobispado':3 'asunción':7,9 'capit':8 'de':4 'del':2 'la':5 'nuevomundo.revues.org':15 'nuevomundo.revues.org/2187#tocto2n1':14 'santísima':6 'urbana':13 'zona':12",
+                "_id": 13
+            },
+            {
+                "Departamento": "Capital",
+                "Dirección": "",
+                "Distrito": "Asunción",
+                "Fuente de la Información": "http://nuevomundo.revues.org/2187#tocto2n1",
+                "ID   ": "14",
+                "Nombre": "Dirección de Publicaciones Oficiales",
+                "N° de registro": null,
+                "Zona Geográfica": "",
+                "_full_text": "'/2187#tocto2n1':9 'asunción':6 'capit':5 'de':2 'dirección':1 'nuevomundo.revues.org':8 'nuevomundo.revues.org/2187#tocto2n1':7 'oficial':4 'publicacion':3",
+                "_id": 14
+            },
+            {
+                "Departamento": "Concepción",
+                "Dirección": "Mariscal López entre  Cerro Corá y General  Eugenio A. Garay",
+                "Distrito": "Concepción",
+                "Fuente de la Información": "Municipalidad de Concepción",
+                "ID   ": "15",
+                "Nombre": "Archivo Histórico de Concepción",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'cerro':10 'concepción':4,5,6,21 'corá':11 'de':3,20 'entr':9 'eugenio':14 'garay':16 'general':13 'histórico':2 'lópez':8 'marisc':7 'municipalidad':19 'urbana':18 'y':12 'zona':17",
+                "_id": 15
+            },
+            {
+                "Departamento": "Concepción",
+                "Dirección": "Mariscal López y Presidente Franco",
+                "Distrito": "Horqueta",
+                "Fuente de la Información": "Municipalidad de Horqueta",
+                "ID   ": "16",
+                "Nombre": "Archivo Histórico de la ciudad de Horqueta",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'ciudad':5 'concepción':8 'de':3,6,18 'franco':14 'histórico':2 'horqueta':7,9,19 'la':4 'lópez':11 'marisc':10 'municipalidad':17 'president':13 'urbana':16 'y':12 'zona':15",
+                "_id": 16
+            },
+            {
+                "Departamento": "Concepción",
+                "Dirección": "Calle Eusebio Ayala; Barrio San Francisco",
+                "Distrito": "Loreto",
+                "Fuente de la Información": "Municipalidad de Loreto",
+                "ID   ": "17",
+                "Nombre": "Archivo Municipal de Loreto",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'ayala':9 'barrio':10 'call':7 'concepción':5 'de':3,16 'eusebio':8 'francisco':12 'loreto':4,6,17 'municip':2 'municipalidad':15 'san':11 'urbana':14 'zona':13",
+                "_id": 17
+            },
+            {
+                "Departamento": "Concepción",
+                "Dirección": "Planta Fabril de la Industria Nacional del Cemento",
+                "Distrito": "Vallemí",
+                "Fuente de la Información": "Junta Municipal de Vallemí",
+                "ID   ": "18",
+                "Nombre": "Archivo Histórico de la ciudad de Vallemí",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'cemento':17 'ciudad':5 'concepción':8 'de':3,6,12,22 'del':16 'fabril':11 'histórico':2 'industria':14 'junta':20 'la':4,13 'municip':21 'nacion':15 'planta':10 'urbana':19 'vallemí':7,9,23 'zona':18",
+                "_id": 18
+            },
+            {
+                "Departamento": "San Pedro",
+                "Dirección": "Mariscal Estigarribia Nş 371 esquina General Díaz ",
+                "Distrito": "Lima",
+                "Fuente de la Información": "Municipalidad de Lima",
+                "ID   ": "19",
+                "Nombre": "Archivo Histórico de la ciudad de Lima",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'371':14 'archivo':1 'ciudad':5 'de':3,6,21 'díaz':17 'esquina':15 'estigarribia':12 'general':16 'histórico':2 'la':4 'lima':7,10,22 'marisc':11 'municipalidad':20 'nş':13 'pedro':9 'san':8 'urbana':19 'zona':18",
+                "_id": 19
+            },
+            {
+                "Departamento": "San Pedro",
+                "Dirección": "Avenida Braulio Zelada",
+                "Distrito": "San Pedro de Ycuamandiyú",
+                "Fuente de la Información": "Municipalidad de San Pedro de Ycuamandiyú",
+                "ID   ": "20",
+                "Nombre": "Archivo Histórico ",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'avenida':9 'braulio':10 'de':7,15,18 'histórico':2 'municipalidad':14 'pedro':4,6,17 'san':3,5,16 'urbana':13 'ycuamandiyú':8,19 'zelada':11 'zona':12",
+                "_id": 20
+            },
+            {
+                "Departamento": "Cordillera",
+                "Dirección": "Avenida Mariscal López entre Luis Alberto del Paraná y Mariscal Estigarriba",
+                "Distrito": "Altos",
+                "Fuente de la Información": "Municipalidad de Altos",
+                "ID   ": "21",
+                "Nombre": "Archivo Parroquial",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'alberto':10 'alto':4,20 'archivo':1 'avenida':5 'cordillera':3 'de':19 'del':11 'entr':8 'estigarriba':15 'lui':9 'lópez':7 'marisc':6,14 'municipalidad':18 'paraná':12 'parroqui':2 'urbana':17 'y':13 'zona':16",
+                "_id": 21
+            },
+            {
+                "Departamento": "Cordillera",
+                "Dirección": "Avenida Luis F. Vache y Sr. Hassler",
+                "Distrito": "San Bernardino",
+                "Fuente de la Información": "Municipalidad de San Bernardino",
+                "ID   ": "22",
+                "Nombre": "Archivo de Estadística Colonial en la Biblioteca de la Casa Hassler",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'avenida':15 'bernardino':14,27 'biblioteca':7 'casa':10 'coloni':4 'cordillera':12 'de':2,8,25 'en':5 'estadística':3 'f':17 'hassler':11,21 'la':6,9 'lui':16 'municipalidad':24 'san':13,26 'sr':20 'urbana':23 'vach':18 'y':19 'zona':22",
+                "_id": 22
+            },
+            {
+                "Departamento": "Cordillera",
+                "Dirección": "Concepción esquina 14 de Mayo",
+                "Distrito": "Tobatí",
+                "Fuente de la Información": "Municipalidad de Tobatí",
+                "ID   ": "23",
+                "Nombre": "Archivo Municipal de Tobatí",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'14':9 'archivo':1 'concepción':7 'cordillera':5 'de':3,10,15 'esquina':8 'mayo':11 'municip':2 'municipalidad':14 'tobatí':4,6,16 'urbana':13 'zona':12",
+                "_id": 23
+            },
+            {
+                "Departamento": "Guairá",
+                "Dirección": "General  Díaz y Mariscal Estigarribia",
+                "Distrito": "Villarrica",
+                "Fuente de la Información": "Municipalidad de Villarrica",
+                "ID   ": "24",
+                "Nombre": "Archivo Municipal de Villarica",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'de':3,15 'díaz':8 'estigarribia':11 'general':7 'guairá':5 'marisc':10 'municip':2 'municipalidad':14 'urbana':13 'villarica':4 'villarrica':6,16 'y':9 'zona':12",
+                "_id": 24
+            },
+            {
+                "Departamento": "Caaguazú",
+                "Dirección": "Ruta 7 y Humberto Lucke",
+                "Distrito": "José Domingo Ocampos",
+                "Fuente de la Información": "Municipalidad de José Domingo Ocampos",
+                "ID   ": "25",
+                "Nombre": "Archivo de la Historia del Distrito",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'7':12 'archivo':1 'caaguazú':7 'de':2,19 'del':5 'distrito':6 'domingo':9,21 'historia':4 'humberto':14 'josé':8,20 'la':3 'luck':15 'municipalidad':18 'ocampo':10,22 'ruta':11 'urbana':17 'y':13 'zona':16",
+                "_id": 25
+            },
+            {
+                "Departamento": "Caaguazú",
+                "Dirección": "calle Antonlín Irala frente a la comisaria",
+                "Distrito": "San José de los Arroyos",
+                "Fuente de la Información": "Municipalidad de San José de los Arroyos",
+                "ID   ": "26",
+                "Nombre": "Archivo de la Historia de la Ciudad",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'antonlín':15 'archivo':1 'arroyo':13,29 'caaguazú':8 'call':14 'ciudad':7 'comisaria':20 'de':2,5,11,24,27 'frent':17 'historia':4 'irala':16 'josé':10,26 'la':3,6,19 'los':12,28 'municipalidad':23 'san':9,25 'urbana':22 'zona':21",
+                "_id": 26
+            },
+            {
+                "Departamento": "Itapúa",
+                "Dirección": "Ruta 6 Km 13 1/2 ",
+                "Distrito": "Capitán Miranda",
+                "Fuente de la Información": "Municipalidad de Capitán Miranda",
+                "ID   ": "27",
+                "Nombre": "Archivo Municipal",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'1/2':10 '13':9 '6':7 'archivo':1 'capitán':4,15 'de':14 'itapúa':3 'km':8 'miranda':5,16 'municip':2 'municipalidad':13 'ruta':6 'urbana':12 'zona':11",
+                "_id": 27
+            },
+            {
+                "Departamento": "Itapúa",
+                "Dirección": "Calle Moisés Bertoni c/ San Roque González",
+                "Distrito": "Capitán Miranda",
+                "Fuente de la Información": "Municipalidad de Capitán Miranda",
+                "ID   ": "28",
+                "Nombre": "Archivo de la Biblioteca Augusto R. Bastos.",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'bastos':7 'bertoni':13 'biblioteca':4 'c':14 'call':11 'capitán':9,22 'de':2,21 'gonzález':17 'itapúa':8 'la':3 'miranda':10,23 'moisé':12 'municipalidad':20 'r':6 'roqu':16 'san':15 'urbana':19 'zona':18 'augusto':5",
+                "_id": 28
+            },
+            {
+                "Departamento": "Misiones",
+                "Dirección": "San Roque González de Santa Cruz c/ Iturbe",
+                "Distrito": "San Ignacio Guazú",
+                "Fuente de la Información": "Municipalidad de San Ignacio Guazú",
+                "ID   ": "29",
+                "Nombre": "Archivo Municipal",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'c':13 'cruz':12 'de':10,18 'gonzález':9 'guazú':6,21 'ignacio':5,20 'iturb':14 'mision':3 'municip':2 'municipalidad':17 'roqu':8 'san':4,7,19 'santa':11 'urbana':16 'zona':15",
+                "_id": 29
+            },
+            {
+                "Departamento": "Misiones",
+                "Dirección": "Monseńor G.E. Rojas y 23 de Octubre",
+                "Distrito": "San Juan Bautista",
+                "Fuente de la Información": "Municipalidad de San Juan Bautista",
+                "ID   ": "30",
+                "Nombre": "Centro de Documentación Archivos de la Dictadura Stronista / Casa de las Víctimas 1954 - 1989",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'1954 ':14 '1954 - 1989':13 '23':24 'archivo':4 'bautista':19,33 'casa':9 'centro':1 'de':2,5,10,25,30 'dictadura':7 'documentación':3 'g.e':21 'juan':18,32 'la':6 'las':11 'mision':16 'monseńor':20 'municipalidad':29 'octubr':26 'roja':22 'san':17,31 'stronista':8 'urbana':28 'víctima':12 'y':23 'zona':27 ' 1989':15",
+                "_id": 30
+            },
+            {
+                "Departamento": "Misiones",
+                "Dirección": "14 de Mayo entre General Díaz y Sargento Eladio del Puerto",
+                "Distrito": "Santa Rosa",
+                "Fuente de la Información": "Municipalidad de Santa Rosa",
+                "ID   ": "31",
+                "Nombre": "Colección de documentos históricos de la Municipalidad de Santa Rosa ",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'14':14 'colección':1 'de':2,5,8,15,28 'del':23 'documento':3 'díaz':19 'eladio':22 'entr':17 'general':18 'histórico':4 'la':6 'mayo':16 'mision':11 'municipalidad':7,27 'puerto':24 'rosa':10,13,30 'santa':9,12,29 'sargento':21 'urbana':26 'y':20 'zona':25",
+                "_id": 31
+            },
+            {
+                "Departamento": "Misiones",
+                "Dirección": "Luis A Riart casi avenida Jóvenes Mártines por la Democracia",
+                "Distrito": "Villa Florida",
+                "Fuente de la Información": "Municipalidad de Villa Florida",
+                "ID   ": "32",
+                "Nombre": "Archivo municipal",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'avenida':10 'casi':9 'de':19 'democracia':15 'florida':5,21 'jóvene':11 'la':14 'lui':6 'mision':3 'municip':2 'municipalidad':18 'mártine':12 'por':13 'riart':8 'urbana':17 'villa':4,20 'zona':16",
+                "_id": 32
+            },
+            {
+                "Departamento": "Alto Paraná",
+                "Dirección": "Mariscal José Félix Estigarribia y General Bernardino Caballero",
+                "Distrito": "Minga Guazú",
+                "Fuente de la Información": "Municipalidad de Minga Guazú",
+                "ID   ": "33",
+                "Nombre": "Archivo fotográfico de los Primeros Colonos",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'alto':7 'archivo':1 'bernardino':17 'caballero':18 'colono':6 'de':3,22 'estigarribia':14 'fotográfico':2 'félix':13 'general':16 'guazú':10,24 'josé':12 'los':4 'marisc':11 'minga':9,23 'municipalidad':21 'paraná':8 'primero':5 'urbana':20 'y':15 'zona':19",
+                "_id": 33
+            },
+            {
+                "Departamento": "Alto Paraná",
+                "Dirección": "calle Saltito entre avenida Monday y calle Van Haken",
+                "Distrito": "Presidente Franco",
+                "Fuente de la Información": "Municipalidad de Presidente Franco",
+                "ID   ": "34",
+                "Nombre": "Archivo Histórico",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'alto':3 'archivo':1 'avenida':10 'call':7,13 'de':19 'entr':9 'franco':6,21 'haken':15 'histórico':2 'monday':11 'municipalidad':18 'paraná':4 'president':5,20 'saltito':8 'urbana':17 'van':14 'y':12 'zona':16",
+                "_id": 34
+            },
+            {
+                "Departamento": "Central",
+                "Dirección": "Via Férrea y Hermanas Dominicas",
+                "Distrito": "Areguá",
+                "Fuente de la Información": "Municipalidad de Areguá",
+                "ID   ": "35",
+                "Nombre": "Archivo Histórico",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'areguá':4,14 'central':3 'de':13 'dominica':9 'férrea':6 'hermana':8 'histórico':2 'municipalidad':12 'urbana':11 'via':5 'y':7 'zona':10",
+                "_id": 35
+            },
+            {
+                "Departamento": "Central",
+                "Dirección": "8 de Diciembre y Diego Farińa",
+                "Distrito": "Capiatá",
+                "Fuente de la Información": "Municipalidad de Capiatá",
+                "ID   ": "36",
+                "Nombre": "Archivo Municipal",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'8':5 'archivo':1 'capiatá':4,15 'central':3 'de':6,14 'diciembr':7 'diego':9 'farińa':10 'municip':2 'municipalidad':13 'urbana':12 'y':8 'zona':11",
+                "_id": 36
+            },
+            {
+                "Departamento": "Central",
+                "Dirección": "Tte Nicasio Insaurralde entre Domingo Martínez de Irala  y Mcal. Estigarribia",
+                "Distrito": "Guarambaré",
+                "Fuente de la Información": "Municipaliudad de Guarambaré",
+                "ID   ": "37",
+                "Nombre": "Archivo Histórico",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'central':3 'de':11,19 'domingo':9 'entr':8 'estigarribia':15 'guarambaré':4,20 'histórico':2 'insaurrald':7 'irala':12 'martínez':10 'mcal':14 'municipaliudad':18 'nicasio':6 'tte':5 'urbana':17 'y':13 'zona':16",
+                "_id": 37
+            },
+            {
+                "Departamento": "Central",
+                "Dirección": "Yegros 338 esquina Mcal Estigarribia",
+                "Distrito": "Ypacaraí",
+                "Fuente de la Información": "Municipalidad de Ypacaraí",
+                "ID   ": "38",
+                "Nombre": "Archivo Municipal",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'338':6 'archivo':1 'central':3 'de':13 'esquina':7 'estigarribia':9 'mcal':8 'municip':2 'municipalidad':12 'urbana':11 'yegro':5 'ypacaraí':4,14 'zona':10",
+                "_id": 38
+            },
+            {
+                "Departamento": "Central",
+                "Dirección": " Maciel esquina Asunción (frente a la plaza Domingo Martínez de Irala)",
+                "Distrito": "Ypané",
+                "Fuente de la Información": "Municipalidad de Ypané",
+                "ID   ": "39",
+                "Nombre": "Archivo Histórico",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'asunción':7 'central':3 'de':14,19 'domingo':12 'esquina':6 'frent':8 'histórico':2 'irala':15 'la':10 'maciel':5 'martínez':13 'municipalidad':18 'plaza':11 'urbana':17 'ypané':4,20 'zona':16",
+                "_id": 39
+            },
+            {
+                "Departamento": "Amambay",
+                "Dirección": "Calle  Mariscal López 909",
+                "Distrito": "Pedro Juan Caballero",
+                "Fuente de la Información": "Municipalidad de Pedro Juan Caballero",
+                "ID   ": "40",
+                "Nombre": "Archivo Histórico Colección Sacha Cardona",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'909':13 'amambay':6 'archivo':1 'caballero':9,20 'call':10 'cardona':5 'colección':3 'de':17 'histórico':2 'juan':8,19 'lópez':12 'marisc':11 'municipalidad':16 'pedro':7,18 'sacha':4 'urbana':15 'zona':14",
+                "_id": 40
+            },
+            {
+                "Departamento": "Canindeyú",
+                "Dirección": "Avenida  Kuruzú Pa'í - Barrio Industrial ",
+                "Distrito": "Curuguaty",
+                "Fuente de la Información": "Municipalidad de Curuguaty",
+                "ID   ": "41",
+                "Nombre": "Registros históricos de la instalación de la capital de la República en Curuguaty; Documentos sobre el General José G. Artigas en el Museo Histórico Cultural",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'artiga':20 'avenida':28 'barrio':32 'canindeyú':26 'capit':8 'cultur':25 'curuguati':13,27,38 'de':3,6,9,37 'documento':14 'el':16,22 'en':12,21 'g':19 'general':17 'histórico':2,24 'industri':33 'instalación':5 'josé':18 'kuruzú':29 'la':4,7,10 'municipalidad':36 'museo':23 'pa':30 'registro':1 'república':11 'sobr':15 'urbana':35 'zona':34 'í':31",
+                "_id": 41
+            },
+            {
+                "Departamento": "Presidente Hayes",
+                "Dirección": "funciona en el Museo Municipal Avenida Lauro Hayes y Costanera",
+                "Distrito": "Villa Hayes",
+                "Fuente de la Información": "Municipalidad de Villa Hayes",
+                "ID   ": "42",
+                "Nombre": "Archivo Municipal",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'avenida':12 'costanera':16 'de':20 'el':9 'en':8 'funciona':7 'hay':4,6,14,22 'lauro':13 'municip':2,11 'municipalidad':19 'museo':10 'president':3 'urbana':18 'villa':5,21 'y':15 'zona':17",
+                "_id": 42
+            },
+            {
+                "Departamento": "Presidente Hayes",
+                "Dirección": "Ribera del Rio Paraguay y Curupayty",
+                "Distrito": "Villa Hayes",
+                "Fuente de la Información": "Municipalidad de Villa Hayes",
+                "ID   ": "43",
+                "Nombre": "Archivo en el Museo Histórico de la Ciudad Salvador Garozzo Simón Bouvier ",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'bouvier':12 'ciudad':8 'curupayti':22 'de':6,26 'del':18 'el':3 'en':2 'garozzo':10 'hay':14,16,28 'histórico':5 'la':7 'municipalidad':25 'museo':4 'paraguay':20 'president':13 'ribera':17 'rio':19 'salvador':9 'simón':11 'urbana':24 'villa':15,27 'y':21 'zona':23",
+                "_id": 43
+            },
+            {
+                "Departamento": "Boquerón",
+                "Dirección": "Avenida Hindenburg y Trébol",
+                "Distrito": "Filadelfia",
+                "Fuente de la Información": "Municipalidad de Filadelfia",
+                "ID   ": "44",
+                "Nombre": "Archivo de la Asociación Fernheim",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'asociación':4 'avenida':8 'boquerón':6 'de':2,15 'fernheim':5 'filadelfia':7,16 'hindenburg':9 'la':3 'municipalidad':14 'trébol':11 'urbana':13 'y':10 'zona':12",
+                "_id": 44
+            },
+            {
+                "Departamento": "Boquerón",
+                "Dirección": "calle Eligio Ayala",
+                "Distrito": "Loma Plata",
+                "Fuente de la Información": "Municipalidad de Loma Plata",
+                "ID   ": "45",
+                "Nombre": "Archivo Histórico de la Cooperativa Chortizer",
+                "N° de registro": null,
+                "Zona Geográfica": "Zona urbana",
+                "_full_text": "'archivo':1 'ayala':12 'boquerón':7 'call':10 'chortiz':6 'cooperativa':5 'de':3,16 'eligio':11 'histórico':2 'la':4 'loma':8,17 'municipalidad':15 'plata':9,18 'urbana':14 'zona':13",
+                "_id": 45
+            }
+        ],
+        "sql": "SELECT * FROM \"f39e7939-3c34-4732-94cb-673e5b434e2b\" ;"
+    },
+    "success": true
+}

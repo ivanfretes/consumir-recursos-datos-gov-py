@@ -1,0 +1,707 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "N°",
+                "type": "numeric"
+            },
+            {
+                "id": "Cédula",
+                "type": "numeric"
+            },
+            {
+                "id": "Nombres y Apellidos",
+                "type": "text"
+            },
+            {
+                "id": "Dependencia de  Origen",
+                "type": "text"
+            },
+            {
+                "id": "Cargo",
+                "type": "text"
+            },
+            {
+                "id": "Fecha Inicio de Comisión",
+                "type": "timestamp"
+            },
+            {
+                "id": "Fecha Fin de Comisión",
+                "type": "timestamp"
+            }
+        ],
+        "records": [
+            {
+                "Cargo": "VICE-MINISTRO",
+                "Cédula": "566305",
+                "Dependencia de  Origen": "MINISTERIO DE HACIENDA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-02T00:00:00",
+                "Nombres y Apellidos": "GERARDO  GOMEZ MORALES",
+                "N°": "1",
+                "_full_text": "'de':5 'gerardo':1 'gomez':2 'hacienda':6 'ministerio':4 'ministro':9 'moral':3 'vice':8 'vice-ministro':7",
+                "_id": 1
+            },
+            {
+                "Cargo": "COORDINADOR",
+                "Cédula": "625106",
+                "Dependencia de  Origen": "MINISTERIO PUBLICO",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-02T00:00:00",
+                "Nombres y Apellidos": "JULIO  PAREDES BENITEZ",
+                "N°": "2",
+                "_full_text": "'benitez':3 'coordinador':6 'julio':1 'ministerio':4 'pared':2 'publico':5",
+                "_id": 2
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "652821",
+                "Dependencia de  Origen": "MINISTERIO DE JUSTICIA Y TRABAJO",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-06T00:00:00",
+                "Nombres y Apellidos": "BLANCA DE LAS NIEVE ENCINA ROJAS",
+                "N°": "3",
+                "_full_text": "'blanca':1 'de':2,8 'encina':5 'justicia':9 'las':3 'ministerio':7 'niev':4 'roja':6 'tecnico':12 'trabajo':11 'y':10",
+                "_id": 3
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "794099",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE CULTURA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "SUSANA DOMNINA LORENZA ROJAS OCHELLI",
+                "N°": "4",
+                "_full_text": "'cultura':9 'de':8 'domnina':2 'lorenza':3 'nacion':7 'ochelli':5 'roja':4 'secretaria':6 'susana':1 'tecnico':10",
+                "_id": 4
+            },
+            {
+                "Cargo": "TECNICO",
+                "Cédula": "935495",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE REPATRIADOS",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-03-01T00:00:00",
+                "Nombres y Apellidos": "SANTIAGO MIGUEL AVALOS BENITEZ",
+                "N°": "5",
+                "_full_text": "'avalo':3 'benitez':4 'de':7 'miguel':2 'nacion':6 'repatriado':8 'santiago':1 'secretaria':5 'tecnico':9",
+                "_id": 5
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "988280",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ROBERTO PABLO CACERES REJALA",
+                "N°": "6",
+                "_full_text": "'cacer':3 'comandancia':5 'de':6,11 'la':7 'nacion':9 'pablo':2 'person':10 'policia':8 'rejala':4 'roberto':1 'seguridad':12",
+                "_id": 6
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "999172",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ZUNILDA  VALDEZ AVILA",
+                "N°": "7",
+                "_full_text": "'avila':3 'comandancia':4 'de':5,10 'la':6 'nacion':8 'person':9 'policia':7 'seguridad':11 'valdez':2 'zunilda':1",
+                "_id": 7
+            },
+            {
+                "Cargo": "ASESOR",
+                "Cédula": "1167068",
+                "Dependencia de  Origen": "MINISTERIO DE SALUD PUBLICA Y BIENESTAR SOCIAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-02-03T00:00:00",
+                "Nombres y Apellidos": "ELSI CAROLINA OVELAR FERNANDEZ",
+                "N°": "8",
+                "_full_text": "'asesor':12 'bienestar':10 'carolina':2 'de':6 'elsi':1 'fernandez':4 'ministerio':5 'ovelar':3 'publica':8 'salud':7 'social':11 'y':9",
+                "_id": 8
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "1256603",
+                "Dependencia de  Origen": "MINISTERIO DE OBRAS PUBLICAS Y COMUNICACIONES",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-01T00:00:00",
+                "Nombres y Apellidos": "JOEL OSVALDO MONGELOS PRATT",
+                "N°": "9",
+                "_full_text": "'comunicacion':10 'de':6 'joel':1 'ministerio':5 'mongelo':3 'obra':7 'osvaldo':2 'pratt':4 'publica':8 'tecnico':11 'y':9",
+                "_id": 9
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "1391179",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE CULTURA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "EDITH BEATRIZ AYALA DE MARTINEZ",
+                "N°": "10",
+                "_full_text": "'ayala':3 'beatriz':2 'cultura':9 'de':4,8 'edith':1 'martinez':5 'nacion':7 'secretaria':6 'tecnico':10",
+                "_id": 10
+            },
+            {
+                "Cargo": "SECRETARIO/A",
+                "Cédula": "1824769",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE CULTURA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-02-01T00:00:00",
+                "Nombres y Apellidos": "ROSALINA ACOSTA TORRES",
+                "N°": "11",
+                "_full_text": "'acosta':2 'cultura':7 'de':6 'nacion':5 'rosalina':1 'secretaria':4 'secretario/a':8 'torr':3",
+                "_id": 11
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "1869729",
+                "Dependencia de  Origen": "FUERZAS ARMADAS DE LA NACION",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-04-01T00:00:00",
+                "Nombres y Apellidos": "NORMA BEATRIZ PORTILLO ESTECHE",
+                "N°": "12",
+                "_full_text": "'armada':6 'beatriz':2 'de':7,11 'estech':4 'fuerza':5 'la':8 'nacion':9 'norma':1 'person':10 'portillo':3 'seguridad':12",
+                "_id": 12
+            },
+            {
+                "Cargo": "AUDITOR",
+                "Cédula": "2020335",
+                "Dependencia de  Origen": "MUNICIPALIDAD DE LAMBARE",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "ULISES NICOLAS RIVEROS AMARILLA",
+                "N°": "13",
+                "_full_text": "'amarilla':4 'auditor':8 'de':6 'lambar':7 'municipalidad':5 'nicola':2 'rivero':3 'ulis':1",
+                "_id": 13
+            },
+            {
+                "Cargo": "BIBLIOTECARIO",
+                "Cédula": "2120869",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE CULTURA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-03-01T00:00:00",
+                "Nombres y Apellidos": "VERONICA SANDRA FIOROTTO JIMENEZ",
+                "N°": "14",
+                "_full_text": "'bibliotecario':9 'cultura':8 'de':7 'fiorotto':3 'jimenez':4 'nacion':6 'sandra':2 'secretaria':5 'veronica':1",
+                "_id": 14
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "2134508",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "JORGE REINALDO SUAREZ LOPEZ",
+                "N°": "15",
+                "_full_text": "'comandancia':5 'de':6,11 'jorg':1 'la':7 'lopez':4 'nacion':9 'person':10 'policia':8 'reinaldo':2 'seguridad':12 'suarez':3",
+                "_id": 15
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "2180447",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-01T00:00:00",
+                "Nombres y Apellidos": "DERLIS ELVER QUINTANA BRITEZ",
+                "N°": "16",
+                "_full_text": "'britez':4 'comandancia':5 'de':6,11 'der':1 'elver':2 'la':7 'nacion':9 'person':10 'policia':8 'quintana':3 'seguridad':12",
+                "_id": 16
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "2195227",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-06-02T00:00:00",
+                "Nombres y Apellidos": "LEONARDO  MOREL",
+                "N°": "17",
+                "_full_text": "'comandancia':3 'de':4,9 'la':5 'leonardo':1 'morel':2 'nacion':7 'person':8 'policia':6 'seguridad':10",
+                "_id": 17
+            },
+            {
+                "Cargo": "DIRECTOR DE CONTRATACIONES",
+                "Cédula": "2478340",
+                "Dependencia de  Origen": "MUNICIPALIDAD DE ASUNCION",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "ANGEL FERNANDO CHAVEZ ALVAREZ",
+                "N°": "18",
+                "_full_text": "'alvarez':4 'angel':1 'asuncion':7 'chavez':3 'contratacion':10 'de':6,9 'director':8 'fernando':2 'municipalidad':5",
+                "_id": 18
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "2519442",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-01T00:00:00",
+                "Nombres y Apellidos": "ARCADIO  CACERES MARQUET",
+                "N°": "19",
+                "_full_text": "'arcadio':1 'cacer':2 'comandancia':4 'de':5,10 'la':6 'marquet':3 'nacion':8 'person':9 'policia':7 'seguridad':11",
+                "_id": 19
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "2525269",
+                "Dependencia de  Origen": "MINISTERIO DE TRABAJO, EMPLEO Y SEGURIDAD SOCIAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-02T00:00:00",
+                "Nombres y Apellidos": "JOSE ISRAEL ZELAYA ROMERO",
+                "N°": "20",
+                "_full_text": "'de':6 'empleo':8 'israel':2 'jose':1 'ministerio':5 'romero':4 'seguridad':10 'social':11 'tecnico':12 'trabajo':7 'y':9 'zelaya':3",
+                "_id": 20
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "2579532",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "PEDRO DAVID LOPEZ VILLAR",
+                "N°": "21",
+                "_full_text": "'comandancia':5 'david':2 'de':6,11 'la':7 'lopez':3 'nacion':9 'pedro':1 'person':10 'policia':8 'seguridad':12 'villar':4",
+                "_id": 21
+            },
+            {
+                "Cargo": "ASESOR JURIDICO",
+                "Cédula": "2900196",
+                "Dependencia de  Origen": "CORTE SUPREMA DE JUSTICIA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ROSA ISABEL GAUTO GIMENEZ",
+                "N°": "22",
+                "_full_text": "'asesor':9 'cort':5 'de':7 'gauto':3 'gimenez':4 'isabel':2 'juridico':10 'justicia':8 'rosa':1 'suprema':6",
+                "_id": 22
+            },
+            {
+                "Cargo": "TECNICO",
+                "Cédula": "2993254",
+                "Dependencia de  Origen": "TRIBUNAL SUPERIOR DE JUSTICIA ELECTORAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-02T00:00:00",
+                "Nombres y Apellidos": "RAFAEL OVELAR DASPETT",
+                "N°": "23",
+                "_full_text": "'daspett':3 'de':6 'elector':8 'justicia':7 'ovelar':2 'rafael':1 'superior':5 'tecnico':9 'tribun':4",
+                "_id": 23
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3171533",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "VICTOR GABRIEL PORTILLO SOTO",
+                "N°": "24",
+                "_full_text": "'comandancia':5 'de':6,11 'gabriel':2 'la':7 'nacion':9 'person':10 'policia':8 'portillo':3 'seguridad':12 'soto':4 'victor':1",
+                "_id": 24
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3247450",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-02T00:00:00",
+                "Nombres y Apellidos": "ALDO CRISTIAN ESPINOLA TRANGONI",
+                "N°": "25",
+                "_full_text": "'aldo':1 'comandancia':5 'cristian':2 'de':6,11 'espinola':3 'la':7 'nacion':9 'person':10 'policia':8 'seguridad':12 'trangoni':4",
+                "_id": 25
+            },
+            {
+                "Cargo": "ASESOR JURIDICO",
+                "Cédula": "3378341",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-02-03T00:00:00",
+                "Nombres y Apellidos": "CARLOS ALBERTO AGUILERA BENITEZ",
+                "N°": "26",
+                "_full_text": "'aguilera':3 'alberto':2 'asesor':10 'benitez':4 'carlo':1 'comandancia':5 'de':6 'juridico':11 'la':7 'nacion':9 'policia':8",
+                "_id": 26
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3405249",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "SANDRA ELIZABETH DIAZ CHAPARRO",
+                "N°": "27",
+                "_full_text": "'chaparro':4 'comandancia':5 'de':6,11 'diaz':3 'elizabeth':2 'la':7 'nacion':9 'person':10 'policia':8 'sandra':1 'seguridad':12",
+                "_id": 27
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3427023",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "GUSTAVO RAMON CHAVEZ ROMERO",
+                "N°": "28",
+                "_full_text": "'chavez':3 'comandancia':5 'de':6,11 'gustavo':1 'la':7 'nacion':9 'person':10 'policia':8 'ramon':2 'romero':4 'seguridad':12",
+                "_id": 28
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3438905",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ARSENIO  CASCO",
+                "N°": "29",
+                "_full_text": "'arsenio':1 'casco':2 'comandancia':3 'de':4,9 'la':5 'nacion':7 'person':8 'policia':6 'seguridad':10",
+                "_id": 29
+            },
+            {
+                "Cargo": "ASISTENTE",
+                "Cédula": "3449396",
+                "Dependencia de  Origen": "MINISTERIO DE SALUD PUBLICA Y BIENESTAR SOCIAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-02-01T00:00:00",
+                "Nombres y Apellidos": "YAMILE ADRIANA MANCUELLO MIR",
+                "N°": "30",
+                "_full_text": "'adriana':2 'asistent':12 'bienestar':10 'de':6 'mancuello':3 'ministerio':5 'mir':4 'publica':8 'salud':7 'social':11 'y':9 'yamil':1",
+                "_id": 30
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3528234",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "MIGUEL ANGEL ADORNO RUIZ DIAZ",
+                "N°": "31",
+                "_full_text": "'adorno':3 'angel':2 'comandancia':6 'de':7,12 'diaz':5 'la':8 'miguel':1 'nacion':10 'person':11 'policia':9 'ruiz':4 'seguridad':13",
+                "_id": 31
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3531434",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "CENIA MARIA GALEANO TORALES",
+                "N°": "32",
+                "_full_text": "'cenia':1 'comandancia':5 'de':6,11 'galeano':3 'la':7 'maria':2 'nacion':9 'person':10 'policia':8 'seguridad':12 'toral':4",
+                "_id": 32
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3553338",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "LUIS ALBERTO FLEITAS MENDOZA",
+                "N°": "33",
+                "_full_text": "'alberto':2 'comandancia':5 'de':6,11 'fleita':3 'la':7 'lui':1 'mendoza':4 'nacion':9 'person':10 'policia':8 'seguridad':12",
+                "_id": 33
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3644513",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ARTURO JOSE ARMANDO VELAZQUEZ CACERES",
+                "N°": "34",
+                "_full_text": "'armando':3 'arturo':1 'cacer':5 'comandancia':6 'de':7,12 'jose':2 'la':8 'nacion':10 'person':11 'policia':9 'seguridad':13 'velazquez':4",
+                "_id": 34
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3674967",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-05-02T00:00:00",
+                "Nombres y Apellidos": "AMALIA MARGARITA TALAVERA BARRIENTOS",
+                "N°": "35",
+                "_full_text": "'amalia':1 'barriento':4 'comandancia':5 'de':6,11 'la':7 'margarita':2 'nacion':9 'person':10 'policia':8 'seguridad':12 'talavera':3",
+                "_id": 35
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3679324",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "VICENTE GASPAR GAVILAN ESCOBAR",
+                "N°": "36",
+                "_full_text": "'comandancia':5 'de':6,11 'escobar':4 'gaspar':2 'gavilan':3 'la':7 'nacion':9 'person':10 'policia':8 'seguridad':12 'vicent':1",
+                "_id": 36
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3728978",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "DARIO  ROA MARTINEZ",
+                "N°": "37",
+                "_full_text": "'comandancia':4 'dario':1 'de':5,10 'la':6 'martinez':3 'nacion':8 'person':9 'policia':7 'roa':2 'seguridad':11",
+                "_id": 37
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3743062",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "NORMA HAYDEE GUERRA ZARATE",
+                "N°": "38",
+                "_full_text": "'comandancia':5 'de':6,11 'guerra':3 'hayde':2 'la':7 'nacion':9 'norma':1 'person':10 'policia':8 'seguridad':12 'zarat':4",
+                "_id": 38
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3801820",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ANGEL ALFREDO ARGUELLO SERVIN",
+                "N°": "39",
+                "_full_text": "'alfredo':2 'angel':1 'arguello':3 'comandancia':5 'de':6,11 'la':7 'nacion':9 'person':10 'policia':8 'seguridad':12 'servin':4",
+                "_id": 39
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3844874",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "NELSON IVAN RAMIREZ GOMEZ",
+                "N°": "40",
+                "_full_text": "'comandancia':5 'de':6,11 'gomez':4 'ivan':2 'la':7 'nacion':9 'nelson':1 'person':10 'policia':8 'ramirez':3 'seguridad':12",
+                "_id": 40
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3866317",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "VICTOR ANTONIO GOMEZ",
+                "N°": "41",
+                "_full_text": "'antonio':2 'comandancia':4 'de':5,10 'gomez':3 'la':6 'nacion':8 'person':9 'policia':7 'seguridad':11 'victor':1",
+                "_id": 41
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3969706",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "JORGE DANIEL VIVEROS PALMA",
+                "N°": "42",
+                "_full_text": "'comandancia':5 'daniel':2 'de':6,11 'jorg':1 'la':7 'nacion':9 'palma':4 'person':10 'policia':8 'seguridad':12 'vivero':3",
+                "_id": 42
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "3974340",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "REINALDO  ALCARAZ SERVIN",
+                "N°": "43",
+                "_full_text": "'alcaraz':2 'comandancia':4 'de':5,10 'la':6 'nacion':8 'person':9 'policia':7 'reinaldo':1 'seguridad':11 'servin':3",
+                "_id": 43
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4005418",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "PERCY MANUEL ANTONIO BECKER SILVA",
+                "N°": "44",
+                "_full_text": "'antonio':3 'becker':4 'comandancia':6 'de':7,12 'la':8 'manuel':2 'nacion':10 'perci':1 'person':11 'policia':9 'seguridad':13 'silva':5",
+                "_id": 44
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4019986",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ROSANA ELIZABETH RAMIREZ COLMAN",
+                "N°": "45",
+                "_full_text": "'colman':4 'comandancia':5 'de':6,11 'elizabeth':2 'la':7 'nacion':9 'person':10 'policia':8 'ramirez':3 'rosana':1 'seguridad':12",
+                "_id": 45
+            },
+            {
+                "Cargo": "ASISTENTE",
+                "Cédula": "4024784",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE LA NIÑEZ Y LA ADOLESCENCIA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ANGEL ARNALDO OLMEDO PAREDES",
+                "N°": "46",
+                "_full_text": "'adolescencia':12 'angel':1 'arnaldo':2 'asistent':13 'de':7 'la':8,11 'nacion':6 'niÑez':9 'olmedo':3 'pared':4 'secretaria':5 'y':10",
+                "_id": 46
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "4184654",
+                "Dependencia de  Origen": "PRESIDENCIA DE LA REPUBLICA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-04-01T00:00:00",
+                "Nombres y Apellidos": "VICTOR MANUEL PEREIRA MARTINEZ",
+                "N°": "47",
+                "_full_text": "'de':6 'la':7 'manuel':2 'martinez':4 'pereira':3 'presidencia':5 'republica':8 'tecnico':9 'victor':1",
+                "_id": 47
+            },
+            {
+                "Cargo": "TECNICO I",
+                "Cédula": "4350653",
+                "Dependencia de  Origen": "SECRETARIA NACIONAL DE CULTURA",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "WILLIAM ALEX FLEITAS SANABRIA",
+                "N°": "48",
+                "_full_text": "'alex':2 'cultura':8 'de':7 'fleita':3 'nacion':6 'sanabria':4 'secretaria':5 'tecnico':9 'william':1",
+                "_id": 48
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4357487",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "RICARDO ISAAC SERVIN CUELLAR",
+                "N°": "49",
+                "_full_text": "'comandancia':5 'cuellar':4 'de':6,11 'isaac':2 'la':7 'nacion':9 'person':10 'policia':8 'ricardo':1 'seguridad':12 'servin':3",
+                "_id": 49
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4358528",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "PABLO  YEGROS GONZALEZ",
+                "N°": "50",
+                "_full_text": "'comandancia':4 'de':5,10 'gonzalez':3 'la':6 'nacion':8 'pablo':1 'person':9 'policia':7 'seguridad':11 'yegro':2",
+                "_id": 50
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4370640",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "MARCIANO ROLANDO MENDOZA LUGO",
+                "N°": "51",
+                "_full_text": "'comandancia':5 'de':6,11 'la':7 'lugo':4 'marciano':1 'mendoza':3 'nacion':9 'person':10 'policia':8 'rolando':2 'seguridad':12",
+                "_id": 51
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4415177",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "ADELIO  CARDOZO VALENZUELA",
+                "N°": "52",
+                "_full_text": "'adelio':1 'cardozo':2 'comandancia':4 'de':5,10 'la':6 'nacion':8 'person':9 'policia':7 'seguridad':11 'valenzuela':3",
+                "_id": 52
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4422591",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "MIGUEL ANGEL SAMUDIO GALLI",
+                "N°": "53",
+                "_full_text": "'angel':2 'comandancia':5 'de':6,11 'galli':4 'la':7 'miguel':1 'nacion':9 'person':10 'policia':8 'samudio':3 'seguridad':12",
+                "_id": 53
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4440005",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "ROBERTO  GONZALEZ GIMENEZ",
+                "N°": "54",
+                "_full_text": "'comandancia':4 'de':5,10 'gimenez':3 'gonzalez':2 'la':6 'nacion':8 'person':9 'policia':7 'roberto':1 'seguridad':11",
+                "_id": 54
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4613988",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "MIGUEL  LOVERA ARAUJO",
+                "N°": "55",
+                "_full_text": "'araujo':3 'comandancia':4 'de':5,10 'la':6 'lovera':2 'miguel':1 'nacion':8 'person':9 'policia':7 'seguridad':11",
+                "_id": 55
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4703736",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "EDGAR  PEREZ VALLEJOS",
+                "N°": "56",
+                "_full_text": "'comandancia':4 'de':5,10 'edgar':1 'la':6 'nacion':8 'perez':2 'person':9 'policia':7 'seguridad':11 'vallejo':3",
+                "_id": 56
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4704713",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "MARTIMIANO  CABAÑA MOLINAS",
+                "N°": "57",
+                "_full_text": "'cabaÑa':2 'comandancia':4 'de':5,10 'la':6 'martimiano':1 'molina':3 'nacion':8 'person':9 'policia':7 'seguridad':11",
+                "_id": 57
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4707202",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "ALAN JAVIER NUÑEZ COLMAN",
+                "N°": "58",
+                "_full_text": "'alan':1 'colman':4 'comandancia':5 'de':6,11 'javier':2 'la':7 'nacion':9 'nuÑez':3 'person':10 'policia':8 'seguridad':12",
+                "_id": 58
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4893049",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-07-01T00:00:00",
+                "Nombres y Apellidos": "AURELIO  COLMAN VERA",
+                "N°": "59",
+                "_full_text": "'aurelio':1 'colman':2 'comandancia':4 'de':5,10 'la':6 'nacion':8 'person':9 'policia':7 'seguridad':11 'vera':3",
+                "_id": 59
+            },
+            {
+                "Cargo": "PERSONAL DE SEGURIDAD",
+                "Cédula": "4982379",
+                "Dependencia de  Origen": "COMANDANCIA DE LA POLICIA NACIONAL",
+                "Fecha Fin de Comisión": "2014-12-31T00:00:00",
+                "Fecha Inicio de Comisión": "2014-01-01T00:00:00",
+                "Nombres y Apellidos": "MARIELA  SANABRIA ALMIRON",
+                "N°": "60",
+                "_full_text": "'almiron':3 'comandancia':4 'de':5,10 'la':6 'mariela':1 'nacion':8 'person':9 'policia':7 'sanabria':2 'seguridad':11",
+                "_id": 60
+            }
+        ],
+        "sql": "SELECT * FROM \"a76a2c3d-122b-409d-a272-3573de178e67\" ;"
+    },
+    "success": true
+}

@@ -1,0 +1,813 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Nº",
+                "type": "text"
+            },
+            {
+                "id": "Nombre y Apellido",
+                "type": "text"
+            },
+            {
+                "id": "lista",
+                "type": "text"
+            },
+            {
+                "id": "Siglas",
+                "type": "text"
+            },
+            {
+                "id": "Partido / Movimiento/ Alianza",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 1,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "LILIAN GRACIELA SAMANIEGO GONZALEZ",
+                "Nº": "1",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':1,6 'anr':7 'colorado':9 'gonzalez':5 'graciela':3 'lilian':2 'partido':8 'samaniego':4",
+                "_id": 2,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "BLAS ANTONIO LLANO RAMOS",
+                "Nº": "2",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':1,6 'antonio':3 'autentico':11 'blas':2 'liber':9 'llano':4 'partido':8 'plra':7 'radic':10 'ramo':5",
+                "_id": 3,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "LUIS ALBERTO CASTIGLIONI SORIA",
+                "Nº": "3",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '3':1 'alberto':3 'anr':7 'castiglioni':4 'colorado':9 'lui':2 'partido':8 'soria':5",
+                "_id": 4,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "EMILIA PATRICIA ALFARO DE FRANCO",
+                "Nº": "4",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':7 '4':1 'alfaro':4 'autentico':12 'de':5 'emilia':2 'franco':6 'liber':10 'partido':9 'patricia':3 'plra':8 'radic':11",
+                "_id": 5,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ARNOLDO WIENS DURKSEN",
+                "Nº": "5",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '5':1 'anr':6 'arnoldo':2 'colorado':8 'durksen':4 'partido':7 'wien':3",
+                "_id": 6,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "FERNANDO ARMINDO LUGO MENDEZ",
+                "Nº": "6",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'40':6 '6':1 'armindo':3 'concertacion':8 'fernando':2 'fg':7 'frent':10 'guasu':11 'lugo':4 'mendez':5 'nacion':9",
+                "_id": 7,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "MIRTA LEONOR GUSINKY DE CUBAS",
+                "Nº": "7",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '7':1 'anr':8 'colorado':10 'cuba':6 'de':5 'gusinki':4 'leonor':3 'mirta':2 'partido':9",
+                "_id": 8,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "RAMON GOMEZ VERLANGIERI",
+                "Nº": "8",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '8':1 'autentico':10 'gomez':3 'liber':8 'partido':7 'plra':6 'radic':9 'ramon':2 'verlangieri':4",
+                "_id": 9,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JULIO CESAR VELAZQUEZ TILLERIA",
+                "Nº": "9",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '9':1 'anr':7 'cesar':3 'colorado':9 'julio':2 'partido':8 'tilleria':5 'velazquez':4",
+                "_id": 10,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "CARLOS ALBERTO AMARILLA CAÑETE",
+                "Nº": "10",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'10':1 '2':6 'alberto':3 'amarilla':4 'autentico':11 'carlo':2 'caÑet':5 'liber':9 'partido':8 'plra':7 'radic':10",
+                "_id": 11,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ARNALDO EUCLIDES GIUZZIO BENITEZ",
+                "Nº": "11",
+                "Partido / Movimiento/ Alianza": "PARTIDO DEMOCRATICO PROGRESISTA",
+                "Siglas": "PDP",
+                "_full_text": "'100':6 '11':1 'arnaldo':2 'benitez':5 'democratico':9 'euclid':3 'giuzzio':4 'partido':8 'pdp':7 'progresista':10",
+                "_id": 12,
+                "lista": "100"
+            },
+            {
+                "Nombre y Apellido": "OSCAR ALBERTO GONZALEZ DAHER",
+                "Nº": "12",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '12':1 'alberto':3 'anr':7 'colorado':9 'daher':5 'gonzalez':4 'oscar':2 'partido':8",
+                "_id": 13,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "GUSTAVO JAVIER ALFONSO GONZALEZ",
+                "Nº": "13",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '13':1 'alfonso':4 'anr':7 'colorado':9 'gonzalez':5 'gustavo':2 'javier':3 'partido':8",
+                "_id": 14,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "CARLOS ALBERTO FILIZZOLA PALLARES",
+                "Nº": "14",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'14':1 '40':6 'alberto':3 'carlo':2 'concertacion':8 'fg':7 'filizzola':4 'frent':10 'guasu':11 'nacion':9 'pallar':5",
+                "_id": 15,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "ZULMA RAMONA GOMEZ CACERES",
+                "Nº": "15",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'15':1 '2':6 'autentico':11 'cacer':5 'gomez':4 'liber':9 'partido':8 'plra':7 'radic':10 'ramona':3 'zulma':2",
+                "_id": 16,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ADOLFO MARCELINO FERREIRO SANABRIA",
+                "Nº": "16",
+                "Partido / Movimiento/ Alianza": "AVANZA PAIS",
+                "Siglas": "AP",
+                "_full_text": "'16':1 '3':6 'adolfo':2 'ap':7 'avanza':8 'ferreiro':4 'marcelino':3 'pai':9 'sanabria':5",
+                "_id": 17,
+                "lista": "3"
+            },
+            {
+                "Nombre y Apellido": "ENRIQUE FAUSTO BACCHETTA CHIRIANI",
+                "Nº": "17",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '17':1 'anr':7 'bacchetta':4 'chiriani':5 'colorado':9 'enriqu':2 'fausto':3 'partido':8",
+                "_id": 18,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ENZO CARDOZO JIMENEZ",
+                "Nº": "18",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'18':1 '2':5 'autentico':10 'cardozo':3 'enzo':2 'jimenez':4 'liber':8 'partido':7 'plra':6 'radic':9",
+                "_id": 19,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "SILVIO ADALBERTO OVELAR BENITEZ",
+                "Nº": "19",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '19':1 'adalberto':3 'anr':7 'benitez':5 'colorado':9 'ovelar':4 'partido':8 'silvio':2",
+                "_id": 20,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JORGE ANTONIO OVIEDO MATTO",
+                "Nº": "20",
+                "Partido / Movimiento/ Alianza": "UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'20':1 '7':6 'antonio':3 'ciudadano':11 'de':10 'etico':12 'jorg':2 'matto':5 'nacion':9 'oviedo':4 'unac':7 'union':8",
+                "_id": 21,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "JULIO ANTONIO QUIÑONEZ DAIUB",
+                "Nº": "21",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '21':1 'anr':7 'antonio':3 'colorado':9 'daiub':5 'julio':2 'partido':8 'quiÑonez':4",
+                "_id": 22,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JULIO CESAR RAMON FRANCO GOMEZ",
+                "Nº": "22",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':7 '22':1 'autentico':12 'cesar':3 'franco':5 'gomez':6 'julio':2 'liber':10 'partido':9 'plra':8 'radic':11 'ramon':4",
+                "_id": 23,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "SIXTO PEREIRA GALEANO",
+                "Nº": "23",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'23':1 '40':5 'concertacion':7 'fg':6 'frent':9 'galeano':4 'guasu':10 'nacion':8 'pereira':3 'sixto':2",
+                "_id": 24,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "JUAN CARLOS ROMAN GALAVERNA DELVALLE",
+                "Nº": "24",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '24':1 'anr':8 'carlo':3 'colorado':10 'delvall':6 'galaverna':5 'juan':2 'partido':9 'roman':4",
+                "_id": 25,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "EDUARDO ROMALINO PETTA SAN MARTIN",
+                "Nº": "25",
+                "Partido / Movimiento/ Alianza": "PARTIDO ENCUENTRO NACIONAL",
+                "Siglas": "PEN",
+                "_full_text": "'25':1 '9':7 'eduardo':2 'encuentro':10 'martin':6 'nacion':11 'partido':9 'pen':8 'petta':4 'romalino':3 'san':5",
+                "_id": 26,
+                "lista": "9"
+            },
+            {
+                "Nombre y Apellido": "LUIS ALBERTO CAYETANO WAGNER LEZCANO",
+                "Nº": "26",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':7 '26':1 'alberto':3 'autentico':12 'cayetano':4 'lezcano':6 'liber':10 'lui':2 'partido':9 'plra':8 'radic':11 'wagner':5",
+                "_id": 27,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "DESIREE GRACIELA MASI JARA",
+                "Nº": "27",
+                "Partido / Movimiento/ Alianza": "PARTIDO DEMOCRATICO PROGRESISTA",
+                "Siglas": "PDP",
+                "_full_text": "'100':6 '27':1 'democratico':9 'desire':2 'graciela':3 'jara':5 'masi':4 'partido':8 'pdp':7 'progresista':10",
+                "_id": 28,
+                "lista": "100"
+            },
+            {
+                "Nombre y Apellido": "DERLIS ARIEL ALEJANDRO OSORIO NUNES",
+                "Nº": "28",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '28':1 'alejandro':4 'anr':8 'ariel':3 'colorado':10 'der':2 'nune':6 'osorio':5 'partido':9",
+                "_id": 29,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "BLANCA MARGARITA OVELAR DE DUARTE",
+                "Nº": "29",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '29':1 'anr':8 'blanca':2 'colorado':10 'de':5 'duart':6 'margarita':3 'ovelar':4 'partido':9",
+                "_id": 30,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "BLANCA BEATRIZ FONSECA LEGAL",
+                "Nº": "30",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '30':1 'autentico':11 'beatriz':3 'blanca':2 'fonseca':4 'legal':5 'liber':9 'partido':8 'plra':7 'radic':10",
+                "_id": 31,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "MARIO ABDO BENITEZ",
+                "Nº": "31",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '31':1 'abdo':3 'anr':6 'benitez':4 'colorado':8 'mario':2 'partido':7",
+                "_id": 32,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ESPERANZA MARTINEZ DE PORTILLO",
+                "Nº": "32",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'32':1 '40':6 'concertacion':8 'de':4 'esperanza':2 'fg':7 'frent':10 'guasu':11 'martinez':3 'nacion':9 'portillo':5",
+                "_id": 33,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "LUIS ANTONIO CANATA BENITEZ",
+                "Nº": "17",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '17':1 'anr':7 'antonio':3 'benitez':5 'canata':4 'colorado':9 'lui':2 'partido':8",
+                "_id": 73,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ABDON SAGUIER CARMONA",
+                "Nº": "33",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '33':1 'abdon':3 'autentico':11 'carmona':5 'liber':9 'miguel':2 'partido':8 'plra':7 'radic':10 'saguier':4",
+                "_id": 34,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ANGEL IGNACIO LOPEZ PERITO",
+                "Nº": "34",
+                "Partido / Movimiento/ Alianza": "AVANZA PAIS",
+                "Siglas": "AP",
+                "_full_text": "'3':7 '34':1 'angel':3 'ap':8 'avanza':9 'ignacio':4 'lopez':5 'miguel':2 'pai':10 'perito':6",
+                "_id": 35,
+                "lista": "3"
+            },
+            {
+                "Nombre y Apellido": "OSCAR RUBEN SALOMON FERNANDEZ",
+                "Nº": "35",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '35':1 'anr':7 'colorado':9 'fernandez':5 'oscar':2 'partido':8 'ruben':3 'salomon':4",
+                "_id": 36,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JUAN DARIO MONGES ESPINOLA",
+                "Nº": "36",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '36':1 'anr':7 'colorado':9 'dario':3 'espinola':5 'juan':2 'mong':4 'partido':8",
+                "_id": 37,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "FERNANDO ALBERTO SILVA FACETTI",
+                "Nº": "37",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '37':1 'alberto':3 'autentico':11 'facetti':5 'fernando':2 'liber':9 'partido':8 'plra':7 'radic':10 'silva':4",
+                "_id": 38,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "VICTOR ALCIDES BOGADO GONZALEZ",
+                "Nº": "38",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '38':1 'alcid':3 'anr':7 'bogado':4 'colorado':9 'gonzalez':5 'partido':8 'victor':2",
+                "_id": 39,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MARIA BLANCA LILA MIGNARRO DE GONZALEZ",
+                "Nº": "39",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':8 '39':1 'autentico':13 'blanca':3 'de':6 'gonzalez':7 'liber':11 'lila':4 'maria':2 'mignarro':5 'partido':10 'plra':9 'radic':12",
+                "_id": 40,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "PEDRO ARTHURO SANTA CRUZ INSAURRALDE",
+                "Nº": "40",
+                "Partido / Movimiento/ Alianza": "PARTIDO DEMOCRATICO PROGRESISTA",
+                "Siglas": "PDP",
+                "_full_text": "'100':7 '40':1 'arthuro':3 'cruz':5 'democratico':10 'insaurrald':6 'partido':9 'pdp':8 'pedro':2 'progresista':11 'santa':4",
+                "_id": 41,
+                "lista": "100"
+            },
+            {
+                "Nombre y Apellido": "NELSON DARIO AGUINAGALDE GALLINAR",
+                "Nº": "41",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '41':1 'aguinagald':4 'anr':7 'colorado':9 'dario':3 'gallinar':5 'nelson':2 'partido':8",
+                "_id": 42,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "OSCAR HUGO RICHER FLORENTIN",
+                "Nº": "42",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'40':6 '42':1 'concertacion':8 'fg':7 'florentin':5 'frent':10 'guasu':11 'hugo':3 'nacion':9 'oscar':2 'richer':4",
+                "_id": 43,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "CARLOS NUÑEZ AGUERO",
+                "Nº": "43",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '43':1 'aguero':4 'anr':6 'carlo':2 'colorado':8 'nuÑez':3 'partido':7",
+                "_id": 44,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JOSE MANUEL BOBEDA MELGAREJO",
+                "Nº": "44",
+                "Partido / Movimiento/ Alianza": "UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'44':1 '7':6 'bobeda':4 'ciudadano':11 'de':10 'etico':12 'jose':2 'manuel':3 'melgarejo':5 'nacion':9 'unac':7 'union':8",
+                "_id": 45,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "ROBERTO RAMON ACEVEDO QUEVEDO",
+                "Nº": "45",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '45':1 'acevedo':4 'autentico':11 'liber':9 'partido':8 'plra':7 'quevedo':5 'radic':10 'ramon':3 'roberto':2",
+                "_id": 46,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 47,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 48,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 49,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "República del Paraguay",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'del':2 'paraguay':3 'república':1",
+                "_id": 50,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "Justicia Electoral",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'elector':2 'justicia':1",
+                "_id": 51,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "Elecciones Generales y Departamentales - 21 de Abril de 2013",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'2013':9 '21':5 'abril':7 'de':6,8 'departamental':4 'eleccion':1 'general':2 'y':3",
+                "_id": 52,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 53,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "Senadores Suplentes",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'senador':1 'suplent':2",
+                "_id": 54,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Nº": "Nº",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':9 'apellido':4 'lista':5 'movimiento':8 'nombr':2 'nº':1 'partido':7 'sigla':6 'y':3",
+                "_id": 55,
+                "lista": "lista"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 56,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "VICTOR HUGO RAMON PANIAGUA FRETES",
+                "Nº": "1",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':1,7 'anr':8 'colorado':10 'frete':6 'hugo':3 'paniagua':5 'partido':9 'ramon':4 'victor':2",
+                "_id": 57,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "NORMAN HARRISON PALEARI",
+                "Nº": "2",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':1,5 'autentico':10 'harrison':3 'liber':8 'norman':2 'paleari':4 'partido':7 'plra':6 'radic':9",
+                "_id": 58,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "RICARDO JAVIER PERALTA GULINO",
+                "Nº": "3",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '3':1 'anr':7 'colorado':9 'gulino':5 'javier':3 'partido':8 'peralta':4 'ricardo':2",
+                "_id": 59,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MODESTO GABRIEL SALINAS ALE",
+                "Nº": "4",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '4':1 'ale':5 'autentico':11 'gabriel':3 'liber':9 'modesto':2 'partido':8 'plra':7 'radic':10 'salina':4",
+                "_id": 60,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JORGE ADALBERTO DOS SANTOS CACERES",
+                "Nº": "5",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '5':1 'adalberto':3 'anr':8 'cacer':6 'colorado':10 'dos':4 'jorg':2 'partido':9 'santo':5",
+                "_id": 61,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL FULGENCIO RODRIGUEZ ROMERO",
+                "Nº": "6",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'40':6 '6':1 'concertacion':8 'fg':7 'frent':10 'fulgencio':3 'guasu':11 'miguel':2 'nacion':9 'rodriguez':4 'romero':5",
+                "_id": 62,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "LUIS EUGENIO VIEDMA VIGO",
+                "Nº": "7",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '7':1 'anr':7 'colorado':9 'eugenio':3 'lui':2 'partido':8 'viedma':4 'vigo':5",
+                "_id": 63,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "LILIANA INES FLEITAS GONZALEZ",
+                "Nº": "8",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '8':1 'autentico':11 'fleita':4 'gonzalez':5 'ine':3 'liber':9 'liliana':2 'partido':8 'plra':7 'radic':10",
+                "_id": 64,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "BERNARDINO CANO RADIL",
+                "Nº": "9",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '9':1 'anr':6 'bernardino':2 'cano':3 'colorado':8 'partido':7 'radil':4",
+                "_id": 65,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "CARLOS GUAPI BRITEZ",
+                "Nº": "10",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'10':1 '2':5 'autentico':10 'britez':4 'carlo':2 'guapi':3 'liber':8 'partido':7 'plra':6 'radic':9",
+                "_id": 66,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JULIO DARIO BENITEZ ALBAVI",
+                "Nº": "11",
+                "Partido / Movimiento/ Alianza": "PARTIDO DEMOCRATICO PROGRESISTA",
+                "Siglas": "PDP",
+                "_full_text": "'100':6 '11':1 'albavi':5 'benitez':4 'dario':3 'democratico':9 'julio':2 'partido':8 'pdp':7 'progresista':10",
+                "_id": 67,
+                "lista": "100"
+            },
+            {
+                "Nombre y Apellido": "FERNANDO ROMAN FERNANDEZ",
+                "Nº": "12",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '12':1 'anr':6 'colorado':8 'fernandez':4 'fernando':2 'partido':7 'roman':3",
+                "_id": 68,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ANIBAL RAMON BARRETO ALVARENGA",
+                "Nº": "13",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '13':1 'alvarenga':5 'anib':2 'anr':7 'barreto':4 'colorado':9 'partido':8 'ramon':3",
+                "_id": 69,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "SAMUEL GARCIA PANIAGUA",
+                "Nº": "14",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'14':1 '40':5 'concertacion':7 'fg':6 'frent':9 'garcia':3 'guasu':10 'nacion':8 'paniagua':4 'samuel':2",
+                "_id": 70,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "AUGUSTO JOSE FELIX PAIVA",
+                "Nº": "15",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'15':1 '2':6 'augusto':2 'autentico':11 'felix':4 'jose':3 'liber':9 'paiva':5 'partido':8 'plra':7 'radic':10",
+                "_id": 71,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "HILDA JOSEFINA DUARTE DE BENITEZ",
+                "Nº": "16",
+                "Partido / Movimiento/ Alianza": "AVANZA PAIS",
+                "Siglas": "AP",
+                "_full_text": "'16':1 '3':7 'ap':8 'avanza':9 'benitez':6 'de':5 'duart':4 'hilda':2 'josefina':3 'pai':10",
+                "_id": 72,
+                "lista": "3"
+            },
+            {
+                "Nombre y Apellido": "JUANA RODRIGUEZ DE FRANCO",
+                "Nº": "18",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'18':1 '2':6 'autentico':11 'de':4 'franco':5 'juana':2 'liber':9 'partido':8 'plra':7 'radic':10 'rodriguez':3",
+                "_id": 74,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ESPERANZA CATALINO CORONEL ALFONSO",
+                "Nº": "19",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '19':1 'alfonso':5 'anr':7 'catalino':3 'colorado':9 'coronel':4 'esperanza':2 'partido':8",
+                "_id": 75,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ANA MARIA PALACIOS DE MARTINEZ",
+                "Nº": "20",
+                "Partido / Movimiento/ Alianza": "UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'20':1 '7':7 'ana':2 'ciudadano':12 'de':5,11 'etico':13 'maria':3 'martinez':6 'nacion':10 'palacio':4 'unac':8 'union':9",
+                "_id": 76,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "ELVIA DORA ARISTE DE SANDOVAL",
+                "Nº": "21",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '21':1 'anr':8 'arist':4 'colorado':10 'de':5 'dora':3 'elvia':2 'partido':9 'sandov':6",
+                "_id": 77,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ELIZABETH DEL ROSARIO CAMPUZANO ROJAS",
+                "Nº": "22",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':7 '22':1 'autentico':12 'campuzano':5 'del':3 'elizabeth':2 'liber':10 'partido':9 'plra':8 'radic':11 'roja':6 'rosario':4",
+                "_id": 78,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "RAMON ROBERTO COLMAN FERNANDEZ",
+                "Nº": "23",
+                "Partido / Movimiento/ Alianza": "CONCERTACION NACIONAL FRENTE GUASU",
+                "Siglas": "FG",
+                "_full_text": "'23':1 '40':6 'colman':4 'concertacion':8 'fernandez':5 'fg':7 'frent':10 'guasu':11 'nacion':9 'ramon':2 'roberto':3",
+                "_id": 79,
+                "lista": "40"
+            },
+            {
+                "Nombre y Apellido": "JAIME AUGUSTO IBARROLA ZARATE",
+                "Nº": "24",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '24':1 'anr':7 'augusto':3 'colorado':9 'ibarrola':4 'jaim':2 'partido':8 'zarat':5",
+                "_id": 80,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "LUIS GUSTAVO TORALES KENNEDY",
+                "Nº": "25",
+                "Partido / Movimiento/ Alianza": "PARTIDO ENCUENTRO NACIONAL",
+                "Siglas": "PEN",
+                "_full_text": "'25':1 '9':6 'encuentro':9 'gustavo':3 'kennedi':5 'lui':2 'nacion':10 'partido':8 'pen':7 'toral':4",
+                "_id": 81,
+                "lista": "9"
+            },
+            {
+                "Nombre y Apellido": "JOSE LUIS INSFRAN CUBILLA",
+                "Nº": "26",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '26':1 'autentico':11 'cubilla':5 'insfran':4 'jose':2 'liber':9 'lui':3 'partido':8 'plra':7 'radic':10",
+                "_id": 82,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ANIBAL GERARDO MUÑOZ FERNANDEZ",
+                "Nº": "27",
+                "Partido / Movimiento/ Alianza": "PARTIDO DEMOCRATICO PROGRESISTA",
+                "Siglas": "PDP",
+                "_full_text": "'100':6 '27':1 'anib':2 'democratico':9 'fernandez':5 'gerardo':3 'muÑoz':4 'partido':8 'pdp':7 'progresista':10",
+                "_id": 83,
+                "lista": "100"
+            },
+            {
+                "Nombre y Apellido": "JUDIT PORFIRIA ALONSO VDA DE SOSA",
+                "Nº": "28",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':8 '28':1 'alonso':4 'anr':9 'colorado':11 'de':6 'judit':2 'partido':10 'porfiria':3 'sosa':7 'vda':5",
+                "_id": 84,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "DAGOBERTO FIDEL MARECOS DELGADO",
+                "Nº": "29",
+                "Partido / Movimiento/ Alianza": "PARTIDO COLORADO",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '29':1 'anr':7 'colorado':9 'dagoberto':2 'delgado':5 'fidel':3 'mareco':4 'partido':8",
+                "_id": 85,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "OSCAR PAULINO FERNANDEZ OSORIO",
+                "Nº": "30",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '30':1 'autentico':11 'fernandez':4 'liber':9 'oscar':2 'osorio':5 'partido':8 'paulino':3 'plra':7 'radic':10",
+                "_id": 86,
+                "lista": "2"
+            }
+        ],
+        "sql": "SELECT * FROM \"852da9d9-cf4e-4b4f-992e-110e86a4eeba\" ;"
+    },
+    "success": true
+}

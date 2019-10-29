@@ -1,0 +1,795 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "Nº",
+                "type": "text"
+            },
+            {
+                "id": "Nombre y Apellido",
+                "type": "text"
+            },
+            {
+                "id": "lista",
+                "type": "text"
+            },
+            {
+                "id": "Siglas",
+                "type": "text"
+            },
+            {
+                "id": "Partido / Movimiento/ Alianza",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 1,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "OSCAR NICANOR DUARTE FRUTOS",
+                "Nº": "1",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':1,6 'anr':7 'asociacion':8 'duart':4 'fruto':5 'nacion':9 'nicanor':3 'oscar':2 'republicana':10",
+                "_id": 2,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "PEDRO EFRAIN ALEGRE SASIAIN",
+                "Nº": "2",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':1,6 'alegr':4 'autentico':11 'efrain':3 'liber':9 'partido':8 'pedro':2 'plra':7 'radic':10 'sasiain':5",
+                "_id": 3,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ENRIQUE GONZALEZ QUINTANA",
+                "Nº": "3",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'3':1 '7':5 'ciudadano':11 'de':10 'enriqu':2 'etico':12 'gonzalez':3 'nacion':9 'partido':7 'quintana':4 'unac':6 'union':8",
+                "_id": 4,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "JULIO CESAR VELAZQUEZ TILLERIA",
+                "Nº": "4",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '4':1 'anr':7 'asociacion':8 'cesar':3 'julio':2 'nacion':9 'republicana':10 'tilleria':5 'velazquez':4",
+                "_id": 5,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "BLAS ANTONIO LLANO RAMOS",
+                "Nº": "5",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '5':1 'antonio':3 'autentico':11 'blas':2 'liber':9 'llano':4 'partido':8 'plra':7 'radic':10 'ramo':5",
+                "_id": 6,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JUAN CARLOS ROMAN GALAVERNA DELVALLE",
+                "Nº": "6",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '6':1 'anr':8 'asociacion':9 'carlo':3 'delvall':6 'galaverna':5 'juan':2 'nacion':10 'republicana':11 'roman':4",
+                "_id": 7,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JULIO CESAR RAMON FRANCO GOMEZ",
+                "Nº": "7",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':7 '7':1 'autentico':12 'cesar':3 'franco':5 'gomez':6 'julio':2 'liber':10 'partido':9 'plra':8 'radic':11 'ramon':4",
+                "_id": 8,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JORGE ANTONIO OVIEDO MATTO",
+                "Nº": "8",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'7':6 '8':1 'antonio':3 'ciudadano':12 'de':11 'etico':13 'jorg':2 'matto':5 'nacion':10 'oviedo':4 'partido':8 'unac':7 'union':9",
+                "_id": 9,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL CARRIZOSA GALIANO",
+                "Nº": "9",
+                "Partido / Movimiento/ Alianza": "PARTIDO PATRIA QUERIDA",
+                "Siglas": "PPQ",
+                "_full_text": "'8':5 '9':1 'carrizosa':3 'galiano':4 'miguel':2 'partido':7 'patria':8 'ppq':6 'querida':9",
+                "_id": 10,
+                "lista": "8"
+            },
+            {
+                "Nombre y Apellido": "LILIAN GRACIELA SAMANIEGO GONZALEZ",
+                "Nº": "10",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '10':1 'anr':7 'asociacion':8 'gonzalez':5 'graciela':3 'lilian':2 'nacion':9 'republicana':10 'samaniego':4",
+                "_id": 11,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ENZO CARDOZO JIMENEZ",
+                "Nº": "11",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'11':1 '2':5 'autentico':10 'cardozo':3 'enzo':2 'jimenez':4 'liber':8 'partido':7 'plra':6 'radic':9",
+                "_id": 12,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "HERMINIO CHENA VALDEZ",
+                "Nº": "12",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'12':1 '7':5 'chena':3 'ciudadano':11 'de':10 'etico':12 'herminio':2 'nacion':9 'partido':7 'unac':6 'union':8 'valdez':4",
+                "_id": 13,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "VICTOR LUIS BERNAL GARAY",
+                "Nº": "13",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '13':1 'anr':7 'asociacion':8 'bernal':4 'garay':5 'lui':3 'nacion':9 'republicana':10 'victor':2",
+                "_id": 14,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ZULMA RAMONA GOMEZ CACERES",
+                "Nº": "14",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'14':1 '2':6 'autentico':11 'cacer':5 'gomez':4 'liber':9 'partido':8 'plra':7 'radic':10 'ramona':3 'zulma':2",
+                "_id": 15,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ROGELIO RAIMUNDO BENITEZ VARGAS",
+                "Nº": "15",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '15':1 'anr':7 'asociacion':8 'benitez':4 'nacion':9 'raimundo':3 'republicana':10 'rogelio':2 'varga':5",
+                "_id": 16,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "IRIS ROCIO GONZALEZ RECALDE",
+                "Nº": "16",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'16':1 '2':6 'autentico':11 'gonzalez':4 'iri':2 'liber':9 'partido':8 'plra':7 'radic':10 'recald':5 'rocio':3",
+                "_id": 17,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JOSE MANUEL BOVEDA MELGAREJO",
+                "Nº": "17",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'17':1 '7':6 'boveda':4 'ciudadano':12 'de':11 'etico':13 'jose':2 'manuel':3 'melgarejo':5 'nacion':10 'partido':8 'unac':7 'union':9",
+                "_id": 18,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "ANA MARIA JUANITA MENDOZA DE ACHA",
+                "Nº": "18",
+                "Partido / Movimiento/ Alianza": "PARTIDO PATRIA QUERIDA",
+                "Siglas": "PPQ",
+                "_full_text": "'18':1 '8':8 'acha':7 'ana':2 'de':6 'juanita':4 'maria':3 'mendoza':5 'partido':10 'patria':11 'ppq':9 'querida':12",
+                "_id": 19,
+                "lista": "8"
+            },
+            {
+                "Nombre y Apellido": "JUAN DARIO MONGES ESPINOLA",
+                "Nº": "19",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '19':1 'anr':7 'asociacion':8 'dario':3 'espinola':5 'juan':2 'mong':4 'nacion':9 'republicana':10",
+                "_id": 20,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "RAMON GOMEZ VERLANGIERI",
+                "Nº": "20",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '20':1 'autentico':10 'gomez':3 'liber':8 'partido':7 'plra':6 'radic':9 'ramon':2 'verlangieri':4",
+                "_id": 21,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "CLARISSA SUSANA MARIN DE LOPEZ",
+                "Nº": "21",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'21':1 '7':7 'ciudadano':13 'clarissa':2 'de':5,12 'etico':14 'lopez':6 'marin':4 'nacion':11 'partido':9 'susana':3 'unac':8 'union':10",
+                "_id": 22,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "ALFREDO GUSTAVO STROESSNER DOMINGUEZ",
+                "Nº": "22",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '22':1 'alfredo':2 'anr':7 'asociacion':8 'dominguez':5 'gustavo':3 'nacion':9 'republicana':10 'stroessner':4",
+                "_id": 23,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ROBERTO RAMON ACEVEDO QUEVEDO",
+                "Nº": "23",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '23':1 'acevedo':4 'autentico':11 'liber':9 'partido':8 'plra':7 'quevedo':5 'radic':10 'ramon':3 'roberto':2",
+                "_id": 24,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "CARLOS ALBERTO FILIZZOLA PALLARES",
+                "Nº": "24",
+                "Partido / Movimiento/ Alianza": "PARTIDO PAIS SOLIDARIO",
+                "Siglas": "PPS",
+                "_full_text": "'24':1 '4':6 'alberto':3 'carlo':2 'filizzola':4 'pai':9 'pallar':5 'partido':8 'pps':7 'solidario':10",
+                "_id": 25,
+                "lista": "4"
+            },
+            {
+                "Nombre y Apellido": "MARIA DIGNA ROA ROJAS",
+                "Nº": "25",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '25':1 'anr':7 'asociacion':8 'digna':3 'maria':2 'nacion':9 'republicana':10 'roa':4 'roja':5",
+                "_id": 26,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "LUIS ALBERTO CAYETANO WAGNER LEZCANO",
+                "Nº": "26",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':7 '26':1 'alberto':3 'autentico':12 'cayetano':4 'lezcano':6 'liber':10 'lui':2 'partido':9 'plra':8 'radic':11 'wagner':5",
+                "_id": 27,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JOSE ABEL GUASTELLA CAPELLO",
+                "Nº": "27",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'27':1 '7':6 'abel':3 'capello':5 'ciudadano':12 'de':11 'etico':13 'guastella':4 'jose':2 'nacion':10 'partido':8 'unac':7 'union':9",
+                "_id": 28,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "SIXTO PEREIRA GALEANO",
+                "Nº": "28",
+                "Partido / Movimiento/ Alianza": "MOVIMIENTO POPULAR TEKOJOJA",
+                "Siglas": "MPT",
+                "_full_text": "'28':1 '99':5 'galeano':4 'movimiento':7 'mpt':6 'pereira':3 'popular':8 'sixto':2 'tekojoja':9",
+                "_id": 29,
+                "lista": "99"
+            },
+            {
+                "Nombre y Apellido": "LUCIO VERGARA RIOS",
+                "Nº": "29",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '29':1 'anr':6 'asociacion':7 'lucio':2 'nacion':8 'republicana':9 'rio':4 'vergara':3",
+                "_id": 30,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ANGEL GONZALEZ ERICO",
+                "Nº": "30",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '30':1 'angel':3 'autentico':11 'erico':5 'gonzalez':4 'liber':9 'miguel':2 'partido':8 'plra':7 'radic':10",
+                "_id": 31,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "MARCELO ALBERTO DIEGO DUARTE MANZONI",
+                "Nº": "31",
+                "Partido / Movimiento/ Alianza": "PARTIDO PATRIA QUERIDA",
+                "Siglas": "PPQ",
+                "_full_text": "'31':1 '8':7 'alberto':3 'diego':4 'duart':5 'manzoni':6 'marcelo':2 'partido':9 'patria':10 'ppq':8 'querida':11",
+                "_id": 32,
+                "lista": "8"
+            },
+            {
+                "Nombre y Apellido": "CARLOS ROGER CABALLERO FIORIO",
+                "Nº": "32",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'32':1 '7':6 'caballero':4 'carlo':2 'ciudadano':12 'de':11 'etico':13 'fiorio':5 'nacion':10 'partido':8 'roger':3 'unac':7 'union':9",
+                "_id": 33,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "OSCAR ALBERTO GONZALEZ DAHER",
+                "Nº": "33",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '33':1 'alberto':3 'anr':7 'asociacion':8 'daher':5 'gonzalez':4 'nacion':9 'oscar':2 'republicana':10",
+                "_id": 34,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "AMANCIO OSCAR DENIS SANCHEZ",
+                "Nº": "34",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '34':1 'amancio':2 'autentico':11 'deni':4 'liber':9 'oscar':3 'partido':8 'plra':7 'radic':10 'sanchez':5",
+                "_id": 35,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "CELSO ORLANDO FIOROTTO SANCHEZ",
+                "Nº": "35",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '35':1 'anr':7 'asociacion':8 'celso':2 'fiorotto':4 'nacion':9 'orlando':3 'republicana':10 'sanchez':5",
+                "_id": 36,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "BLANCA BEATRIZ FONSECA LEGAL",
+                "Nº": "36",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '36':1 'autentico':11 'beatriz':3 'blanca':2 'fonseca':4 'legal':5 'liber':9 'partido':8 'plra':7 'radic':10",
+                "_id": 37,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "LINO CESAR OVIEDO",
+                "Nº": "37",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'37':1 '7':5 'cesar':3 'ciudadano':11 'de':10 'etico':12 'lino':2 'nacion':9 'oviedo':4 'partido':7 'unac':6 'union':8",
+                "_id": 38,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "SILVIO ADALBERTO OVELAR BENITEZ",
+                "Nº": "38",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '38':1 'adalberto':3 'anr':7 'asociacion':8 'benitez':5 'nacion':9 'ovelar':4 'republicana':10 'silvio':2",
+                "_id": 39,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ABDON SAGUIER CARMONA",
+                "Nº": "39",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '39':1 'abdon':3 'autentico':11 'carmona':5 'liber':9 'miguel':2 'partido':8 'plra':7 'radic':10 'saguier':4",
+                "_id": 40,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "RAFAEL AUGUSTO FILIZZOLA SERRA",
+                "Nº": "40",
+                "Partido / Movimiento/ Alianza": "PARTIDO DEMOCRATICO PROGRESISTA",
+                "Siglas": "PDP",
+                "_full_text": "'100':6 '40':1 'augusto':3 'democratico':9 'filizzola':4 'partido':8 'pdp':7 'progresista':10 'rafael':2 'serra':5",
+                "_id": 41,
+                "lista": "100"
+            },
+            {
+                "Nombre y Apellido": "MARCIAL GONZALEZ SAFSTRAND",
+                "Nº": "41",
+                "Partido / Movimiento/ Alianza": "PARTIDO PATRIA QUERIDA",
+                "Siglas": "PPQ",
+                "_full_text": "'41':1 '8':5 'gonzalez':3 'marcial':2 'partido':7 'patria':8 'ppq':6 'querida':9 'safstrand':4",
+                "_id": 42,
+                "lista": "8"
+            },
+            {
+                "Nombre y Apellido": "MARIO CANO YEGROS",
+                "Nº": "42",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'42':1 '7':5 'cano':3 'ciudadano':11 'de':10 'etico':12 'mario':2 'nacion':9 'partido':7 'unac':6 'union':8 'yegro':4",
+                "_id": 43,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "MARTIN ANTONIO CHIOLA VILLAGRA",
+                "Nº": "43",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '43':1 'anr':7 'antonio':3 'asociacion':8 'chiola':4 'martin':2 'nacion':9 'republicana':10 'villagra':5",
+                "_id": 44,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ALFREDO LUIS JAEGGLI CABALLERO",
+                "Nº": "44",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '44':1 'alfredo':2 'autentico':11 'caballero':5 'jaegg':4 'liber':9 'lui':3 'partido':8 'plra':7 'radic':10",
+                "_id": 45,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "HUGO ESTEBAN ESTIGARRIBIA GUTIERREZ",
+                "Nº": "45",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '45':1 'anr':7 'asociacion':8 'esteban':3 'estigarribia':4 'gutierrez':5 'hugo':2 'nacion':9 'republicana':10",
+                "_id": 46,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 47,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 48,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 49,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 50,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 51,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "Senadores Suplentes",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "'senador':1 'suplent':2",
+                "_id": 52,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "Nombre y Apellido",
+                "Nº": "Nº",
+                "Partido / Movimiento/ Alianza": "Partido / Movimiento/ Alianza",
+                "Siglas": "Siglas",
+                "_full_text": "'alianza':9 'apellido':4 'lista':5 'movimiento':8 'nombr':2 'nº':1 'partido':7 'sigla':6 'y':3",
+                "_id": 53,
+                "lista": "lista"
+            },
+            {
+                "Nombre y Apellido": "",
+                "Nº": "",
+                "Partido / Movimiento/ Alianza": "",
+                "Siglas": "",
+                "_full_text": "",
+                "_id": 54,
+                "lista": ""
+            },
+            {
+                "Nombre y Apellido": "GREGORIO ARECO RUIZ DIAZ",
+                "Nº": "1",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':1,6 'anr':7 'areco':3 'asociacion':8 'diaz':5 'gregorio':2 'nacion':9 'republicana':10 'ruiz':4",
+                "_id": 55,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "AMANCIO LOPEZ IRALA",
+                "Nº": "2",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':1,5 'amancio':2 'autentico':10 'irala':4 'liber':8 'lopez':3 'partido':7 'plra':6 'radic':9",
+                "_id": 56,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JORGE MENDOZA GAETE",
+                "Nº": "3",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'3':1 '7':5 'ciudadano':11 'de':10 'etico':12 'gaet':4 'jorg':2 'mendoza':3 'nacion':9 'partido':7 'unac':6 'union':8",
+                "_id": 57,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "OCTAVIO MANUEL GOMEZ MARTINEZ",
+                "Nº": "4",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '4':1 'anr':7 'asociacion':8 'gomez':4 'manuel':3 'martinez':5 'nacion':9 'octavio':2 'republicana':10",
+                "_id": 58,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "FERNANDO ALBERTO SILVA FACETTI",
+                "Nº": "5",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '5':1 'alberto':3 'autentico':11 'facetti':5 'fernando':2 'liber':9 'partido':8 'plra':7 'radic':10 'silva':4",
+                "_id": 59,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JULIO ANTONIO QUIÑONEZ DAIUB",
+                "Nº": "6",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '6':1 'anr':7 'antonio':3 'asociacion':8 'daiub':5 'julio':2 'nacion':9 'quiÑonez':4 'republicana':10",
+                "_id": 60,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "CARLOS GUAPI BRITEZ",
+                "Nº": "7",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '7':1 'autentico':10 'britez':4 'carlo':2 'guapi':3 'liber':8 'partido':7 'plra':6 'radic':9",
+                "_id": 61,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "HECTOR ANIBAL NIZZA ROJAS",
+                "Nº": "8",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'7':6 '8':1 'anib':3 'ciudadano':12 'de':11 'etico':13 'hector':2 'nacion':10 'nizza':4 'partido':8 'roja':5 'unac':7 'union':9",
+                "_id": 62,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "ROSA ESPERANZA MERLO DREWS",
+                "Nº": "9",
+                "Partido / Movimiento/ Alianza": "PARTIDO PATRIA QUERIDA",
+                "Siglas": "PPQ",
+                "_full_text": "'8':6 '9':1 'drew':5 'esperanza':3 'merlo':4 'partido':8 'patria':9 'ppq':7 'querida':10 'rosa':2",
+                "_id": 63,
+                "lista": "8"
+            },
+            {
+                "Nombre y Apellido": "ENRIQUE JAVIER PEREIRA THALMANN",
+                "Nº": "10",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '10':1 'anr':7 'asociacion':8 'enriqu':2 'javier':3 'nacion':9 'pereira':4 'republicana':10 'thalmann':5",
+                "_id": 64,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "ABDON ORTELLADO VEGA",
+                "Nº": "11",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'11':1 '2':5 'abdon':2 'autentico':10 'liber':8 'ortellado':3 'partido':7 'plra':6 'radic':9 'vega':4",
+                "_id": 65,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "GENARO ESTIGARRIBIA",
+                "Nº": "12",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'12':1 '7':4 'ciudadano':10 'de':9 'estigarribia':3 'etico':11 'genaro':2 'nacion':8 'partido':6 'unac':5 'union':7",
+                "_id": 66,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "CELSA INOCENCIA BELOTTO DE BOBEDA",
+                "Nº": "13",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '13':1 'anr':8 'asociacion':9 'belotto':4 'bobeda':6 'celsa':2 'de':5 'inocencia':3 'nacion':10 'republicana':11",
+                "_id": 67,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "NILDA ESTIGARRIBIA VDA DE GOMEZ",
+                "Nº": "14",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'14':1 '2':7 'autentico':12 'de':5 'estigarribia':3 'gomez':6 'liber':10 'nilda':2 'partido':9 'plra':8 'radic':11 'vda':4",
+                "_id": 68,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JUAN MILCIADES CAZAL PEDROZO",
+                "Nº": "15",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '15':1 'anr':7 'asociacion':8 'cazal':4 'juan':2 'milciad':3 'nacion':9 'pedrozo':5 'republicana':10",
+                "_id": 69,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "BASILISA VAZQUEZ ROMAN",
+                "Nº": "16",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'16':1 '2':5 'autentico':10 'basilisa':2 'liber':8 'partido':7 'plra':6 'radic':9 'roman':4 'vazquez':3",
+                "_id": 70,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ANGEL MENDOZA ISMAEL",
+                "Nº": "17",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'17':1 '7':6 'angel':3 'ciudadano':12 'de':11 'etico':13 'ismael':5 'mendoza':4 'miguel':2 'nacion':10 'partido':8 'unac':7 'union':9",
+                "_id": 71,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "EMILIO RUBEN FURLER FERNANDEZ",
+                "Nº": "18",
+                "Partido / Movimiento/ Alianza": "PARTIDO PATRIA QUERIDA",
+                "Siglas": "PPQ",
+                "_full_text": "'18':1 '8':6 'emilio':2 'fernandez':5 'furler':4 'partido':8 'patria':9 'ppq':7 'querida':10 'ruben':3",
+                "_id": 72,
+                "lista": "8"
+            },
+            {
+                "Nombre y Apellido": "MARIA MERCEDES AMARILLA DE TANIGUCHI",
+                "Nº": "19",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':7 '19':1 'amarilla':4 'anr':8 'asociacion':9 'de':5 'maria':2 'merced':3 'nacion':10 'republicana':11 'taniguchi':6",
+                "_id": 73,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "SILVIO ALBERTO DELVALLE",
+                "Nº": "20",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '20':1 'alberto':3 'autentico':10 'delvall':4 'liber':8 'partido':7 'plra':6 'radic':9 'silvio':2",
+                "_id": 74,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "ARTURO TOMAS ORTIZ CIBILS",
+                "Nº": "21",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'21':1 '7':6 'arturo':2 'cibil':5 'ciudadano':12 'de':11 'etico':13 'nacion':10 'ortiz':4 'partido':8 'toma':3 'unac':7 'union':9",
+                "_id": 75,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "REINALDO DOMINGUEZ DIBB",
+                "Nº": "22",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '22':1 'anr':6 'asociacion':7 'dibb':4 'dominguez':3 'nacion':8 'reinaldo':2 'republicana':9",
+                "_id": 76,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "GABRIEL ALBERTO SAGUIER",
+                "Nº": "23",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':5 '23':1 'alberto':3 'autentico':10 'gabriel':2 'liber':8 'partido':7 'plra':6 'radic':9 'saguier':4",
+                "_id": 77,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "SAMUEL GARCIA PANIAGUA",
+                "Nº": "24",
+                "Partido / Movimiento/ Alianza": "PARTIDO PAIS SOLIDARIO",
+                "Siglas": "PPS",
+                "_full_text": "'24':1 '4':5 'garcia':3 'pai':8 'paniagua':4 'partido':7 'pps':6 'samuel':2 'solidario':9",
+                "_id": 78,
+                "lista": "4"
+            },
+            {
+                "Nombre y Apellido": "CELIA TORRES CORONEL",
+                "Nº": "25",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':5 '25':1 'anr':6 'asociacion':7 'celia':2 'coronel':4 'nacion':8 'republicana':9 'torr':3",
+                "_id": 79,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "JORGE RAUL LEOZ BERTHOMIER",
+                "Nº": "26",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '26':1 'autentico':11 'berthomi':5 'jorg':2 'leoz':4 'liber':9 'partido':8 'plra':7 'radic':10 'raul':3",
+                "_id": 80,
+                "lista": "2"
+            },
+            {
+                "Nombre y Apellido": "JORGE DELORENZI",
+                "Nº": "27",
+                "Partido / Movimiento/ Alianza": "PARTIDO UNION NACIONAL DE CIUDADANOS ETICOS",
+                "Siglas": "UNACE",
+                "_full_text": "'27':1 '7':4 'ciudadano':10 'de':9 'delorenzi':3 'etico':11 'jorg':2 'nacion':8 'partido':6 'unac':5 'union':7",
+                "_id": 81,
+                "lista": "7"
+            },
+            {
+                "Nombre y Apellido": "RAMON ROBERTO COLMAN FERNANDEZ",
+                "Nº": "28",
+                "Partido / Movimiento/ Alianza": "MOVIMIENTO POPULAR TEKOJOJA",
+                "Siglas": "MPT",
+                "_full_text": "'28':1 '99':6 'colman':4 'fernandez':5 'movimiento':8 'mpt':7 'popular':9 'ramon':2 'roberto':3 'tekojoja':10",
+                "_id": 82,
+                "lista": "99"
+            },
+            {
+                "Nombre y Apellido": "MIGUEL ANGEL ROJAS SALVIONI",
+                "Nº": "29",
+                "Partido / Movimiento/ Alianza": "ASOCIACION NACIONAL REPUBLICANA",
+                "Siglas": "ANR",
+                "_full_text": "'1':6 '29':1 'angel':3 'anr':7 'asociacion':8 'miguel':2 'nacion':9 'republicana':10 'roja':4 'salvioni':5",
+                "_id": 83,
+                "lista": "1"
+            },
+            {
+                "Nombre y Apellido": "CESAR WALDINO SEGOVIA AGUILERA",
+                "Nº": "30",
+                "Partido / Movimiento/ Alianza": "PARTIDO LIBERAL RADICAL AUTENTICO",
+                "Siglas": "PLRA",
+                "_full_text": "'2':6 '30':1 'aguilera':5 'autentico':11 'cesar':2 'liber':9 'partido':8 'plra':7 'radic':10 'segovia':4 'waldino':3",
+                "_id": 84,
+                "lista": "2"
+            }
+        ],
+        "sql": "SELECT * FROM \"bfbcf2f8-4f59-47c1-802b-5ff874637122\" ;"
+    },
+    "success": true
+}

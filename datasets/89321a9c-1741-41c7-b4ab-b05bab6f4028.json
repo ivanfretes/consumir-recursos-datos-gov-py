@@ -1,0 +1,303 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "COD.",
+                "type": "numeric"
+            },
+            {
+                "id": "DISTRITO",
+                "type": "text"
+            },
+            {
+                "id": "ELECTORES",
+                "type": "numeric"
+            },
+            {
+                "id": "ANR",
+                "type": "numeric"
+            },
+            {
+                "id": "PLRA",
+                "type": "numeric"
+            },
+            {
+                "id": "AP",
+                "type": "numeric"
+            },
+            {
+                "id": "UNACE",
+                "type": "numeric"
+            },
+            {
+                "id": "PPQ",
+                "type": "numeric"
+            },
+            {
+                "id": "PEN",
+                "type": "numeric"
+            },
+            {
+                "id": "PB",
+                "type": "numeric"
+            },
+            {
+                "id": "PEA",
+                "type": "numeric"
+            },
+            {
+                "id": "UDV",
+                "type": "numeric"
+            },
+            {
+                "id": "PJ",
+                "type": "numeric"
+            },
+            {
+                "id": "PSD",
+                "type": "numeric"
+            },
+            {
+                "id": "PL",
+                "type": "numeric"
+            },
+            {
+                "id": "30-A",
+                "type": "numeric"
+            },
+            {
+                "id": "FG",
+                "type": "numeric"
+            },
+            {
+                "id": "MII",
+                "type": "numeric"
+            },
+            {
+                "id": "PPL",
+                "type": "numeric"
+            },
+            {
+                "id": "MKP",
+                "type": "numeric"
+            },
+            {
+                "id": "PDP",
+                "type": "numeric"
+            },
+            {
+                "id": "MICA",
+                "type": "numeric"
+            },
+            {
+                "id": "BLANCOS",
+                "type": "numeric"
+            },
+            {
+                "id": "NULOS",
+                "type": "numeric"
+            },
+            {
+                "id": "TOTAL",
+                "type": "numeric"
+            },
+            {
+                "id": "PARTICIPACION",
+                "type": "numeric"
+            }
+        ],
+        "records": [
+            {
+                "30-A": "4",
+                "ANR": "2165",
+                "AP": "208",
+                "BLANCOS": "511",
+                "COD.": "0",
+                "DISTRITO": "FILADELFIA",
+                "ELECTORES": "7109",
+                "FG": "96",
+                "MICA": "24",
+                "MII": "10",
+                "MKP": "77",
+                "NULOS": "138",
+                "PARTICIPACION": "0",
+                "PB": "7",
+                "PDP": "76",
+                "PEA": "17",
+                "PEN": "131",
+                "PJ": "13",
+                "PL": "26",
+                "PLRA": "570",
+                "PPL": "8",
+                "PPQ": "362",
+                "PSD": "13",
+                "TOTAL": "4708",
+                "UDV": "6",
+                "UNACE": "246",
+                "_full_text": "'filadelfia':1",
+                "_id": 1
+            },
+            {
+                "30-A": "4",
+                "ANR": "2803",
+                "AP": "183",
+                "BLANCOS": "755",
+                "COD.": "1",
+                "DISTRITO": "LOMA PLATA",
+                "ELECTORES": "8704",
+                "FG": "254",
+                "MICA": "15",
+                "MII": "6",
+                "MKP": "38",
+                "NULOS": "122",
+                "PARTICIPACION": "0",
+                "PB": "5",
+                "PDP": "23",
+                "PEA": "15",
+                "PEN": "35",
+                "PJ": "13",
+                "PL": "17",
+                "PLRA": "424",
+                "PPL": "8",
+                "PPQ": "119",
+                "PSD": "13",
+                "TOTAL": "5234",
+                "UDV": "2",
+                "UNACE": "380",
+                "_full_text": "'loma':1 'plata':2",
+                "_id": 2
+            },
+            {
+                "30-A": "9",
+                "ANR": "3403",
+                "AP": "344",
+                "BLANCOS": "770",
+                "COD.": "3",
+                "DISTRITO": "MCAL.ESTIGARRIBIA",
+                "ELECTORES": "10126",
+                "FG": "267",
+                "MICA": "6",
+                "MII": "2",
+                "MKP": "71",
+                "NULOS": "149",
+                "PARTICIPACION": "0",
+                "PB": "32",
+                "PDP": "32",
+                "PEA": "19",
+                "PEN": "176",
+                "PJ": "11",
+                "PL": "22",
+                "PLRA": "583",
+                "PPL": "3",
+                "PPQ": "291",
+                "PSD": "15",
+                "TOTAL": "6557",
+                "UDV": "14",
+                "UNACE": "338",
+                "_full_text": "'mcal.estigarribia':1",
+                "_id": 3
+            },
+            {
+                "30-A": null,
+                "ANR": null,
+                "AP": null,
+                "BLANCOS": null,
+                "COD.": null,
+                "DISTRITO": "",
+                "ELECTORES": null,
+                "FG": null,
+                "MICA": null,
+                "MII": null,
+                "MKP": null,
+                "NULOS": null,
+                "PARTICIPACION": null,
+                "PB": null,
+                "PDP": null,
+                "PEA": null,
+                "PEN": null,
+                "PJ": null,
+                "PL": null,
+                "PLRA": null,
+                "PPL": null,
+                "PPQ": null,
+                "PSD": null,
+                "TOTAL": null,
+                "UDV": null,
+                "UNACE": null,
+                "_full_text": "",
+                "_id": 4
+            },
+            {
+                "30-A": "17",
+                "ANR": "8371",
+                "AP": "735",
+                "BLANCOS": "2036",
+                "COD.": null,
+                "DISTRITO": "TOTALES",
+                "ELECTORES": "25939",
+                "FG": "617",
+                "MICA": "45",
+                "MII": "18",
+                "MKP": "186",
+                "NULOS": "409",
+                "PARTICIPACION": "0",
+                "PB": "44",
+                "PDP": "131",
+                "PEA": "51",
+                "PEN": "342",
+                "PJ": "37",
+                "PL": "65",
+                "PLRA": "1577",
+                "PPL": "19",
+                "PPQ": "772",
+                "PSD": "41",
+                "TOTAL": "16499",
+                "UDV": "22",
+                "UNACE": "964",
+                "_full_text": "'total':1",
+                "_id": 5
+            },
+            {
+                "30-A": "0",
+                "ANR": "0",
+                "AP": "0",
+                "BLANCOS": "0",
+                "COD.": null,
+                "DISTRITO": "% VOTOS EMITIDOS",
+                "ELECTORES": null,
+                "FG": "0",
+                "MICA": "0",
+                "MII": "0",
+                "MKP": "0",
+                "NULOS": "0",
+                "PARTICIPACION": null,
+                "PB": "0",
+                "PDP": "0",
+                "PEA": "0",
+                "PEN": "0",
+                "PJ": "0",
+                "PL": "0",
+                "PLRA": "0",
+                "PPL": "0",
+                "PPQ": "0",
+                "PSD": "0",
+                "TOTAL": null,
+                "UDV": "0",
+                "UNACE": "0",
+                "_full_text": "'emitido':2 'voto':1",
+                "_id": 6
+            }
+        ],
+        "sql": "SELECT * FROM \"89321a9c-1741-41c7-b4ab-b05bab6f4028\" ;"
+    },
+    "success": true
+}

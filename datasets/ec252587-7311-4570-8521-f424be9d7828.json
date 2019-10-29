@@ -1,0 +1,234 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "candi",
+                "type": "text"
+            },
+            {
+                "id": "dep",
+                "type": "numeric"
+            },
+            {
+                "id": "mun",
+                "type": "text"
+            },
+            {
+                "id": "lista",
+                "type": "numeric"
+            },
+            {
+                "id": "tit_sup",
+                "type": "text"
+            },
+            {
+                "id": "orden",
+                "type": "text"
+            },
+            {
+                "id": "NOMBRE",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "NOMBRE": "MIRTA RAMONA MENDOZA DIAZ",
+                "_full_text": "'diaz':5 'gobernador':1 'mendoza':4 'mirta':2 'ramona':3",
+                "_id": 1,
+                "candi": "GOBERNADOR",
+                "dep": "1",
+                "lista": "2",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "JORGE ANTONIO CESPEDES COLMAN",
+                "_full_text": "'antonio':3 'cesped':4 'colman':5 'gobernador':1 'jorg':2",
+                "_id": 2,
+                "candi": "GOBERNADOR",
+                "dep": "2",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "JULIO ANTONIO QUIÑONEZ DAIUB",
+                "_full_text": "'antonio':3 'daiub':5 'gobernador':1 'julio':2 'quiÑonez':4",
+                "_id": 3,
+                "candi": "GOBERNADOR",
+                "dep": "3",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "ESTEBAN DEJESUS TORRES ESPÍNOLA",
+                "_full_text": "'dejesus':3 'espÍnola':5 'esteban':2 'gobernador':1 'torr':4",
+                "_id": 4,
+                "candi": "GOBERNADOR",
+                "dep": "4",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "ENZO CARDOZO JIMENEZ",
+                "_full_text": "'cardozo':3 'enzo':2 'gobernador':1 'jimenez':4",
+                "_id": 5,
+                "candi": "GOBERNADOR",
+                "dep": "5",
+                "lista": "2",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "OSCAR ROMAN DÁVALOS DIETRICH",
+                "_full_text": "'dietrich':5 'dÁvalo':4 'gobernador':1 'oscar':2 'roman':3",
+                "_id": 6,
+                "candi": "GOBERNADOR",
+                "dep": "6",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "LUIS EUGENIO VIEDMA VIGO",
+                "_full_text": "'eugenio':3 'gobernador':1 'lui':2 'viedma':4 'vigo':5",
+                "_id": 7,
+                "candi": "GOBERNADOR",
+                "dep": "7",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "CARLOS ANTONIO VILLALBA ROTELA",
+                "_full_text": "'antonio':3 'carlo':2 'gobernador':1 'rotela':5 'villalba':4",
+                "_id": 8,
+                "candi": "GOBERNADOR",
+                "dep": "8",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "JORGE IGNACIO BARUJA FERNANDEZ",
+                "_full_text": "'baruja':4 'fernandez':5 'gobernador':1 'ignacio':3 'jorg':2",
+                "_id": 9,
+                "candi": "GOBERNADOR",
+                "dep": "9",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "ANTONIO GUSTAVO CARDOZO",
+                "_full_text": "'antonio':2 'cardozo':4 'gobernador':1 'gustavo':3",
+                "_id": 10,
+                "candi": "GOBERNADOR",
+                "dep": "10",
+                "lista": "2",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "LUIS FEDERICO FRANCO GOMEZ",
+                "_full_text": "'federico':3 'franco':4 'gobernador':1 'gomez':5 'lui':2",
+                "_id": 11,
+                "candi": "GOBERNADOR",
+                "dep": "11",
+                "lista": "2",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "JUAN CARLOS BOTTINO BAEZ",
+                "_full_text": "'baez':5 'bottino':4 'carlo':3 'gobernador':1 'juan':2",
+                "_id": 12,
+                "candi": "GOBERNADOR",
+                "dep": "12",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "ROBERTO RAMON ACEVEDO QUEVEDO",
+                "_full_text": "'acevedo':4 'gobernador':1 'quevedo':5 'ramon':3 'roberto':2",
+                "_id": 13,
+                "candi": "GOBERNADOR",
+                "dep": "13",
+                "lista": "2",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "MANUEL DEJESUS CABALLERO SANTAC",
+                "_full_text": "'caballero':4 'dejesus':3 'gobernador':1 'manuel':2 'santac':5",
+                "_id": 14,
+                "candi": "GOBERNADOR",
+                "dep": "14",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "ISIDRO ROMILDO ROUSILLON PASCOTTI",
+                "_full_text": "'gobernador':1 'isidro':2 'pascotti':5 'romildo':3 'rousillon':4",
+                "_id": 15,
+                "candi": "GOBERNADOR",
+                "dep": "15",
+                "lista": "30",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "ERASMO RODRIGUEZ ACOSTA",
+                "_full_text": "'acosta':4 'erasmo':2 'gobernador':1 'rodriguez':3",
+                "_id": 16,
+                "candi": "GOBERNADOR",
+                "dep": "16",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            },
+            {
+                "NOMBRE": "DAVID SAWATZKY FUNK",
+                "_full_text": "'david':2 'funk':4 'gobernador':1 'sawatzki':3",
+                "_id": 17,
+                "candi": "GOBERNADOR",
+                "dep": "17",
+                "lista": "1",
+                "mun": "",
+                "orden": "",
+                "tit_sup": ""
+            }
+        ],
+        "sql": "SELECT * FROM \"ec252587-7311-4570-8521-f424be9d7828\" ;"
+    },
+    "success": true
+}

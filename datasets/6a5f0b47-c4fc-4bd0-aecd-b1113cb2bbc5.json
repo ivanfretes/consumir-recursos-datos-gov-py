@@ -1,0 +1,307 @@
+{
+    "help": "Execute SQL queries on the DataStore.\n\n    The datastore_search_sql action allows a user to search data in a resource\n    or connect multiple resources with join expressions. The underlying SQL\n    engine is the\n    `PostgreSQL engine <http://www.postgresql.org/docs/9.1/interactive/sql/.html>`_.\n    There is an enforced timeout on SQL queries to avoid an unintended DOS.\n    DataStore resource that belong to a private CKAN resource cannot be searched with\n    this action. Use :meth:`~ckanext.datastore.logic.action.datastore_search` instead.\n\n    .. note:: This action is only available when using PostgreSQL 9.X and using a read-only user on the database.\n        It is not available in :ref:`legacy mode<legacy-mode>`.\n\n    :param sql: a single SQL select statement\n    :type sql: string\n\n    **Results:**\n\n    The result of this action is a dictionary with the following keys:\n\n    :rtype: A dictionary with the following keys\n    :param fields: fields/columns and their extra metadata\n    :type fields: list of dictionaries\n    :param records: list of matching results\n    :type records: list of dictionaries\n\n    ",
+    "result": {
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int4"
+            },
+            {
+                "id": "_full_text",
+                "type": "tsvector"
+            },
+            {
+                "id": "COD.",
+                "type": "text"
+            },
+            {
+                "id": "DISTRITO",
+                "type": "text"
+            },
+            {
+                "id": "ELECTORES",
+                "type": "text"
+            },
+            {
+                "id": "MESAS",
+                "type": "text"
+            },
+            {
+                "id": "ANR",
+                "type": "text"
+            },
+            {
+                "id": "PLRA",
+                "type": "text"
+            },
+            {
+                "id": "PRF",
+                "type": "text"
+            },
+            {
+                "id": "PHP",
+                "type": "text"
+            },
+            {
+                "id": "PEN",
+                "type": "text"
+            },
+            {
+                "id": "PPS",
+                "type": "text"
+            },
+            {
+                "id": "MOVIMIENTOS",
+                "type": "text"
+            },
+            {
+                "id": "BLANCO",
+                "type": "text"
+            },
+            {
+                "id": "NULOS",
+                "type": "text"
+            },
+            {
+                "id": "TOTAL",
+                "type": "text"
+            },
+            {
+                "id": "PARTICIPACION",
+                "type": "text"
+            }
+        ],
+        "records": [
+            {
+                "ANR": "2334.0",
+                "BLANCO": "117.0",
+                "COD.": "0.0",
+                "DISTRITO": "MCAL.ESTIGARRIBIA",
+                "ELECTORES": "13325.0",
+                "MESAS": "49.0",
+                "MOVIMIENTOS": "",
+                "NULOS": "186.0",
+                "PARTICIPACION": "0.448705440901",
+                "PEN": "3041.0",
+                "PHP": "",
+                "PLRA": "301.0",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "5979.0",
+                "_full_text": "'0.0':1 '0.448705440901':11 '117.0':8 '13325.0':3 '186.0':9 '2334.0':5 '301.0':6 '3041.0':7 '49.0':4 '5979.0':10 'mcal.estigarribia':2",
+                "_id": 1
+            },
+            {
+                "ANR": "2334.0",
+                "BLANCO": "117.0",
+                "COD.": "",
+                "DISTRITO": "TOTALES",
+                "ELECTORES": "13325.0",
+                "MESAS": "49.0",
+                "MOVIMIENTOS": "0.0",
+                "NULOS": "186.0",
+                "PARTICIPACION": "0.448705440901",
+                "PEN": "3041.0",
+                "PHP": "0.0",
+                "PLRA": "301.0",
+                "PPS": "0.0",
+                "PRF": "0.0",
+                "TOTAL": "5979.0",
+                "_full_text": "'0.0':6,7,9,10 '0.448705440901':14 '117.0':11 '13325.0':2 '186.0':12 '2334.0':4 '301.0':5 '3041.0':8 '49.0':3 '5979.0':13 'total':1",
+                "_id": 2
+            },
+            {
+                "ANR": "0.390366281987",
+                "BLANCO": "0.019568489714",
+                "COD.": "",
+                "DISTRITO": "PORCENTAJE VOTACION",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "0.0311088810838",
+                "PARTICIPACION": "",
+                "PEN": "0.508613480515",
+                "PHP": "",
+                "PLRA": "0.0503428667001",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "'0.019568489714':6 '0.0311088810838':7 '0.0503428667001':4 '0.390366281987':3 '0.508613480515':5 'porcentaj':1 'votacion':2",
+                "_id": 3
+            },
+            {
+                "ANR": "",
+                "BLANCO": "",
+                "COD.": "",
+                "DISTRITO": "",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "",
+                "PARTICIPACION": "",
+                "PEN": "",
+                "PHP": "",
+                "PLRA": "",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "",
+                "_id": 4
+            },
+            {
+                "ANR": "",
+                "BLANCO": "",
+                "COD.": "",
+                "DISTRITO": "",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "",
+                "PARTICIPACION": "",
+                "PEN": "",
+                "PHP": "",
+                "PLRA": "",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "",
+                "_id": 5
+            },
+            {
+                "ANR": "",
+                "BLANCO": "",
+                "COD.": "Resultados para Junta Municipal",
+                "DISTRITO": "",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "",
+                "PARTICIPACION": "",
+                "PEN": "",
+                "PHP": "",
+                "PLRA": "",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "'junta':3 'municip':4 'para':2 'resultado':1",
+                "_id": 6
+            },
+            {
+                "ANR": "",
+                "BLANCO": "",
+                "COD.": "",
+                "DISTRITO": "",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "",
+                "PARTICIPACION": "",
+                "PEN": "",
+                "PHP": "",
+                "PLRA": "",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "",
+                "_id": 7
+            },
+            {
+                "ANR": "",
+                "BLANCO": "",
+                "COD.": "",
+                "DISTRITO": "",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "",
+                "PARTICIPACION": "",
+                "PEN": "",
+                "PHP": "",
+                "PLRA": "",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "",
+                "_id": 8
+            },
+            {
+                "ANR": "ANR",
+                "BLANCO": "BLANCO",
+                "COD.": "COD.",
+                "DISTRITO": "DISTRITO",
+                "ELECTORES": "ELECTORES",
+                "MESAS": "MESAS",
+                "MOVIMIENTOS": "MOVIMIENTOS",
+                "NULOS": "NULOS",
+                "PARTICIPACION": "PARTICIPACION",
+                "PEN": "PEN",
+                "PHP": "PHP",
+                "PLRA": "PLRA",
+                "PPS": "PPS",
+                "PRF": "PRF",
+                "TOTAL": "TOTAL",
+                "_full_text": "'anr':5 'blanco':12 'cod':1 'distrito':2 'elector':3 'mesa':4 'movimiento':11 'nulo':13 'participacion':15 'pen':9 'php':8 'plra':6 'pps':10 'prf':7 'total':14",
+                "_id": 9
+            },
+            {
+                "ANR": "2290.0",
+                "BLANCO": "158.0",
+                "COD.": "0.0",
+                "DISTRITO": "MCAL.ESTIGARRIBIA",
+                "ELECTORES": "13325.0",
+                "MESAS": "49.0",
+                "MOVIMIENTOS": "",
+                "NULOS": "192.0",
+                "PARTICIPACION": "0.447804878049",
+                "PEN": "3015.0",
+                "PHP": "",
+                "PLRA": "312.0",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "5967.0",
+                "_full_text": "'0.0':1 '0.447804878049':11 '13325.0':3 '158.0':8 '192.0':9 '2290.0':5 '3015.0':7 '312.0':6 '49.0':4 '5967.0':10 'mcal.estigarribia':2",
+                "_id": 10
+            },
+            {
+                "ANR": "2290.0",
+                "BLANCO": "158.0",
+                "COD.": "",
+                "DISTRITO": "TOTALES",
+                "ELECTORES": "13325.0",
+                "MESAS": "49.0",
+                "MOVIMIENTOS": "0.0",
+                "NULOS": "192.0",
+                "PARTICIPACION": "0.447804878049",
+                "PEN": "3015.0",
+                "PHP": "0.0",
+                "PLRA": "312.0",
+                "PPS": "0.0",
+                "PRF": "0.0",
+                "TOTAL": "5967.0",
+                "_full_text": "'0.0':6,7,9,10 '0.447804878049':14 '13325.0':2 '158.0':11 '192.0':12 '2290.0':4 '3015.0':8 '312.0':5 '49.0':3 '5967.0':13 'total':1",
+                "_id": 11
+            },
+            {
+                "ANR": "0.383007191838",
+                "BLANCO": "0.0264258237163",
+                "COD.": "",
+                "DISTRITO": "PORCENTAJE VOTACION",
+                "ELECTORES": "",
+                "MESAS": "",
+                "MOVIMIENTOS": "",
+                "NULOS": "0.0321123933768",
+                "PARTICIPACION": "",
+                "PEN": "0.504264927245",
+                "PHP": "",
+                "PLRA": "0.0521826392373",
+                "PPS": "",
+                "PRF": "",
+                "TOTAL": "",
+                "_full_text": "'0.0264258237163':6 '0.0321123933768':7 '0.0521826392373':4 '0.383007191838':3 '0.504264927245':5 'porcentaj':1 'votacion':2",
+                "_id": 12
+            }
+        ],
+        "sql": "SELECT * FROM \"6a5f0b47-c4fc-4bd0-aecd-b1113cb2bbc5\" ;"
+    },
+    "success": true
+}
